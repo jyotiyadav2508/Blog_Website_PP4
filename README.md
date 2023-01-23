@@ -58,8 +58,63 @@ You can view the live site here -
   - [Acknowledgement](#acknowledgement)
 
 
+-----
+
+## User Experience - UX
+
+### Site Aims
+
+
+
+### Agile Methodology
+
+
+
+### User Stories
+
+**Iteration 1**
+* As a Site Admin I can create, read, update and delete posts to manage my blog content.
+
+**Iteration 2**
+
+**Iteration 3**
+
+**Iteration 4**
+
+
+**Still in backlog for future features**
 
 -----
+
+## Design
+
+### Colours
+
+### Typography
+
+
+### Imagery
+
+### Wireframes
+
+----
+
+## Database Diagram
+
+----
+
+
+## Features
+
+
+
+
+----
+
+## Admin Panel/Superuser
+
+----
+
 
 ## Technologies Used
 
@@ -95,6 +150,19 @@ You can view the live site here -
 
 -----
 
+## Testing
+
+
+
+
+----
+
+## Bugs
+
+
+
+
+----
 
 ## Deployment
 
