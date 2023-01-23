@@ -34,11 +34,9 @@ You can view the live site here -
 * Enter a unique name for the application.
 * Select the appropriate region for the application.
 * Click create app
-* Click Reveal Config Vars and add a new record with `SECRET_KEY`
 * Click Reveal Config Vars and add a new record with `DATABASE_URL`
 * Click Reveal Config Vars and add a new record with `PORT`
-* Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
-* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
+* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`(note: this must be removed for final deployment)
 * Next, scroll down to the Buildpack section, click `Add Buildpack` select python and click Save Changes
 * Scroll to the top of the page and choose the Deploy tab
 * Select Github as the deployment method
@@ -46,3 +44,61 @@ You can view the live site here -
 * Search for the repository name and click the connect button
 * Scroll to the bottom of the deploy page and select the preferred deployment type
 * Click either Enable Automatic Deploys for automatic deployment when you push updates to Github
+
+### 3. Set up Environment Variables
+* In you IDE create a new env.py file in the top level directory
+* Add env.py to the .gitignore file
+* In env.py import the os library
+* In env.py add `os.environ["DATABASE_URL"]` = "Paste the link copied from Heroku DATABASE_URL"
+* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"`
+* In Heroku Settings tab Config Vars enter the same `SECRET_KEY` created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
+
+### 4. Setting up settings.py
+
+* In your Django 'settings.py' file type:
+
+ ```
+ from pathlib import Path
+ import os
+ import dj_database_url
+
+ if os.path.isfile("env.py"):
+  import env
+ ```
+* Remove the default insecure secret key in settings.py and replace with the link to the secret key variable in Heroku by typing: `SECRET_KEY = os.environ.get(SECRET_KEY)`
+* Comment out the `DATABASES` section in settings.py and replace with:
+```
+DATABASES = {
+  'default': 
+  dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }`
+```
+* Create a Cloudinary account and from the 'Dashboard' in Cloudinary copy your url into the env.py file by typing: `os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"`
+* In Heroku, click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+* Add Cloudinary libraries to the installed apps section of settings.py file:
+ ```
+ 'cloudinary_storage'
+ 'django.contrib.staticfiles''
+ 'cloudinary'
+ ```
+* Connect Cloudinary to the Django app in `settings.py`:
+```
+STATIC_URL = '/static'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'STATIC')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE =
+'cloudinary_storage.storage.MediaCloudinaryStorage'
+* Link file to the templates directory in Heroku 
+* Place under the BASE_DIR: TEMPLATES_DIR = os.path.join(BASE_DIR,
+'templates')
+```
+* Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: `'DIRS': [TEMPLATES_DIR]`
+* Add Heroku Hostname to ALLOWED_HOSTS: ```ALLOWED_HOSTS =
+['<Heroku_app_name>.herokuapp.com', 'localhost']```
+*Create Procfile at the top level of the file structure and insert the following:
+    ``` web: gunicorn PROJECT_NAME.wsgi ```
+
+* Commit and push the code to the GitHub Repository.
+   
