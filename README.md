@@ -27,13 +27,22 @@ You can view the live site here -
 * If the app has been installed correctly the window will display- The install worked successfully! Congratulations!
 
 ### 2. Create your Heroku app
-* Navigate to the Heroku website
+* Navigate to [Heroku](https://id.heroku.com)
 * Create a Heroku account by entering your email address and a password (or login if you have one already).
 * Activate the account through the authentication email sent to your email account
 * Click the **new button** on the top right corner of the screen and select create a new app from the dropdown menu.
 * Enter a unique name for the application.
 * Select the appropriate region for the application.
 * Click create app
-* On the Heroku dashboard, click on the Resources tab
-* Scroll down to Add-Ons, search for and select 'Heroku Postgres'
-* In the Settings tab, scroll down to 'Reveal Config Vars' and copy the text in the box beside DATABASE_URL.
+* Click Reveal Config Vars and add a new record with `SECRET_KEY`
+* Click Reveal Config Vars and add a new record with `DATABASE_URL`
+* Click Reveal Config Vars and add a new record with `PORT`
+* Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
+* Next, scroll down to the Buildpack section, click `Add Buildpack` select python and click Save Changes
+* Scroll to the top of the page and choose the Deploy tab
+* Select Github as the deployment method
+* Confirm you want to connect to GitHub
+* Search for the repository name and click the connect button
+* Scroll to the bottom of the deploy page and select the preferred deployment type
+* Click either Enable Automatic Deploys for automatic deployment when you push updates to Github
