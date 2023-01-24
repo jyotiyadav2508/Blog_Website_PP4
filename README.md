@@ -1,6 +1,6 @@
-# Incredible India - Project Portfolio 4
+# Incredible India - Introduction
 
-This project is a Full Stack website built using the Django framework for Code Institute Full-stack development program.
+This is my Portfolio Project 4, which is a Full Stack website built using the Django framework for Code Institute Full-stack development program.
 > Incredible India is a blog website which targets India's tourist places, where user can look or search for a tourist place in India. When the user is logged in they can also like/unlike a post and comment on a post. They can also share their favourite place by adding a post on the ---- Page and upload or update their user image and details.
 
 You can view the live site here -
@@ -27,14 +27,8 @@ You can view the live site here -
       - [About Page](#about-page)
       - [Blog Page](#blog-page)
       - 
-      - 
-      - 
-      - 
-      - 
   - [Future Features](#future-features)
-      - 
-      - 
-      - 
+      
   - [Admin Panel/Superuser](#admin-panelsuperuser)
   - [Technologies Used](#technologies-used)
       - [Languages Used](#languages-used)

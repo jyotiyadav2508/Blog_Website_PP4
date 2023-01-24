@@ -1,1 +1,1 @@
-web: gunicorn tourism.wsgi
+web: gunicorn incredible_india.wsgi
