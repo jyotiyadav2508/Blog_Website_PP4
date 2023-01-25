@@ -24,9 +24,9 @@ class Destination(models.Model):
     """
     Model for destination place
     """
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True)
     destination_image = CloudinaryField('image', default='placeholder')
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True, default="", null=True)
 
     def __str__(self):
         return self.title
@@ -37,7 +37,7 @@ class Post(models.Model):
     Model for main blog post
     """
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, null=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
