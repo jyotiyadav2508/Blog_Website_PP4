@@ -55,7 +55,7 @@ class Post(models.Model):
     best_time = models.CharField(max_length=100)
     known_for = models.TextField(blank=True)
     ideal_duration = models.DurationField()
-    destinations = models.ManyToManyField(Destination)
+    destinations = models.ManyToManyField(Destination, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
