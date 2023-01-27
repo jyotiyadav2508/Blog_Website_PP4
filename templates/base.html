@@ -25,28 +25,82 @@
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">In<span class="red-o">cre</span>di<span class="green-ble">ble<span class="thin">|star</span></span></span></span></a> -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/favicon-16x16.png' %}" alt="India map logo" width="30" height="24" class="d-inline-block align-text-top">
+                Incredible India
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" aria-label="Go to the home page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about" aria-label="Go to the about page">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/signup" aria-label="Go to the sign up page">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/login" aria-label="Go to the login page">Login</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destination
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Hill Stations</a></li>
+                            <li><a class="dropdown-item" href="#">Beaches</a></li>
+                            <li><a class="dropdown-item" href="#">Historical or heritage</a></li>
+                            <li><a class="dropdown-item" href="#">Adventure</a></li>
+                            <li><a class="dropdown-item" href="#">National Park</a></li>
+                            <li><a class="dropdown-item" href="#">Museum and art galleries</a></li>
+                            <li><a class="dropdown-item" href="#">Mountains</a></li>
+                            <li><a class="dropdown-item" href="#">Festivals and parades</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section>
+        {% block content %}
+        <!-- Content goes here -->
+        {% endblock content %}
+    </section>
 
+
+
+    <!-- Footer with links to social media and link to home page -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-2 footer-text">
+                    <a href="{% url 'home' %}">Incredible India</a>
+                    <p class="footer-text">One of the oldest civilisations in the world. India is a home to the finest architectural heritage, rich culture, serene ghats, and spectacular landscapes.
+                    </p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <h4>Follow Us</h4>
+                    <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my Github "><i class="fab fa-github-f"></i>Github</a></p>
+                    <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin"><i class="fab fa-linkedin"></i>Linkedin</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                <h3><i class="far fa-copyright"></i> Copyright | Jyoti Yadav | <span id="year"></span></h3>
+            </div>
+    </footer>
 </body>
-
-<!-- Footer -->
-<footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-2 footer-text">
-                <h4>Incredible India</h4>
-                <p class="footer-text">One of the oldest civilisations in the world. India is a home to the finest architectural heritage, rich culture, serene ghats, and spectacular landscapes.
-                </p>
-            </div>
-            <div class="col-md-4 footer-box">
-                <h4>Follow Us</h4>
-                <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my Github "><i class="fab fa-github-f"></i>Github</a></p>
-                <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin"><i class="fab fa-linkedin"></i>Linkedin</a></p>
-            </div>
-        </div>
-        <hr>
-        <div class="copyright">
-            <h3><i class="far fa-copyright"></i> Copyright | Jyoti Yadav | <span id="year"></span></h3>
-        </div>
-</footer>
 
 </html>
