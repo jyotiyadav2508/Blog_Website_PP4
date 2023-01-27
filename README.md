@@ -78,6 +78,7 @@ You can view the live site here -
 
 
 **Sprint Two**
+
 **Sprint Three**
 
 * As a Site User I can click on a post so that I can read the full article.
