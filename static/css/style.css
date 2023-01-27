@@ -1,12 +1,57 @@
 body {
-    background-color: #343a40;
+    background-color: #dda5a5;
     font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 60px;
     height: 100vh;
 
 }
 
+/* -------------------------------------------------logo */
+.red-o {
+    color: #E84610;
+}
+
+.thin {
+    font-weight: 300;
+}
+
 /*----------------------------------------Nav bar buttons */
 .navbar-brand {
     font-family: 'Kalam', cursive;
+}
+
+.navbar-brand:hover {
+    font-weight: 600;
+}
+
+.dropdown {
+    margin: 5px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    transition: ease-in-out;
+}
+
+/*-----------------------------------------------footer*/
+#footer {
+    position: relative;
+    padding: 25px;
+    margin-top: 50px;
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    z-index: 1000;
+}
+
+#footer .copyright {
+    text-align: right;
+    z-index: 1000;
+}
+
+#footer hr {
+    background: -o-linear-gradient(350deg, #2d557d, #9610fd, rgb(252 84 4));
+    background: linear-gradient(100deg, #2d557d, #9610fd, rgb(252 84 4));
+    height: 5px;
+    z-index: 1000;
 }
