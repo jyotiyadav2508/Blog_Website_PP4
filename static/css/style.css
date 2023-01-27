@@ -1,0 +1,12 @@
+body {
+    background-color: #343a40;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 60px;
+    height: 100vh;
+
+}
+
+/*----------------------------------------Nav bar buttons */
+.navbar-brand {
+    font-family: 'Kalam', cursive;
+}
