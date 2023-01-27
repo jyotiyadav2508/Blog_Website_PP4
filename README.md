@@ -69,17 +69,34 @@ You can view the live site here -
 ### Agile Methodology
 
 
-
 ### User Stories
 
-**Iteration 1**
+**Sprint One**
+* As a Site Admin I can create draft posts so that I can finish writing the content later.
 * As a Site Admin I can create, read, update and delete posts to manage my blog content.
+* As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments.
 
-**Iteration 2**
 
-**Iteration 3**
+**Sprint Two**
+**Sprint Three**
 
-**Iteration 4**
+* As a Site User I can click on a post so that I can read the full article.
+* As a Site User I can view a list of posts so that I can select one to read.
+* As a Site User I can access all my reviews easily in one place so that I can easily track my activity on the site and interact with the blog owners' content.
+* As a Site User I can easily see the purpose of the site from the landing page so that I can see if the site is relevant to my needs.
+* As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
+* As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
+* As a Site User I can view a list of destinations so that I can see a list of posts relating to my specific interest.
+* As a Site User I can register an account so that I can comment and like.
+* As a registered user I can login and logout of the site so that I can access my content.
+* As a logged-in user I can leave comments on a post so that I can be involved in the conversation.
+* As a logged-in user I can create a post with my favorite tourist place so that I can share my preferences with other users.
+* As a logged-in user I can edit/delete my comments so that I can update/delete my post opinion.
+* As a logged-in user I can like or unlike a post so that I can interact with the content.
+
+* As a Site User I can use a search bar to search for a specific place so that I have quick and easy access to the information I need.
+* As a Site User I can view a paginated list of posts so that easily select a post to view.
+
 
 
 **Still in backlog for future features**
