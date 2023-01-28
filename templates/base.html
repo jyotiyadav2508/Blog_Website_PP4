@@ -20,6 +20,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Fontawesome link -->
+    <script src="https://kit.fontawesome.com/a40a60ed20.js" crossorigin="anonymous"></script>
     <!-- CSS style sheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
@@ -28,10 +30,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">In<span class="red-o">cre</span>di<span class="green-ble">ble<span class="thin">|star</span></span></span></span></a> -->
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">In<span class="red-o">cre</span>di<span class="green-o">ble<span class="thin">|India</span></span></span></span></a> -->
+            <!-- <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/favicon-16x16.png' %}" alt="India map logo" width="30" height="24" class="d-inline-block align-text-top">
                 Incredible India
+            </a> -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/Incredible-India-Logo60.jpg' %}" alt="India map logo" class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,20 +90,22 @@
     <footer>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 offset-2 footer-text">
-                    <a href="{% url 'home' %}">Incredible India</a>
+                <div class="col-md-5 offset-1 footer-text">
+                    <a href="{% url 'home' %}">
+                        <h4>Incredible India</h4>
+                    </a>
                     <p class="footer-text">One of the oldest civilisations in the world. India is a home to the finest architectural heritage, rich culture, serene ghats, and spectacular landscapes.
                     </p>
                 </div>
-                <div class="col-md-4 footer-box">
-                    <h4>Follow Us</h4>
-                    <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my Github "><i class="fab fa-github-f"></i>Github</a></p>
-                    <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin"><i class="fab fa-linkedin"></i>Linkedin</a></p>
+                <div class="col-md-4 offset-2 footer-box">
+                    <h4>My Social Media</h4>
+                    <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin"><i class="fa-brands fa-linkedin"></i><span> LinkedIn</span></a></p>
+                    <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my github"><i class="fa-brands fa-github"></i><span> GitHub</span></a> </p>
                 </div>
             </div>
             <hr>
             <div class="copyright">
-                <h3><i class="far fa-copyright"></i> Copyright | Jyoti Yadav | <span id="year"></span></h3>
+                <h5><i class="far fa-copyright"></i> Copyright | Jyoti Yadav | <span id="year"></span></h5>
             </div>
     </footer>
 </body>
