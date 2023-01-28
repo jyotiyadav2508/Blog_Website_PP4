@@ -1,5 +1,5 @@
 body {
-    background-color: #36eb11;
+    background-color: #48d62b;
     font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 60px;
     height: 100vh;
@@ -38,9 +38,10 @@ footer {
     position: fixed;
     bottom: 0;
     right: 0;
-    height: 100px;
+    height: 200px;
     margin-top: 30px;
-    background-color: #c8dbc4;
+    background-color: black;
+    color: yellowgreen;
 }
 
 .hello {
