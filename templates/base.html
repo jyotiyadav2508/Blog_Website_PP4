@@ -23,7 +23,8 @@
     <!-- Fontawesome link -->
     <script src="https://kit.fontawesome.com/a40a60ed20.js" crossorigin="anonymous"></script>
     <!-- CSS style sheet -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
 </head>
 
 <body>
@@ -78,6 +79,9 @@
             </div>
         </div>
     </nav>
+    <section class="hello">
+        <h2>Hello</h2>
+    </section>
     <section>
         {% block content %}
         <!-- Content goes here -->
