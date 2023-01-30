@@ -1,57 +1,72 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
-
-<div class="container">
-
-    <div class="row g-0">
-        <div class="col-md-10 mx-auto p-md-3">
-            <!-- <img class="post-content-img" src="{{ post.featured_image.url }}" width="100%" alt="{{ post.title }} Image"> -->
-            <div class="d-none d-md-block col-md-6">
-                <!-- The featured image URL or an alternitive if one isnt provided -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img class="card-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-                {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
-                {% endif %}
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-            </div>
-
-            <div class="content-description">
-                {% for type in post.attractions.all %}
-                <h4 class="pt-3">{{ type }}</h4>
-                {% endfor %}
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <h4 class="best-time">Best Time: <span><small>Jan to march</small></span></h4>
-                <h4 class="duration">Ideal Duration: <span><small> 2-3 Days</span></small></h4>
-            </div>
-            <p class="card-text">
-                {{ post.content | safe }}
-            </p>
-            <div class="row">
-                <div class="col-1">
-                    <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+<!-- Post full description section -->
+<section id="post-description">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-10 mx-auto p-md-3">
+                <!-- <img class="post-content-img" src="{{ post.featured_image.url }}" width="100%" alt="{{ post.title }} Image"> -->
+                <div class="d-none d-md-block col-md-6">
+                    <!-- The featured image URL or an alternitive if one isnt provided -->
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img class="card-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                    {% else %}
+                    <img src=" {{ post.featured_image.url }}" width="100%">
+                    {% endif %}
+                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 </div>
-                <div class="col-1">
-                    {% with comments.count as total_comments %}
-                    <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
-                    {% endwith %}
+
+                <div class="content-description">
+                    {% for type in post.attractions.all %}
+                    <h4 class="pt-3">{{ type }}</h4>
+                    {% endfor %}
+                    <!-- Post title goes in these h1 tags -->
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <h4 class="best-time">Best Time: <span><small>Jan to march</small></span></h4>
+                    <h4 class="duration">Ideal Duration: <span><small> 2-3 Days</span></small></h4>
+                </div>
+                <p class="card-text">
+                    {{ post.content | safe }}
+                </p>
+                <div class="row">
+                    <div class="col-1">
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                    </div>
+                    <div class="col-1">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+                <hr>
+                <hr>
+            </div>
+            <div class="col-md-4 card mb-4  mt-3 post-comment ">
+                <div class="card-body">
+                    <!-- alert when comment is submitted -->
+                    {% if commented %}
+                    <div class="alert alert-sucess" role="alert">
+                        Thanks {{ user.username}}. Your comment is awaiting approval!
+                    </div>
+                    {% else %}
+                    {% if user.is_authenticated %}
+                    <h3>Leave a comment: </h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post" style="margin-top: 1.2em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+
                 </div>
             </div>
-
         </div>
-
-
     </div>
-</div>
 
-
-
-
-
-
-
-
+</section>
 
 {% endblock%}
