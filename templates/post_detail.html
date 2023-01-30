@@ -8,7 +8,7 @@
         <div class="row g-0">
             <div class="col-md-10 mx-auto p-md-3">
                 <!-- <img class="post-content-img" src="{{ post.featured_image.url }}" width="100%" alt="{{ post.title }} Image"> -->
-                <div class="d-none d-md-block col-md-6">
+                <div class="d-none d-md-block col-md-10">
                     <!-- The featured image URL or an alternitive if one isnt provided -->
                     {% if "placeholder" in post.featured_image.url %}
                     <img class="card-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -43,8 +43,24 @@
                 <hr>
                 <hr>
                 <div class="row">
-
-                    <div class=" col-md-6 card mb-4  mt-3 post-comment ">
+                    <div class=" col-md-7 card mb-4 mt-3 pt-3 post-comment ">
+                        <h3>Comments: </h3>
+                        <div class="card-body">
+                            <!-- for loop to iterate through each comment in comments -->
+                            {% for comment in comments %}
+                            <div class="comments" style="padding: 10px;">
+                                <p class="font-weight-bold">
+                                    {{ comment.name }}
+                                    <span class=" text-muted font-weight-normal">
+                                        {{ comment.created_on }}
+                                    </span> wrote:
+                                </p>
+                                {{ comment.body | linebreaks }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class=" col-md-5 card mb-4  mt-3 post-comment ">
                         <div class="card-body">
                             <!-- alert when comment is submitted -->
                             {% if commented %}
@@ -64,23 +80,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <div class=" col-md-6 card mb-4 mt-3 pt-3 post-comment ">
-                        <h3>Comments: </h3>
-                        <div class="card-body">
-                            <!-- for loop to iterate through each comment in comments -->
-                            {% for comment in comments %}
-                            <div class="comments" style="padding: 10px;">
-                                <p class="font-weight-bold">
-                                    {{ comment.name }}
-                                    <span class=" text-muted font-weight-normal">
-                                        {{ comment.created_on }}
-                                    </span> wrote:
-                                </p>
-                                {{ comment.body | linebreaks }}
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
