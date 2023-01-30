@@ -48,14 +48,20 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Go to the home page">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/about" aria-label="Go to the about page">About</a>
+                        <a class="nav-link" aria-current="page" href="#" aria-label="Go to the about page">About</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}" aria-label="Go to the register page">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}" aria-label="Go to the sign up page">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/signup" aria-label="Go to the sign up page">Sign Up</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'account_login' %}" aria-label="Go to the login page">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login" aria-label="Go to the login page">Login</a>
-                    </li>
+                    {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Attractions
