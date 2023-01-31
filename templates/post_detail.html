@@ -75,6 +75,7 @@
                             {% endfor %}
                         </div>
                     </div>
+
                     <div class=" col-md-5 card mb-4  mt-3 post-comment ">
                         <div class="card-body">
                             <!-- alert when comment is submitted -->
@@ -91,6 +92,8 @@
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                             </form>
+                            {% else %}
+                            <h3>To like and comment a post, please sign up first.</h3>
                             {% endif %}
                             {% endif %}
                         </div>
