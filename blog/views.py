@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
@@ -17,7 +19,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """
-    Render the full Post details page
+    Render the full Post details page with approved comments
     """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -39,6 +41,9 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Current user can submit a comment on the post
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
@@ -67,3 +72,20 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+
+class PostLike(View):
+    """
+    When a post is liked/unliked, the slug is noted
+    and the like/unlike is counted. Total likes display
+    """
+    def post(self, request, slug, *args):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(request.user)
+            messages.success(request, 'You have unliked this post.')
+        else:
+            post.likes.add(request.user)
+            messages.success(request, 'You have liked this post, Thanks!')
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
