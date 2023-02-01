@@ -19,7 +19,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """
-    Render the full Post details page with approved comments
+    Render the Post details page of the selected post with approved comments
     """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -58,7 +58,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.success(request, 'Your comment is submitted!')
+            messages.success(request, 'Thank you for your comment!')
         else:
             comment_form = CommentForm()
 
