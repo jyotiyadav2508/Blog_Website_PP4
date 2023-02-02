@@ -23,8 +23,8 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                             </a>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Best Time: <span>{{ post.best_time }}</span></li>
-                                <li class="list-group-item">Ideal Duration: <span> {{ post.ideal_duration }}</span></li>
+                                <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
+                                <li class="list-group-item"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
                             </ul>
                             <p class="card-text">{{ post.content | slice:":180" }}...</p>
                             <div class="card-footer">
