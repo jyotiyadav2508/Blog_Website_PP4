@@ -1,5 +1,5 @@
 from django_summernote.widgets import SummernoteWidget
-from .models import Comment
+from .models import Comment, Post
 from django import forms
 
 
@@ -17,3 +17,30 @@ class CommentForm(forms.ModelForm):
         # Choose fields to display from the Comment model
         model = Comment
         fields = ('body',)
+
+
+class AddPostForm(forms.ModelForm):
+    """
+    Form to add blog post
+    """
+    class Meta:
+        model = Post
+        fields = (
+            'title', 'author', 'destinations',
+            'content', 'featured_image', 'best_time',
+            'ideal_duration', )
+
+    widgets = {
+        'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),  # noqa: E501
+        'author': forms.TextInput(attrs={'class': 'form-control'}),
+        'destinations': forms.Select(attrs={'class': 'form-control'}),
+        'content': forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Add a description about the post'}),
+        'best_time': forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Best time to visit'}),
+        'ideal_duration': SummernoteWidget(attrs={
+            'class': 'form-control',
+            'placeholder': 'Ideal duration to stay'}),
+    }
