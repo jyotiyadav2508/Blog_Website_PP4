@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Add Post {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- Only allows users who are log in -->
+{% if user.is_authenticated %}
+<div class="container create-form text-light mb-3 p-2">
+    <div class="row">
+        <div class="col-md-8 mt-1 offset-md-2 text-light">
+            <h2 class="mt-2">Add your own blog post: </h2>
+            {% if submitted %}
+            <div class="form-group">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    {{ form.as_p}}
+                    <button type="submit" class="btn btn-success mb-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- If user is not signed in/ however the page will not be seen to them-->
+{% else %}
+<div class="d-flex justify-content-center p-3">
+    <h3>Access Denied. You must be Logged In to add a post. </h3>
+    <a href="{% url 'account_login' %}">Login Here</a>
+</div>
+{% endif %}
+
+{% endblock %}

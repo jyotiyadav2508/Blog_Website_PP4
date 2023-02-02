@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Blog enteries column -->
 <div class="container-fluid">
     <div class="row">
-        <!-- Blog enteries column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
@@ -14,38 +14,37 @@
                                 <div class="image-container">
 
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Image uploaded by user">
                                     {% else %}
-                                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image here">
+                                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
                                     {% endif %}
                                     <!-- <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div> -->
+
                                 </div>
 
-                                <div class="card-content">
-                                    <!-- <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page"> -->
-                                    <h2 class="card-title">{{ post.title }}</h2>
+                                <!-- <div class="card-content"> -->
+                                <br>
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <!-- <p class="card-text">{{ post.content | slice:":90" }}...</p> -->
                             </a>
 
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Best Time: <span>Jan to march</span></li>
-                                <li class="list-group-item">Ideal Duration: <span> 3-5 days</span></li>
-                                <!-- <li class="list-group-item">A third item</li> -->
+                                <li class="list-group-item">Best Time: <span>{{ post.best_time }}</span></li>
+                                <li class="list-group-item">Ideal Duration: <span> {{ post.ideal_duration }}</span></li>
                             </ul>
-                            <p class="card-text">{{ post.excerpt | slice:":90" }}...</p>
+                            <p class="card-text">{{ post.description | slice:":180" }}...</p>
 
-                        </div>
-                        <!-- <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Best Time: <span>Jan to march</span></li>
-                                <li class="list-group-item">Ideal Duration: <span> 3-5 days</span></li>
-                                <li class="list-group-item">A third item</li>
-                            </ul> -->
-                        <div class="author-info">
-                            <span>Author: {{ post.author }} | </span>
-                            <span>{{ post.created_on}} | </span>
-                            <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-                            <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                            <div class="card-footer">
+                                <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+                                <!-- </div> -->
+                                <!-- <div class="author-info"> -->
+                                <span>Author: {{ post.author }} | </span>
+                                <span>{{ post.created_on}} | </span>
+                                <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,18 +56,23 @@
             </div>
         </div>
     </div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
-    </ul>
-</nav>
-{% endif%}
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif%}
+    <!-- Back to top button -->
+    <!-- <div class="d-flex justify-content-end">
+    <a href="#search" role="button" class="btn btn-success mb-3 btn-floating btn-lg" id="btn-back-to-top">Back to
+        top ⇧</a>
+</div> -->
 </div>
 {% endblock %}

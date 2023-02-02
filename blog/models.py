@@ -44,7 +44,6 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
     stars = models.PositiveIntegerField(
         default=3, validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
