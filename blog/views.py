@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, AddPostForm
 
 
 class PostList(generic.ListView):
@@ -15,6 +17,16 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html"
     paginate_by = 6
+
+
+class AllBlogPost(generic.ListView):
+    """
+    Render the blog page
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('created_on')
+    template_name = "blog.html"
+    paginate_by = 9
 
 
 class PostDetail(View):
@@ -90,3 +102,57 @@ class PostLike(View):
             post.likes.add(request.user)
             messages.success(request, 'You have liked this post, Thanks!')
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+# @login_required()
+# class AddPost(request):
+#     """
+#     Add a blog post only when user is logged in
+#     """
+#     if request.method == 'POST':
+#         form = PostForm(request.FORM, request.FILES)
+#         if form.is_valid():
+#             post = form.save(commit=False)
+#             post.author = request.user
+#             post.slug = slugify(post.title)
+#             form.save()
+#             messages.success(
+#                 request,
+#                 'You have added a new post and it has been flagged for approval!')  # noqa: E501
+#             return redirect(reverse('add-post'))
+#         else:
+#             messages.error(request, 'Failed to Create a post. \
+#                             Please ensure the form is valid.')
+#     else:
+#         form = PostForm()
+
+#     template = 'add_post.html',
+#     context = {
+#         'form': form,
+#     }
+#     return render(request, template, context)
+
+
+class AddPost(LoginRequiredMixin, CreateView):
+    """
+    Add a blog post only after logged in
+    """
+    template = 'add_post.html'
+    form_class = AddPostForm
+
+    def get_success_url(self):
+        """
+        Set the reverse url for the sucessfully addition of a post
+        """
+        return reverse('list-blog')
+
+    def form_valid(self, form):
+        """
+        Validate the form and return a success message
+        """
+        form.instance.author = self.request.user
+        messages.success(
+            self.request,
+            'You have added a post and it has been flagged for approval!')
+        form.slug = slugify(form.instance.title)
+        return super().form_valid(form)
