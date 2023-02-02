@@ -1,7 +1,7 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<!-- Blog enteries column -->
+<!-- All Blog enteries -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
@@ -12,39 +12,26 @@
                         <div class="card-body">
                             <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                 <div class="image-container">
-
                                     {% if "placeholder" in post.featured_image.url %}
                                     <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Image uploaded by user">
                                     {% else %}
                                     <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
                                     {% endif %}
-                                    <!-- <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div> -->
-
                                 </div>
-
                                 <!-- <div class="card-content"> -->
                                 <br>
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <!-- <p class="card-text">{{ post.content | slice:":90" }}...</p> -->
                             </a>
-
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Best Time: <span>{{ post.best_time }}</span></li>
                                 <li class="list-group-item">Ideal Duration: <span> {{ post.ideal_duration }}</span></li>
                             </ul>
-                            <p class="card-text">{{ post.description | slice:":180" }}...</p>
-
+                            <p class="card-text">{{ post.content | slice:":180" }}...</p>
                             <div class="card-footer">
-                                <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-                                <!-- </div> -->
-                                <!-- <div class="author-info"> -->
-                                <small class="text-muted"><span>Author: {{ post.author }} | </span>
-                                    <span>{{ post.created_on}} | </span>
-                                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-                                    <span class="text-secondary"> | <i class="far fa-comments"></i></span>
-                                </small>
+                                <span>Author: {{ post.author }} | </span>
+                                <span>{{ post.created_on}} | </span>
+                                <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                <span class="text-secondary"> | <i class="far fa-comments"></i></span>
                             </div>
                         </div>
                     </div>
@@ -76,4 +63,6 @@
         top ⇧</a>
 </div> -->
 </div>
-{% endblock %}
+
+
+{% endblock content %}
