@@ -144,7 +144,8 @@ class AddPost(LoginRequiredMixin, CreateView):
         """
         Set the reverse url for the sucessfully addition of a post
         """
-        return reverse('list-blog')
+        return reverse('all-blog')
+        # return reverse('list-blog')
 
     def form_valid(self, form):
         """
@@ -156,3 +157,12 @@ class AddPost(LoginRequiredMixin, CreateView):
             'You have added a post and it has been flagged for approval!')
         form.slug = slugify(form.instance.title)
         return super().form_valid(form)
+
+
+class User(LoginRequiredMixin, generic.ListView):
+    """
+    Render the user page
+    """
+    model = Post
+    template_name = "user_page.html"
+    # return render(request, 'user_page.html')
