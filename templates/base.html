@@ -29,7 +29,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #033c64;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #033c64;">
         <div class="container-fluid">
             <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">In<span class="red-o">cre</span>di<span class="green-o">ble<span class="thin">|India</span></span></span></span></a> -->
             <!-- <a class="navbar-brand" href="{% url 'home' %}">
@@ -69,8 +69,8 @@
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{% url 'destinations' %}">Destinations</a></li>
                             <li>
                                 <hr class="dropdown-divider">
