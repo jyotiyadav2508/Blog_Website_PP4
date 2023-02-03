@@ -7,24 +7,24 @@
 }
 
 body {
-    /* background-color: #f6efcf; */
+    /* background-color: #c4a519; */
     font-family: 'Source Sans Pro', sans-serif;
-    margin-bottom: 60px;
-    height: 100vh;
+    /* margin-bottom: 60px; */
+    /* height: 100vh; */
 
 }
 
 /* -------------------------------------------------logo */
-.red-o {
+/* .red-o {
     color: #E84610;
 }
 
 .thin {
     font-weight: 300;
-}
+} */
 
 /*----------------------------------------Nav bar buttons */
-.navbar ul {
+/* .navbar ul {
     color: white;
 }
 
@@ -43,28 +43,15 @@ body {
 .nav-link:hover {
     text-decoration: underline;
     transition: ease-in-out;
-}
+} */
 
 /*-----------------------------------------------footer*/
 
-#footer {
+/* #footer {
     position: relative;
     padding: 25px;
     margin: 50px;
-    background-color: rgb(113, 110, 110);
-    color: #E84610;
     width: 100%;
     z-index: 1000;
-    border-top: 2px solid #E84610;
-}
-
-/*----------------------------------------------Logout*/
-/* #log-out {
-    height: 60vh;
-    margin-top: 50px;
-    box-shadow: #E84610;
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px #888888;
-    box-shadow: 20px 20px 50px 10px pink inset;
+    
 } */

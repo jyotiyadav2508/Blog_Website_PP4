@@ -58,7 +58,7 @@
                 <hr>
                 <hr>
                 <div class="row">
-                    <div class=" col-md-7 card mb-4 mt-3 pt-3 post-comment ">
+                    <div class=" col-md-6 card mb-4 mt-3 pt-3 post-comment" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191) inset;">
                         <h3>Comments: </h3>
                         <div class="card-body">
                             <!-- for loop to iterate through each comment in comments -->
@@ -70,13 +70,13 @@
                                         {{ comment.created_on }}
                                     </span> wrote:
                                 </p>
-                                {{ comment.body | linebreaks }}
+                                <i class="fa-regular fa-comment"></i><span> {{ comment.body }}</span>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
 
-                    <div class=" col-md-5 card mb-4  mt-3 post-comment ">
+                    <div class=" col-md-5 offset-1 card mb-4  mt-3 post-comment " style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
                         <div class="card-body">
                             <!-- alert when comment is submitted -->
                             {% if commented %}
@@ -90,10 +90,10 @@
                             <form method="post" style="margin-top: 1.2em;">
                                 {{ comment_form | crispy }}
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                                <button type="submit" class="btn btn-signup btn-success mt-2">Submit</button>
                             </form>
                             {% else %}
-                            <h3>To like and comment a post, please sign up first.</h3>
+                            <h4>To like and comment a post, please <a href="{{ signup_url }}">sign up</a> first.</h4>
                             {% endif %}
                             {% endif %}
                         </div>

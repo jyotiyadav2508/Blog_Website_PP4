@@ -8,28 +8,30 @@
 {% block content %}
 
 
+<!-- Sign In page -->
+<section id="signin">
+    <div class="container mb-5 col-md-8" style="height: 58vh; box-shadow: 20px 20px 50px 10px pink inset;">
+        <div class="row mt-5">
+            <div class="col-md-8 mt-5 offset-md-2 text-dark">
+                <h2>{% trans "Sign In" %}</h2>
+                <p class="mt-2" style="font-size:1.3rem">{% blocktrans %}Welcome back to Incredible India blog. To leave a comment and like a post, please login first. If you have not created an account yet, then please
+                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2 text-dark">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 text-dark">
-            <h3>{% trans "Sign In" %}</h3>
-            <p>{% blocktrans %}Welcome back to Incredible India blog. To leave a comment and like a post, please login first. If you have not created an account yet, then please
-                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                    <button class="btn btn-signup btn-lg right btn-success mt-3" type="submit">{% trans "Sign In" %}</button>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 text-dark">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-            </form>
-        </div>
-    </div>
-</div>
+</section>
 
 {% endblock %}
