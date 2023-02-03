@@ -93,7 +93,7 @@
                                 <button type="submit" class="btn btn-signup btn-success mt-2">Submit</button>
                             </form>
                             {% else %}
-                            <h4>To like and comment a post, please <a href="{{ signup_url }}">sign up</a> first.</h4>
+                            <h4>To like and comment a post, please <a href="{% url 'account_signup' %}">sign up</a> first.</h4>
                             {% endif %}
                             {% endif %}
                         </div>
