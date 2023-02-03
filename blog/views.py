@@ -144,7 +144,7 @@ class AddPost(LoginRequiredMixin, CreateView):
         """
         Set the reverse url for the sucessfully addition of a post
         """
-        return reverse('all-blog')
+        return reverse('user-page')
         # return reverse('list-blog')
 
     def form_valid(self, form):
@@ -165,4 +165,22 @@ class User(LoginRequiredMixin, generic.ListView):
     """
     model = Post
     template_name = "user_page.html"
-    # return render(request, 'user_page.html')
+
+
+def destinations(request):
+    """
+    Renders the destinations page
+    """
+    return render(request, 'destinations.html')
+
+
+def destinations_view(request, des):
+    """
+    Render the page for selected destination
+    """
+    destinations_post = Post.objects.filter(
+        destinations__title__contains=des, status=1)
+    return render(request, 'destinations_post.html', {
+        'des': des.title(),
+        'destinations_post': destinations_post
+    })

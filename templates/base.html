@@ -69,10 +69,12 @@
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Attractions
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'destinations' %}">Destinations</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Hill Stations</a></li>
                             <li><a class="dropdown-item" href="#">Beaches</a></li>
                             <li><a class="dropdown-item" href="#">Historical or heritage</a></li>

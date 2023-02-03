@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Destinations section -->
+<section id="destinations">
+    <h2 class="title">Destinations</h2>
+    <div class="container box-shadow">
+        <div class="row">
+            {{ des }}
+            {% for destinaton in destinations_list %}
+            <div class="col-md-4">
+                <a href="{% url 'destinations_post' destination.title %}" aria-label="Go to the destination post page">
+                    <div class="content-img">
+                        <img src="{{ destination.destination_image.url }}" alt=" {{ destination.title }} Image">
+                        <div class="content-destination-center">
+                            <h3>{{ category.title}}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

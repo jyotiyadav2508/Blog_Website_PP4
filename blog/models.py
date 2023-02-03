@@ -28,6 +28,10 @@ class Destination(models.Model):
     destination_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=100, unique=True, default="", null=True)
 
+    class Meta:
+        verbose_name_plural = 'Destinations'
+        db_table = 'Destination'
+
     def __str__(self):
         return self.title
 
