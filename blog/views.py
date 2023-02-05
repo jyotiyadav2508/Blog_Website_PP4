@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
@@ -111,7 +112,7 @@ def user_add_post(request):
     Add a blog post only when user is logged in
     """
     if request.method == 'POST':
-        form = PostForm(request.FORM, request.FILES)
+        form = AddPostForm(request.FORM, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -125,7 +126,7 @@ def user_add_post(request):
             messages.error(request, 'Failed to Create a post. \
                             Please ensure the form is valid.')
     else:
-        form = PostForm()
+        form = AddPostForm()
 
     template = 'add_post.html',
     context = {
