@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-
 <!-- Only allows users who are log in -->
 {% if user.is_authenticated %}
 <div class="container create-form text-light mb-3 p-2">
@@ -9,28 +8,22 @@
         <div class="col-md-8 mt-1 offset-md-2 text-light">
             <h3 class="text-light">Welcome {{ user }}</h3>
             <h2 class="mt-2">Add your own blog post: </h2>
-            <!-- <a class="btn btn-signup" href="{% url 'add-post' %}"> Add a Post </a> -->
             {% if submitted %}
             <!-- success alert -->
             <h2>Your post has submitted successfully. Thanks!</h2>
             {% else %}
-            <div class="container">
-                <div class="row">
-                    <div class="form-group">
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            {{ form.as_p}}
-                            <button type="submit" class="btn btn-success mb-3">Submit</button>
-                        </form>
-                    </div>
-                </div>
+            <div class="form-group">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    {{ form.as_p}}
+                    <button type="submit" class="btn btn-success mb-3">Submit</button>
+                </form>
             </div>
             {% endif %}
         </div>
     </div>
 </div>
-
 <!-- If user is not signed in/ however the page will not be seen to them-->
 {% else %}
 <div class="d-flex justify-content-center p-3">
