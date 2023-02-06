@@ -29,6 +29,23 @@
                 <div class="row">
                     {% for post in post_list %}
                     <div class="col-md-4">
+                        <div class="card mb-4 h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                            <div class="card-header" style="font-weight: 500;">
+                                <h2>class="card-title">{{ post.title }}</h2>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
+                                <div class="image-container">
+                                    {% if "placeholder" in post.featured_image.url %}
+                                    <img class="card-img-top" src="" alt="Placeholder_image">
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
+                                    {% endif %}
+                                </div>
+                            </a>
+                            <div class="card-footer text-muted">
+                                India having the longest stretch of coastline exhibits some serene beautiful beaches.
+                            </div>
+                            <!-- <div class="col-md-4">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Beaches</h2>
@@ -105,8 +122,10 @@
                                 India is a country of dynamic culture, and every Indian celebrates many festivals wholeheartedly throughout the year.
                             </div>
                         </div>
+                    </div> -->
+                            {% if forloop.counter|divisibleby:3 %}
+                        </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
                 </div>
                 <div class="row">
                     {% endif %}

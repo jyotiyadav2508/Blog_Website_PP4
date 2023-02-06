@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post
+from .models import Post, Destination
 from .forms import CommentForm, AddPostForm
 
 
@@ -193,3 +193,11 @@ def destinations_view(request, des):
         'des': des.title(),
         'destinations_post': destinations_post
     })
+
+# def category_list(request):
+#     """ Return a list of categories for the dropdown in the nav """
+#     category_list = Category.objects.all()
+#     context = {
+#         "category_list": category_list,
+#     }
+#     return context
