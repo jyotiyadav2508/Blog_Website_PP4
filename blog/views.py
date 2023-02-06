@@ -161,6 +161,13 @@ def user_add_post(request):
 #         return super().form_valid(form)
 
 
+def about(request):
+    """
+    Render the about page
+    """
+    return render(request, 'about.html')
+
+
 class User(LoginRequiredMixin, generic.ListView):
     """
     Render the user page

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- About section -->
+<section id="about" class="bg-success p-4 text-dark bg-opacity-10">
+    <div class="container" style=" border-bottom:2px solid #03736d;">
+        <div class="row d-flex">
+            <div class=" col-md-4">
+                <img src="{% static 'images/world map.png' %}" alt="world map image"></div>
+            <div class="col-md-8">
+                <h2 class="text-center">About Us</h2>
+                <div class="text-center">
+                    <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
+                </div>
+                <p style="font-size: 1.5rem; font-weight:500;" class="text-center ">India, one of the oldest civilisations in the world.</p>
+                <p style="font-size: 1.2rem;"> India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country by area, the second-most populous country, and the most populous democracy in the world. India is a home to the finest architectural heritage, serene ghats, spectacular landscapes and largest tiger reserve. Over the past decade, the country’s integration into the global economy has been accompanied by economic growth. India has now emerged as a global player. India is popular for its forts and palaces. You can visit India to find yourself through yoga, to lose yourself in the mountains of Himalayas, to be mesmerised by the ancient temples. The crowded bazaars, blaring traffic, filmy music, the colour, the noise and not to forget, the chaos will leave you all amazed and overwhelmed.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mt-5">How to reach India?</h2>
+            <div class="text-center mb-5">
+                <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center"> <i class="fa-solid fa-ship"></i> Reaching India by See</h3>
+                <p style="font-size: 1.2rem;">India is a transit point that connects European and Central Asian countries with East Asia and Australia via the sea route. 7-10 day cruises operate from all major destinations such as Shanghai, Bangkok, Mandalay, Siem Reap, Maldives, Sri Lanka and many more connecting India with the Far East.Kochi, Mumbai, Goa and Mangalore are also the major ports in India handling passenger traffic. Costa Cruise Lines running between Maldives, Sri Lanka and India is a feasible option to reach India by waterways.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center"><i class="fa-solid fa-train"></i> Reaching India by Rail</h3>
+                <p style="font-size: 1.2rem;">International rail routes in India are limited to only three at present – the Delhi-Atari-Wagah Samjhauta Express, Kolkata-Dhaka Maitree Express and the weekly Jodhpur-Munabo Thar Link Express. It is advisable to look for the latest update on these as operations may sometimes be suspended due to border issues. New train routes that have been approved or are under construction are Tapul/Imphal-Moreh Burma Link to Myanmar, and Jaynagar-Kurtha Rail Line to Nepal. Once the new routes are in place it will be possible to go train hopping up to Thailand and Malaysia.</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h3 class="text-center"> <i class="fa-solid fa-plane-departure"></i> Reaching India by Air</h3>
+                <p style="font-size: 1.2rem;">India is connected with the rest of the world by a robust network of air routes. It has 34 International airports located across the length and breadth of the whole country – from Srinagar in the north to Manipur in the east and Jaipur in the west to Chennai in the south. The following six airports of India are connected with all the top international destinations.</p>
+                <ul style="font-size: 1.2rem;">
+                    <li>Chhatrapati Shivaji maharaj International Airport, Mumbai</li>
+                    <li>Indira Gandhi International Airport, Delhi</li>
+                    <li>Chennai International Airport</li>
+                    <li>Netaji Subhash Chandra Bose International Airport, Kolkata</li>
+                    <li>Kempegowda International Airport, Bengaluru</li>
+                    <li>Rajiv Gandhi International Airport, Hyderabad</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center"> <i class="fa-solid fa-bus"></i> Reaching India by Road</h3>
+                <p style="font-size: 1.2rem;">There is a land crossing between Pakistan and India (Lahore to Amritsar) via the Attari/Wagah border crossing. You will require a Carnet de Passage if you plan to travel by your own vehicle. There is also a border crossing between India and Myanmar but special permits are required to cross this. The air-conditioned Delhi-Lahore bus connects India and Pakistan, running all days of the week except Sundays. There are several bus services which connect Kathmandu in Nepal to various cities in India including Delhi and Gorakhpur. There are bus routes between Dhaka in Bangladesh and Kolkata in India as well.</p>
+            </div>
+        </div>
+</section>
+
+
+{% endblock %}

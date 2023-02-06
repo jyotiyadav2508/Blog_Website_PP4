@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Destination
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -27,3 +27,12 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Destination)
+class DestinationAdmin(admin.ModelAdmin):
+    """
+    Add fields for destination in admin panel
+    """
+    list_display = ['title']
+    search_fields = ['title']
