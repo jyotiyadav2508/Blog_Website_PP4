@@ -18,6 +18,7 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html"
+    # template_name = "index1.html"
     paginate_by = 6
 
 
@@ -192,6 +193,7 @@ def destinations_view(request, des):
         'des': des.title(),
         'destinations_post': destinations_post
     })
+
 
 # def category_list(request):
 #     """ Return a list of categories for the dropdown in the nav """
