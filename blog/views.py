@@ -15,11 +15,8 @@ class PostList(generic.ListView):
     Takes the Post Model and makes sure they are approved
     and displaye them on the home page
     """
-    model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html"
-    # template_name = "index1.html"
-    paginate_by = 6
 
 
 class AllBlogPost(generic.ListView):

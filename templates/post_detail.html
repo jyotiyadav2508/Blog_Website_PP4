@@ -24,8 +24,8 @@
                     {% endfor %}
                     <!-- Post title goes in these h1 tags -->
                     <h1 class="post-title">{{ post.title }}</h1>
-                    <h4 class="best-time">Best Time: <span><small>Jan to march</small></span></h4>
-                    <h4 class="duration">Ideal Duration: <span><small> 2-3 Days</span></small></h4>
+                    <h4 class="best-time">Best Time: <span><small>{{ post.best_time }}</small></span></h4>
+                    <h4 class="duration">Ideal Trip Duration: <span><small> {{ post.ideal_trip_duration }}</small></span></h4>
                 </div>
                 <p class="card-text">
                     {{ post.content | safe }}
