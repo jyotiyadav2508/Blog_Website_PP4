@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="py-5 min-vh-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="text-center py-5">
+                <strong> Something went wrong! Let's back to <a href="{% url 'home' %}">home</a></strong>
+            </h2>
+            <div class="col-lg-8">
+                <img class="card-img" src="{% static 'images/error-404.png %}" alt="404 error">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

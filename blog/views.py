@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post, Destination
+from .models import *
 from .forms import CommentForm, AddPostForm
 
 
@@ -121,10 +121,9 @@ def user_add_post(request):
             messages.success(
                 request,
                 'You have added a new post and it has been flagged for approval!')  # noqa: E501
-            return redirect(reverse('add-post'))
+            return redirect(reverse('user_page'))
         else:
-            messages.error(request, 'Failed to Create a post. \
-                            Please ensure the form is valid.')
+            messages.error(request, 'Failed to Create a post. Try again!')
     else:
         form = AddPostForm()
 

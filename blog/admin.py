@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Destination
+from .models import Post, Comment, Destination, Author
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -36,3 +36,12 @@ class DestinationAdmin(admin.ModelAdmin):
     """
     list_display = ['title']
     search_fields = ['title']
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    """
+    Add fields for author in admin panel
+    """
+    list_display = ('user', 'created_on')
+    search_fields = ['user']

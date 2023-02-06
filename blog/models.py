@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django_summernote.widgets import SummernoteWidget
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 from django.urls import reverse
@@ -57,7 +58,7 @@ class Post(models.Model):
     comment_count = models.IntegerField(default=0)
     best_time = models.CharField(max_length=100)
     known_for = models.TextField(blank=True)
-    ideal_duration = models.DurationField()
+    ideal_duration = models. TextField()
     destinations = models.ManyToManyField(Destination, blank=True)
 
     class Meta:
@@ -83,12 +84,14 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        To order the comments on the created_on field in the ascending order
+        """
         ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
-    # def get_absolute_url(self):
-    #     """Sets absolute URL"""
-    #     return reverse('post_detail', args=[self.post.slug])
-
+    def get_absolute_url(self):
+        """Sets absolute URL"""
+        return reverse('post_detail', args=[self.post.slug])

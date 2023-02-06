@@ -22,7 +22,7 @@ class CommentForm(forms.ModelForm):
 
 class AddPostForm(forms.ModelForm):
     """
-    Form to add blog post
+    Form to add a blog post
     """
     class Meta:
         model = Post
