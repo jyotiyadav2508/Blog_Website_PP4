@@ -2,16 +2,55 @@
 {% load static %}
 {% block content %}
 <!-- Blog enteries column -->
-<div class="container">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row" style="height:300px; width:100%; border:2px solid #033c64;">
-                <h2 class="text-center mt-5"> Here comes either the video or the slide</h2>
+<section>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static 'images/manali-trekking.jpg' %}" class="d-block w-100" style="height: 70vh;" alt="Hill station image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Incredible India</h5>
+                    <p>The Land of Majestic Mountains.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'images/incredible-kerala.jpg' %}" style="height: 70vh;" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Incredible India</h5>
+                    <p>The Land of diverse Fastivals.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/heritage.jpg' %}" style="height: 70vh;" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Incredible India</h5>
+                    <p>The Land of Yoga.</p>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/incredible-india-kanyakumari.webp' %}" style="height: 70vh;" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Incredible India</h5>
+                    <p>The Land of Sprituality.</p>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</div>
-<section class="bg-success mt-5 mb-3 p-4 text-dark bg-opacity-10">
+</section>
+<section class="bg-success p-4 text-dark bg-opacity-10">
     <div class="container">
         <div class="row d-flex flex-wrap">
             <div class="col-md-12">
@@ -26,7 +65,7 @@
         <div class="row">
             <div class="col-12 mt-3 left">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Beaches</h2>
@@ -37,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Hill Station</h2>
@@ -49,7 +88,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Historical</h2>
@@ -60,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Adventure</h2>
@@ -71,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Wildlife</h2>
@@ -82,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Museam and Art Gellerie</h2>
@@ -93,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
                             <div class="card-header" style="font-weight: 500;">
                                 <h2>Festivals and Parades</h2>

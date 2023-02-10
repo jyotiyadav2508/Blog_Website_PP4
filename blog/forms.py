@@ -29,7 +29,7 @@ class AddPostForm(forms.ModelForm):
         fields = (
             'title', 'author', 'destinations',
             'content', 'featured_image', 'best_time',
-            'ideal_trip_duration', )
+            'ideal_duration', )
 
     widgets = {
         'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),  # noqa: E501
@@ -41,7 +41,7 @@ class AddPostForm(forms.ModelForm):
         'best_time': forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Best time to visit'}),
-        'ideal_trip_duration': SummernoteWidget(attrs={
+        'ideal_duration': SummernoteWidget(attrs={
             'class': 'form-control',
             'placeholder': 'Ideal duration to stay'}),
     }

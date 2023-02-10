@@ -58,7 +58,7 @@ class Post(models.Model):
     comment_count = models.IntegerField(default=0)
     best_time = models.CharField(max_length=100)
     known_for = models.TextField(blank=True)
-    ideal_trip_duration = models.TextField(
+    ideal_duration = models.TextField(
         verbose_name="Ideal trip duration (days)")
     destinations = models.ManyToManyField(Destination, blank=True)
 
