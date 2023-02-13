@@ -35,7 +35,7 @@ class AddPostForm(forms.ModelForm):
         'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),  # noqa: E501
         'author': forms.TextInput(attrs={'class': 'form-control'}),
         'destinations': forms.Select(attrs={'class': 'form-control'}),
-        'content': forms.TextInput(attrs={'class': 'form-control'}),
+        'content': SummernoteWidget(attrs={'class': 'form-control'}),
         'best_time': forms.TextInput(attrs={'class': 'form-control'}),
         'ideal_duration': forms.TextInput(attrs={'class': 'form-control'}),
     }
