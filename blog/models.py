@@ -49,15 +49,11 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
-    stars = models.PositiveIntegerField(
-        default=3, validators=[MinValueValidator(1), MaxValueValidator(5)]
-    )
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name="blogpost_likes", blank=True)
     comment_count = models.IntegerField(default=0)
     best_time = models.CharField(max_length=100)
-    known_for = models.TextField(blank=True)
     ideal_duration = models.TextField(
         verbose_name="Ideal trip duration (days)")
     destinations = models.ManyToManyField(Destination, blank=True)
