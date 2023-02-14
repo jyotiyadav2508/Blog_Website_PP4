@@ -110,7 +110,7 @@ def user_add_post(request):
     Add a blog post only when user is logged in
     """
     if request.method == 'POST':
-        form = AddPostForm(request.FORM, request.FILES)
+        form = AddPostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -119,7 +119,7 @@ def user_add_post(request):
             messages.success(
                 request,
                 'You have added a new post and it has been flagged for approval!')  # noqa: E501
-            return redirect(reverse('user_page'))
+            return redirect(reverse('user-page'))
         else:
             messages.error(request, 'Failed to Create a post. Try again!')
     else:
