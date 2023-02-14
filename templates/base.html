@@ -75,13 +75,16 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Hill Stations</a></li>
+                            {% for destination in destinations_list %}
+                            <li><a class="dropdown-item" href="{% url 'destinations-post' destination.title %}" aria-label="Go to the each destination page">{{ destination.title }}</a></li>
+                            {% endfor %}
+                            <!-- <li><a class="dropdown-item" href="#">Hill Stations</a></li>
                             <li><a class="dropdown-item" href="#">Beaches</a></li>
                             <li><a class="dropdown-item" href="#">Historical or heritage</a></li>
                             <li><a class="dropdown-item" href="#">Adventure</a></li>
-                            <li><a class="dropdown-item" href="#">National Park</a></li>
+                            <li><a class="dropdown-item" href="#">Wildlife</a></li>
                             <li><a class="dropdown-item" href="#">Museum and art galleries</a></li>
-                            <li><a class="dropdown-item" href="#">Festivals and parades</a></li>
+                            <li><a class="dropdown-item" href="#">Festivals and parades</a></li> -->
                         </ul>
                     </li>
                 </ul>

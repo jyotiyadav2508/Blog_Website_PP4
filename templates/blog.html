@@ -17,15 +17,14 @@
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                     <div class="image-container">
-                                        {% if "placeholder" in post.featured_image.url %}
-                                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Image uploaded by user">
-                                        {% else %}
-                                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
-                                        {% endif %}
+                                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                                        <div class="card-img-overlay text-center">
+                                            {% for des in post.destinations.all %}
+                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f;">{{ des }}</h4>
+                                            {% endfor %}
+                                        </div>
                                     </div>
-                                    <!-- <div class="card-content"> -->
-                                    <br>
-                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <h3 class="card-title mt-2" style="color: black;">{{ post.title }}</h3>
                                 </a>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>

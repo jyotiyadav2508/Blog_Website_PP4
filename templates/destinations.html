@@ -10,11 +10,13 @@
             {{ des }}
             {% for destinaton in destinations_list %}
             <div class="col-md-4">
-                <a href="{% url 'destinations_post' destination.title %}" aria-label="Go to the destination post page">
+                <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destination post page">
                     <div class="content-img">
                         <img src="{{ destination.destination_image.url }}" alt=" {{ destination.title }} Image">
-                        <div class="content-destination-center">
-                            <h3>{{ category.title}}</h3>
+                        <div class="card-img-overlay text-center">
+                            <div class="content-destination-center">
+                                <h3>{{ destination.title}}</h3>
+                            </div>
                         </div>
                     </div>
                 </a>

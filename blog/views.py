@@ -132,32 +132,6 @@ def user_add_post(request):
     return render(request, template, context)
 
 
-# class AddPost(LoginRequiredMixin, CreateView):
-#     """
-#     Add a blog post only after logged in
-#     """
-#     template = 'add_post.html'
-#     form_class = AddPostForm
-
-#     def get_success_url(self):
-#         """
-#         Set the reverse url for the sucessfully addition of a post
-#         """
-#         return reverse('user-page')
-#         # return reverse('list-blog')
-
-#     def form_valid(self, form):
-#         """
-#         Validate the form and return a success message
-#         """
-#         form.instance.author = self.request.user
-#         messages.success(
-#             self.request,
-#             'You have added a post and it has been flagged for approval!')
-#         form.slug = slugify(form.instance.title)
-#         return super().form_valid(form)
-
-
 def about(request):
     """
     Render the about page
@@ -182,7 +156,7 @@ def destinations(request):
 
 def destinations_view(request, des):
     """
-    Render the page for selected destination
+    Render the posts for selected destination
     """
     destinations_post = Post.objects.filter(
         destinations__title__contains=des, status=1)
@@ -192,10 +166,10 @@ def destinations_view(request, des):
     })
 
 
-# def category_list(request):
-#     """ Return a list of categories for the dropdown in the nav """
-#     category_list = Category.objects.all()
+# def destinations_list(request):
+#     """ Return a list of destinations for the dropdown in the nav """
+#     destinations_list = Destination.objects.all()
 #     context = {
-#         "category_list": category_list,
+#         "destinations_list": destinations_list,
 #     }
 #     return context
