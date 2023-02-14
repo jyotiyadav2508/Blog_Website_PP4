@@ -2,69 +2,75 @@
 {% load static %}
 {% block content %}
 <!-- All Blog enteries -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
-                        <div class="card-body">
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
-                                <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Image uploaded by user">
-                                    {% else %}
-                                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
-                                    {% endif %}
+<section id="blog-page">
+    <h2 class="text-center mt-4"> Welcome to the blog page</h2>
+    <div class="text-center">
+        <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
+    <p class="text-center" style="font-size: 1.3rem;">India - <mark>"The Land of Diversity"</mark>. Majestic mountains, artistic temples, rip-roaring wildlife, colorful deserts and much more! <br>Have a glimpses of some Indian tourist places.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for post in post_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                            <div class="card-body">
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
+                                    <div class="image-container">
+                                        {% if "placeholder" in post.featured_image.url %}
+                                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Image uploaded by user">
+                                        {% else %}
+                                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image uploaded by user">
+                                        {% endif %}
+                                    </div>
+                                    <!-- <div class="card-content"> -->
+                                    <br>
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                </a>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
+                                    <li class="list-group-item"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
+                                </ul>
+                                <div class="card-text">
+                                    {{ post.content | slice:":280" | safe }}...
                                 </div>
-                                <!-- <div class="card-content"> -->
-                                <br>
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
-                                <li class="list-group-item"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
-                            </ul>
-                            <div class="card-text">
-                                {{ post.content | slice:":180" | safe }}...
-                            </div>
-                            <div class="card-footer">
-                                <span>Author: {{ post.author }} | </span>
-                                <span>{{ post.created_on}} | </span>
-                                <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-                                <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                <div class="card-footer">
+                                    <span>Author: {{ post.author }} | </span>
+                                    <span>{{ post.created_on}} | </span>
+                                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                    <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
 
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif%}
-    <!-- Back to top button -->
-    <!-- <div class="d-flex justify-content-end">
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif%}
+        <!-- Back to top button -->
+        <!-- <div class="d-flex justify-content-end">
     <a href="#search" role="button" class="btn btn-success mb-3 btn-floating btn-lg" id="btn-back-to-top">Back to
         top ⇧</a>
 </div> -->
-</div>
+    </div>
+</section>
 
 
 {% endblock content %}
