@@ -8,7 +8,7 @@
     <div class="container box-shadow">
         <div class="row">
             {{ des }}
-            {% for destinaton in destinations_list %}
+            {% for destination in destinations_list %}
             <div class="col-md-4">
                 <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destination post page">
                     <div class="content-img">

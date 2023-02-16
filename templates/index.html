@@ -67,7 +67,8 @@
     </div>
 </section>
 
-<section class="bg-success p-4 text-dark bg-opacity-10">
+<section class="bg-success p-4 text-dark bg-opacity-10" id="destination">
+    <!-- <a name="destination/"></a> -->
     <div class="container">
         <div class="row d-flex flex-wrap">
             <div class="col-md-12">
@@ -84,10 +85,12 @@
                 <div class="row">
                     <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Beaches</h2>
-                            </div>
-                            <img src="{% static 'images/beach.png' %}" class="card-img" alt="Beach image">
+                            <a href="{% url 'destinations' %}" class="post-link" aria-label="Go to the destinations page">
+                                <div class="card-header" style="font-weight: 500;">
+                                    <h2>Beaches</h2>
+                                </div>
+                                <img src="{% static 'images/beach.png' %}" class="card-img" alt="Beach image">
+                            </a>
                             <div class="card-footer text-muted">
                                 India having the longest stretch of coastline exhibits some serene beautiful beaches.
                             </div>

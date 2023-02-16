@@ -39,3 +39,7 @@ class AddPostForm(forms.ModelForm):
         'best_time': forms.TextInput(attrs={'class': 'form-control'}),
         'ideal_duration': forms.TextInput(attrs={'class': 'form-control'}),
     }
+
+
+class PostSearchForm(forms.Form):
+    q = forms.CharField()

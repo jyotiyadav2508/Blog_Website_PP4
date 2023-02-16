@@ -71,7 +71,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'destinations' %}">Destinations</a></li>
+                            <!-- <li><a class="dropdown-item" href="{% url 'destinations' %}">Destinations</a></li>
+                            <li> -->
+                            <li><a class="dropdown-item" href="{% url 'home' %}#destination">Destinations</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -88,8 +90,8 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" method="GET" action="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Post" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

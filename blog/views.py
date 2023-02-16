@@ -7,7 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import CommentForm, AddPostForm
+from .forms import CommentForm, AddPostForm, PostSearchForm
 
 
 class PostList(generic.ListView):
@@ -151,7 +151,9 @@ def destinations(request):
     """
     Renders the destinations page
     """
-    return render(request, 'destinations.html')
+    return render(request, 'index.html')
+    # return render(request, 'destinations.html')
+    # return render(request, '#destination')
 
 
 def destinations_view(request, des):
@@ -173,3 +175,24 @@ def destinations_view(request, des):
 #         "destinations_list": destinations_list,
 #     }
 #     return context
+
+def post_search(request):
+    """
+    Return a list of searched post
+    """
+    form = PostSearchForm()
+    q = ''
+    result = []
+    if 'q' in request.GET():
+        form = PostSearchForm(request.GET)
+        if form.is_valid():
+            q = form.cleaned_data['q']
+            results = Post.objects.filter(
+                Q(title__icontains=q)
+                | Q(content__icontains=q)
+            ).filter(status=1)
+    return render(request, 'search.html', {
+        'form': form,
+        'q': q,
+        'results': results
+    })
