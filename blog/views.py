@@ -5,9 +5,10 @@ from django.views.generic import CreateView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import CommentForm, AddPostForm, PostSearchForm
+from .forms import CommentForm, AddPostForm
 
 
 class PostList(generic.ListView):
@@ -176,23 +177,18 @@ def destinations_view(request, des):
 #     }
 #     return context
 
-def post_search(request):
+
+def search(request):
     """
-    Return a list of searched post
+    To search for a log post containing keyword
     """
-    form = PostSearchForm()
-    q = ''
-    result = []
-    if 'q' in request.GET():
-        form = PostSearchForm(request.GET)
-        if form.is_valid():
-            q = form.cleaned_data['q']
-            results = Post.objects.filter(
-                Q(title__icontains=q)
-                | Q(content__icontains=q)
-            ).filter(status=1)
+    q = request.GET.get('q')
+    results = []
+
+    if 'q' in request.GET:
+        results = Post.objects.filter(Q(title__icontains=q) | Q(content__icontains=q)).filter(status=1)  # noqa: E501
+
     return render(request, 'search.html', {
-        'form': form,
         'q': q,
         'results': results
     })

@@ -40,6 +40,3 @@ class AddPostForm(forms.ModelForm):
         'ideal_duration': forms.TextInput(attrs={'class': 'form-control'}),
     }
 
-
-class PostSearchForm(forms.Form):
-    q = forms.CharField()

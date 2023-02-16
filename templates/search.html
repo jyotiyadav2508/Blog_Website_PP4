@@ -8,13 +8,13 @@
         <div class="row justify-content-center">
 
             {% if q %}
-            <h1 class="text-center pb-5">
+            <h2 class="text-center pb-5">
                 <strong>
                     {% with results.count as total_results %}
                     There are {{ total_results }} result{{ total_results|pluralize }} containing: "{{ q }}"
                     {% endwith %}
                 </strong>
-            </h1>
+            </h2>
             {% for post in results %}
             <div class="col-md-8">
                 <div class="card mb-4">
@@ -27,35 +27,35 @@
                                 <!-- Only users that are logged in can edit/ delete their own post -->
 
                                 {% if user.id == post.author.id %}
-                                <small><a href="{% url 'edit_post' post.slug %}"> Edit</a></small> |
-                                <small><a class="text-danger" href="{% url 'delete_post' post.slug %}">
+                                <small><a href="{% url 'edit-post' post.slug %}"> Edit</a></small> |
+                                <small><a class="text-danger" href="{% url 'delete-post' post.slug %}">
                                         Delete</a></small>
                                 {% endif %}
                             </p>
                         </div>
-                        <p class="card-text">{{post.content|slice:":280" }} <a href="{% url 'post_detail' post.slug  %}" class="hidden-link">... continue reading &rarr;</a></p>
+                        <p class="card-text">{{post.content|slice:":280" | safe }} <a href="{% url 'post_detail' post.slug  %}" class="hidden-link">... continue reading &rarr;</a></p>
 
                         <hr>
                         <div class="card-footer">
                             <span>{{ post.created_on}} | </span>
                             <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-                            <span class="text-secondary"> | <i class="far fa-comments"></i></span> {{ post.destinations|title }}
+                            <span class="text-secondary"> | <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
             {% empty %}
-            <div class="col-md-8">
-                <img class="card-img-top" src="{% static 'images/error-404.png %}" alt="Error-404">
-                <h2 class="text-center">Sorry, currently there are no posts for your search "{{ q }}".
-                    <a class="hidden-link" href="{% url 'add_post' %}">Add one?</a></h2>
+            <div class="col-md-8 vh-90">
+                <h3 class="text-center">Sorry, currently there are no matching result.<br> Try for another post.<br>
+                    <a class="hidden-link" href="{% url 'add-post' %}">Add one?</a></h2>
+                </h3>
             </div>
             {% endfor %}
             {% else %}
             <div class="results-empty">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>You forgot to search for a post. <br>Please try searching again.</h2>
+                        <h2 class="text-center mt-5">Hey, Look like you forgot to search for a post. <br>Please try searching again.</h2>
                     </div>
                 </div>
             </div>
