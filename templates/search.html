@@ -3,12 +3,12 @@
 {% load static %}
 
 {% block content %}
-<section class="py-5 min-vh-80">
-    <div class="container">
+<section class="my-5 min-vh-80">
+    <div class="container" style="height: auto; box-shadow: 20px 20px 50px 10px #a3f4f1 inset;">
         <div class="row justify-content-center">
 
             {% if q %}
-            <h2 class="text-center pb-5">
+            <h2 class="text-center my-4">
                 <strong>
                     {% with results.count as total_results %}
                     There are {{ total_results }} result{{ total_results|pluralize }} containing: "{{ q }}"
@@ -46,7 +46,7 @@
             </div>
             {% empty %}
             <div class="col-md-8 vh-90">
-                <h3 class="text-center">Sorry, currently there are no matching result.<br> Try for another post.<br>
+                <h3 class="text-center mb-5">Sorry, currently there are no matching result.<br> Try for another post.<br>
                     <a class="hidden-link" href="{% url 'add-post' %}">Add one?</a></h2>
                 </h3>
             </div>
@@ -55,7 +55,7 @@
             <div class="results-empty">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="text-center mt-5">Hey, Look like you forgot to search for a post. <br>Please try searching again.</h2>
+                        <h2 class="text-center my-5">Hey, Look like you forgot to search for a post. <br>Please try searching again.</h2>
                     </div>
                 </div>
             </div>

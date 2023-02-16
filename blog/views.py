@@ -154,7 +154,6 @@ def destinations(request):
     """
     return render(request, 'index.html')
     # return render(request, 'destinations.html')
-    # return render(request, '#destination')
 
 
 def destinations_view(request, des):
@@ -180,7 +179,7 @@ def destinations_view(request, des):
 
 def search(request):
     """
-    To search for a log post containing keyword
+    To search for a blog post
     """
     q = request.GET.get('q')
     results = []
@@ -192,3 +191,15 @@ def search(request):
         'q': q,
         'results': results
     })
+
+
+@login_required()
+def delete_comment(request, comment_id):
+    """
+    Delete comment
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    messages.success(request, 'Comment deleted successfully!')
+    return HttpResponseRedirect(reverse(
+        'post_detail', args=[comment.post.slug]))
