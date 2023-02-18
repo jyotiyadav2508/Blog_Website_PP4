@@ -127,6 +127,20 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
+def user_post_list(request):
+    """
+    Lists the reviews that the user
+    has created in one place
+    """
+    if request.user.is_authenticated:
+        user = request.user.id
+        post = Post.objects.filter(author=user)
+        return render(request, 'user_post_list.html', {'post': post})
+    else:
+        messages.success(request, ('You must log in.'))
+        return redirect('home')
+
+
 @login_required()
 def update_post(request, slug):
     """
@@ -170,7 +184,6 @@ class DeletePost(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.warning(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
-
 
 
 # class UpdatePost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):

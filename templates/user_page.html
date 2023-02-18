@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} Welcome {{user.username}} !{% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
@@ -6,31 +7,33 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-8 offset-2">
-                <h2 class="text-center display-6 fw-bold text-dark" id="user"> Welcome {{user.username}} !</h2>
-                <hr>
+            <div class="col-8 offset-2 mt-3 text-center">
+                <h2>Welcome <span style="color:#03736d;">{{user.username}}</span></h2>
+                <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
             </div>
         </div>
     </div>
-    <div class="container text-center mt-4">
-        <div class="text-dark">
-            <p class="fw-bold">What brings you here today. Would you like to share a new post?
-            </p>
-        </div>
-        <div class="mt-4 mb-5">
-            <a href="{% url 'add-post' %}" role="button" type="submit" class="btn btn-success text-white">
-                Add New Post!
-            </a>
-        </div>
-        <div class="text-dark">
-            <p class="fw-bold">Or you would like to update / delete old one?
-            </p>
-        </div>
-        <div class="mt-4 mb-5">
-            <a href="{% url 'update-post' post.slug %}" role="button" type="submit" class="btn btn-success text-white">
-                View Old Post
-            </a>
-        </div>
+</div>
+<div class="container text-center mt-4">
+    <div class="text-dark">
+        <h4>What brings you here today. Would you like to share a new post?
+        </h4>
     </div>
+    <div class="mt-4 mb-5">
+        <a href="{% url 'add-post' %}" role="button" type="submit" class="btn btn-success text-white">
+            Add New Post!
+        </a>
+    </div>
+    <div class="text-dark">
+        <h4>Or you would like to update / delete old one?
+        </h4>
+    </div>
+    <div class="mt-4 mb-5">
+
+        <a href="{% url 'user-post-list' %}" role="button" type="submit" class="btn btn-success text-white">
+            View Old Post!
+        </a>
+    </div>
+</div>
 </div>
 {% endblock %}
