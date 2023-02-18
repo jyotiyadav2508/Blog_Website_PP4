@@ -25,7 +25,7 @@ class AllBlogPost(generic.ListView):
     Render the blog page
     """
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "blog.html"
     paginate_by = 9
 
@@ -127,18 +127,16 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-def user_post_list(request):
+class UserPostList(LoginRequiredMixin, generic.ListView):
     """
-    Lists the reviews that the user
-    has created in one place
+    display all posts of user in one place
     """
-    if request.user.is_authenticated:
-        user = request.user.id
-        post = Post.objects.filter(author=user)
-        return render(request, 'user_post_list.html', {'post': post})
-    else:
-        messages.success(request, ('You must log in.'))
-        return redirect('home')
+    model = Post
+    author = Post.author
+    template_name = 'user_post_list.html'
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')  # noqa: E501
 
 
 @login_required()
