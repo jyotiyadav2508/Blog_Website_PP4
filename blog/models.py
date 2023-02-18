@@ -28,6 +28,7 @@ class Destination(models.Model):
     title = models.CharField(max_length=100, blank=True)
     destination_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=100, unique=True, default="", null=True)
+    excerpt = models.TextField(blank=True)
 
     class Meta:
         verbose_name = 'Destination'
@@ -47,6 +48,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)

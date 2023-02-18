@@ -68,7 +68,6 @@
 </section>
 
 <section class="bg-success p-4 text-dark bg-opacity-10" id="destination">
-    <!-- <a name="destination/"></a> -->
     <div class="container">
         <div class="row d-flex flex-wrap">
             <div class="col-md-12">
@@ -181,5 +180,51 @@
         </nav>
         {% endif%}
     </div>
+</section>
+<section id="all-destination">
+    <h2 class="title">Categories</h2>
+    <div class="container box-shadow">
+        <div class="row">
+            {{ des }}
+            {% for destination in destination_list %}
+            <div class="card-body col-md-4">
+                <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destination page">
+                    <div class="content-img">
+                        <div class="overlay"></div>
+                        <img src="{{ destination.destination_image.url}}" alt=" {{ destination.title }} Image">
+                        <div class="text-center">
+                            <h3>{{ destination.title}}</h3>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        {{ destination.excerpt | slice:":280" | safe }}...
+                    </div>
+
+                </a>
+            </div>
+            {% endfor %}
+
+            <!-- {% for post in destination_list %}
+
+            <div class="col-md-4">
+                <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <img class="card-img-top" src="{{ destination.destination_image.url }}" alt="{{ destination.title }} Image">
+                            <div class="card-img-overlay text-center">
+                                {% for des in destination.all %}
+                                <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <h3 class="card-title mt-2 text-center" style="color: black;">{{ destination.title }}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} -->
+        </div>
+    </div>
+
 </section>
 {% endblock %}

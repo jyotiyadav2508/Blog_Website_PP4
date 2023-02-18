@@ -20,16 +20,17 @@
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f;">{{ des }}</h4>
+                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>
-                                    <h3 class="card-title mt-2" style="color: black;">{{ post.title }}</h3>
+                                    <h3 class="card-title mt-2 text-center" style="color: black;">{{ post.title }}</h3>
                                 </a>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
-                                    <li class="list-group-item"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
+                                    <li class="list-group-item text-center"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
+                                    <li class="list-group-item text-center"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
                                 </ul>
+                                <hr>
                                 <div class="card-text">
                                     {{ post.content | slice:":280" | safe }}...
                                 </div>

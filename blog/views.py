@@ -11,13 +11,20 @@ from .models import *
 from .forms import CommentForm, AddPostForm, UpdatePostForm
 
 
-class PostList(generic.ListView):
-    """
-    Takes the Post Model and makes sure they are approved
-    and displaye them on the home page
-    """
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = "index.html"
+# class PostList(generic.ListView):
+#     """
+#     Takes the Post Model and makes sure they are approved
+#     and displaye them on the home page
+#     """
+#     queryset = Post.objects.filter(status=1).order_by('-created_on')
+#     template_name = "index.html"
+
+
+# def index(request):
+#     """
+#     Render the about page
+#     """
+#     return render(request, 'index.html')
 
 
 class AllBlogPost(generic.ListView):
@@ -28,6 +35,15 @@ class AllBlogPost(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "blog.html"
     paginate_by = 9
+
+
+class AllDestination(generic.ListView):
+    """
+    Render the all destinations type on home page
+    """
+    model = Destination
+    # queryset = Destination.objects.all()
+    template_name = 'index.html'
 
 
 class PostDetail(View):
@@ -129,7 +145,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class UserPostList(LoginRequiredMixin, generic.ListView):
     """
-    display all posts of user in one place
+    Display all posts of a particular logged in user in one place
     """
     model = Post
     author = Post.author
@@ -182,28 +198,6 @@ class DeletePost(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.warning(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
-
-
-# class UpdatePost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-#     """
-#     Users can update their blog post that they have created
-#     """
-#     model = Post
-#     form_class = UpdatePostForm
-#     template_name = 'update_post.html'
-#     success_message = "Your post updated successfully!"
-
-#     def get_success_url(self):
-#         """
-#         Set the reverse url for the successful addition
-#         of the post to the database
-#         """
-#         return reverse('user-page')
-
-#     def form_valid(self, form):
-#         form.instance.name = self.request.user
-#         form.slug = slugify(form.instance.title)
-#         return super().form_valid(form)
 
 
 def about(request):

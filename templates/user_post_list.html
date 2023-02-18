@@ -23,7 +23,7 @@
 
                     <!-- loops through the posts have been posted by the logged in user -->
                     {% for post in post_list %}
-                    <div class="col-md-10 my-3">
+                    <div class="col-md-10 offset-md-1 text-center my-3">
                         <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
@@ -31,7 +31,7 @@
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f;">{{ des }}</h4>
+                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>
