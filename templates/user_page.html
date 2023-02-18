@@ -19,7 +19,16 @@
         </div>
         <div class="mt-4 mb-5">
             <a href="{% url 'add-post' %}" role="button" type="submit" class="btn btn-success text-white">
-                Add Post!
+                Add New Post!
+            </a>
+        </div>
+        <div class="text-dark">
+            <p class="fw-bold">Or you would like to update / delete old one?
+            </p>
+        </div>
+        <div class="mt-4 mb-5">
+            <a href="{% url 'update-post' post.slug %}" role="button" type="submit" class="btn btn-success text-white">
+                View Old Post
             </a>
         </div>
     </div>

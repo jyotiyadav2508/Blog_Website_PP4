@@ -1,14 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import CommentForm, AddPostForm
+from .forms import CommentForm, AddPostForm, UpdatePostForm
 
 
 class PostList(generic.ListView):
@@ -105,32 +105,94 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-@login_required()
-def user_add_post(request):
+class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     Add a blog post only when user is logged in
     """
-    if request.method == 'POST':
-        form = AddPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.slug = slugify(post.title)
-            form.save()
-            messages.success(
-                request,
-                'You have added a new post and it has been flagged for approval!')  # noqa: E501
-            return redirect(reverse('user-page'))
-        else:
-            messages.error(request, 'Failed to Create a post. Try again!')
-    else:
-        form = AddPostForm()
+    model = Post
+    form_class = AddPostForm
+    template_name = 'add_post.html'
+    success_message = "You have added a new post, It's awaiting approval!"
 
-    template = 'add_post.html',
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful addition
+        of the post to the database
+        """
+        return reverse('user-page')
+
+    def form_valid(self, form):
+        form.instance.name = self.request.user
+        form.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+
+
+@login_required()
+def update_post(request, slug):
+    """
+    Users can update their blog post that they have created
+    """
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        if request.method == 'POST':
+            form = UpdatePostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.slug = slugify(post.title)
+                post.status = 1
+                form.save()
+                messages.success(request, 'Your post updated successfully!')
+                return redirect(reverse('user-page'))
+            else:
+                messages.error(request, 'Failed to update the post.')
+        else:
+            form = UpdatePostForm(instance=post)
+    else:
+        messages.error(request, 'Sorry, This is not your post.')
+
+    template = 'update_post.html',
     context = {
         'form': form,
+        'post': post
     }
     return render(request, template, context)
+
+
+class DeletePost(generic.DeleteView):
+    """
+    Class to allow to delete a post
+    """
+    model = Post
+    template_name = 'delete_post.html'
+    success_message = "Post was deleted successfully."
+
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
+
+
+
+# class UpdatePost(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+#     """
+#     Users can update their blog post that they have created
+#     """
+#     model = Post
+#     form_class = UpdatePostForm
+#     template_name = 'update_post.html'
+#     success_message = "Your post updated successfully!"
+
+#     def get_success_url(self):
+#         """
+#         Set the reverse url for the successful addition
+#         of the post to the database
+#         """
+#         return reverse('user-page')
+
+#     def form_valid(self, form):
+#         form.instance.name = self.request.user
+#         form.slug = slugify(form.instance.title)
+#         return super().form_valid(form)
 
 
 def about(request):
