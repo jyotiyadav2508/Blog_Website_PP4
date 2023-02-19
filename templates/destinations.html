@@ -4,24 +4,30 @@
 
 <!-- Destinations section -->
 <section id="destinations" class="content-destination">
-    <h2 class="title">Destinations</h2>
-    <div class="container box-shadow">
+    <h2 class="text-center my-3">Destinations</h2>
+    <div class="container">
         <div class="row">
-            {{ des }}
-            {% for destination in destinations_list %}
-            <div class="col-md-4">
-                <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destination post page">
-                    <div class="content-img">
-                        <img src="{{ destination.destination_image.url }}" alt=" {{ destination.title }} Image">
-                        <div class="card-img-overlay text-center">
-                            <div class="content-destination-center">
-                                <h3>{{ destination.title}}</h3>
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    <!-- {{ des }} -->
+                    {% for destination in destinations_list %}
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
+                            <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destinations post page">
+                                <div class="card-header" style="font-weight: 500;">
+                                    <h2>{{ destination.title}}</h2>
+                                </div>
+                                <img src="{{ destination.destination_image.url }}" class="card-img" alt=" {{ destination.title }} Image">
+                            </a>
+                            <div class="card-footer text-muted">
+                                {{ destination.excerpt }}
                             </div>
                         </div>
                     </div>
-                </a>
+                    {% endfor %}
+
+                </div>
             </div>
-            {% endfor %}
         </div>
     </div>
 </section>

@@ -11,15 +11,6 @@ from .models import *
 from .forms import CommentForm, AddPostForm, UpdatePostForm
 
 
-# class PostList(generic.ListView):
-#     """
-#     Takes the Post Model and makes sure they are approved
-#     and displaye them on the home page
-#     """
-#     queryset = Post.objects.filter(status=1).order_by('-created_on')
-#     template_name = "index.html"
-
-
 # def index(request):
 #     """
 #     Render the about page
@@ -42,7 +33,6 @@ class AllDestination(generic.ListView):
     Render the all destinations type on home page
     """
     model = Destination
-    # queryset = Destination.objects.all()
     template_name = 'index.html'
 
 
@@ -215,11 +205,11 @@ class User(LoginRequiredMixin, generic.ListView):
     template_name = "user_page.html"
 
 
-def destinations(request):
-    """
-    Renders the destinations page
-    """
-    return render(request, 'index.html')
+# def destinations(request):
+#     """
+#     Renders the destinations page
+#     """
+#     return render(request, 'index.html')
     # return render(request, 'destinations.html')
 
 
@@ -235,13 +225,13 @@ def destinations_view(request, des):
     })
 
 
-# def destinations_list(request):
-#     """ Return a list of destinations for the dropdown in the nav """
-#     destinations_list = Destination.objects.all()
-#     context = {
-#         "destinations_list": destinations_list,
-#     }
-#     return context
+def destinations_list(request):
+    """ Return a list of destinations for the dropdown in the navbar """
+    destinations_list = Destination.objects.all()
+    context = {
+        "destinations_list": destinations_list,
+    }
+    return context
 
 
 def search(request):

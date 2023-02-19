@@ -71,8 +71,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- <li><a class="dropdown-item" href="{% url 'destinations' %}">Destinations</a></li>
-                            <li> -->
                             <li><a class="dropdown-item" href="{% url 'home' %}#destination">Destinations</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -80,13 +78,6 @@
                             {% for destination in destinations_list %}
                             <li><a class="dropdown-item" href="{% url 'destinations-post' destination.title %}" aria-label="Go to the each destination page">{{ destination.title }}</a></li>
                             {% endfor %}
-                            <!-- <li><a class="dropdown-item" href="#">Hill Stations</a></li>
-                            <li><a class="dropdown-item" href="#">Beaches</a></li>
-                            <li><a class="dropdown-item" href="#">Historical or heritage</a></li>
-                            <li><a class="dropdown-item" href="#">Adventure</a></li>
-                            <li><a class="dropdown-item" href="#">Wildlife</a></li>
-                            <li><a class="dropdown-item" href="#">Museum and art galleries</a></li>
-                            <li><a class="dropdown-item" href="#">Festivals and parades</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -146,7 +137,6 @@
         setTimeout(function() {
             let messages = document.getElementsByClassName("msg");
             if (messages) {
-
                 let alert = new bootstrap.Alert(messages);
                 alert.close();
             }

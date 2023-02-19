@@ -74,157 +74,34 @@
                 <h2 class="text-center"><span style="color:#03736d;">Destinations</span> Tours In India</h2>
                 <div class="text-center">
                     <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
-                <p class="lead text-center" style="font-weight: 400;">From pilgrimage to wildlife and from adventure to leisure- View some Glimpses!</p>
+                <p class="lead text-center" style="font-weight: 500;">From pilgrimage to wildlife and from adventure to leisure- View some Glimpses!</p>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12 mt-3 left">
                 <div class="row">
+                    {% for destination in destinations_list %}
                     <div class="col-md-4 mb-5">
                         <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <a href="{% url 'destinations' %}" class="post-link" aria-label="Go to the destinations page">
+                            <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destinations post page">
                                 <div class="card-header" style="font-weight: 500;">
-                                    <h2>Beaches</h2>
+                                    <h2>{{ destination.title}}</h2>
                                 </div>
-                                <img src="{% static 'images/beach.png' %}" class="card-img" alt="Beach image">
+                                <img src="{{ destination.destination_image.url }}" class="card-img" alt=" {{ destination.title }} Image">
                             </a>
                             <div class="card-footer text-muted">
-                                India having the longest stretch of coastline exhibits some serene beautiful beaches.
+                                {{ destination.excerpt }}
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Hill Station</h2>
-                            </div>
-                            <img src="{% static 'images/hill_station.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                India has abundant hill stations spread all over the country that makes for a tranquil and picturesque destination for tourists.
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Historical</h2>
-                            </div>
-                            <img src="{% static 'images/historical-places.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                From palaces and forts to temples and monuments, many historic places in India reveal stunning craftsmanship.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Adventure</h2>
-                            </div>
-                            <img src="{% static 'images/river-rafting.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                India is one of those few countries, which offer something for all sorts of adventure seekers.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Wildlife</h2>
-                            </div>
-                            <img src="{% static 'images/wildlife.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                Explore India's National Parks to spot diverse animal life, including tigers, leopards, rhinos, birds and river dolphins.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Museam and Art Gellerie</h2>
-                            </div>
-                            <img src="{% static 'images/museam.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                Visit to a museum of the city that reflects the culture and history of ancient India in a most beautiful way.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 text-center text-dark" style="box-shadow: 1px 1px 5px 3px  rgb(245, 196, 196);">
-                            <div class="card-header" style="font-weight: 500;">
-                                <h2>Festivals and Parades</h2>
-                            </div>
-                            <img src="{% static 'images/holi-image.jpg' %}" class="card-img" alt="Beach image">
-                            <div class="card-footer text-muted">
-                                India’s vibrant character and a diverse ethnicity are revealed in its colorful fairs and festivals celebrated all over the country.
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
             </div>
         </div>
-
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif%}
     </div>
 </section>
-<section id="all-destination">
-    <h2 class="title">Categories</h2>
-    <div class="container box-shadow">
-        <div class="row">
-            {{ des }}
-            {% for destination in destination_list %}
-            <div class="card-body col-md-4">
-                <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destination page">
-                    <div class="content-img">
-                        <div class="overlay"></div>
-                        <img src="{{ destination.destination_image.url}}" alt=" {{ destination.title }} Image">
-                        <div class="text-center">
-                            <h3>{{ destination.title}}</h3>
-                        </div>
-                    </div>
-                    <div class="card-text">
-                        {{ destination.excerpt | slice:":280" | safe }}...
-                    </div>
 
-                </a>
-            </div>
-            {% endfor %}
-
-            <!-- {% for post in destination_list %}
-
-            <div class="col-md-4">
-                <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
-                    <div class="card-body">
-                        <div class="image-container">
-                            <img class="card-img-top" src="{{ destination.destination_image.url }}" alt="{{ destination.title }} Image">
-                            <div class="card-img-overlay text-center">
-                                {% for des in destination.all %}
-                                <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <h3 class="card-title mt-2 text-center" style="color: black;">{{ destination.title }}</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %} -->
-        </div>
-    </div>
-
-</section>
 {% endblock %}
