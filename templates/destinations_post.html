@@ -2,59 +2,90 @@
 {% load static %}
 {% block content %}
 <section id="destination_post">
-    <h2 class="text-center">Destination: <span style="color:#05a098;">{{ des }}</span></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2 mt-4 text-center">
+                <h2>Destination: <span style="color:#05a098;">{{ des }}</span></h2>
+                <div>
+                    <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
+            </div>
+        </div>
+    </div>
+
     {% if destinations_post %}
     <div class="container">
+        <h4 class="text-center">Have a look at all posts relative to your choice: {{ des }}</h4>
+        <hr>
         <div class="row">
             <div class="col-12 mt-3 left">
                 <div class="row">
                     {% for post in destinations_post %}
-                    <div class="col-md-4">
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
-                            <div class="image-container">
-                                <img src="{{ post.featured_image.url }}" alt="{{ des }} Image">
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100" style="box-shadow: 1px 1px 3px 2px  #b8ebeb;">
+                            <div class="card-body">
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
+                                    <div class="image-container">
+                                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                                        <div class="card-img-overlay text-center">
+                                            {% for des in post.destinations.all %}
+                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <h3 class="card-title mt-2 text-center" style="color: black;">{{ post.title }}</h3>
+                                </a>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item text-center"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
+                                    <li class="list-group-item text-center"><strong>Ideal Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
+                                </ul>
+                                <hr>
+                                <div class="card-text">
+                                    {{ post.content | slice:":280" | safe }}...
+                                </div>
+                                <div class="card-footer">
+                                    <span>Author: {{ post.author }} | </span>
+                                    <span>{{ post.created_on}} | </span>
+                                    <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
+                                    <span class="text-secondary"> | <i class="far fa-comments"></i></span>
+                                </div>
                             </div>
-                            <h2>{{ post.title }}</h2>
-                        </a>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
-                            <li class="list-group-item"><strong>Ideal Trip Duration: </strong> <span> {{ post.ideal_duration }}</span></li>
-                        </ul>
-                        <p class="card-text">{{ post.content | slice:":280" }}...</p>
-                        <div class="card-footer">
-                            <span>Author: {{ post.author }} | </span>
-                            <span>{{ post.created_on}} | </span>
-                            <span><i class="fas fa-heart"></i> {{ post.number_of_likes }} </span>
-                            <span class="text-secondary"> | <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:3 %}
                 </div>
                 <div class="row">
                     {% endif %}
-                    {% empty %}
-                    <div class="col-lg-8">
-
-                        <h2 class="text-center">Sorry, currently there are no posts in this category.
-                            <a class="hidden-link" href="{% url 'add_post' %}">Add one?</a></h2>
-                    </div>
                     {% endfor %}
+                </div>
+
+                {% else %}
+
+                <div class="col-md-12 my-5">
+
+                    <h2 class="text-center">Ohh, Looks like there are no posts in this destination yet...
+                    </h2>
                 </div>
             </div>
         </div>
+
+        {% endif %}
         {% if is_paginated %}
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link my-3">&laquo; PREV </a></li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link my-3"> NEXT &raquo;</a></li>
                 {% endif %}
             </ul>
         </nav>
-        {% endif %}
+        {% endif%}
+        <!-- Back to top button -->
+        <!-- <div class="d-flex justify-content-end">
+    <a href="#search" role="button" class="btn btn-success mb-3 btn-floating btn-lg" id="btn-back-to-top">Back to
+        top ⇧</a>
+</div> -->
     </div>
-    {% endif%}
 </section>
-{% endblock %}
+{% endblock content %}

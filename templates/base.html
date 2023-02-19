@@ -31,19 +31,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #033c64;">
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">In<span class="red-o">cre</span>di<span class="green-o">ble<span class="thin">|India</span></span></span></span></a> -->
-            <!-- <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/favicon-16x16.png' %}" alt="India map logo" width="30" height="24" class="d-inline-block align-text-top">
-                Incredible India
-            </a> -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/Incredible-India-Logo60.jpg' %}" alt="India map logo" class="d-inline-block align-text-top">
+                <img src="{% static 'images/Incredible-India-Logo60.jpg' %}" alt="India map logo" class="d-inline-block align-text-top ps-3" style="border-radius: 30px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:large">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Go to the home page">Home</a>
                     </li>
@@ -83,7 +78,7 @@
                 </ul>
                 <form class="d-flex" method="GET" action="{% url 'search' %}">
                     <input class="form-control me-2" name="q" type="search" placeholder="Search Post" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success me-3" type="submit">Search</button>
                 </form>
             </div>
         </div>

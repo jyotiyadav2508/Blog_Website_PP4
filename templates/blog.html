@@ -7,13 +7,14 @@
     <div class="text-center">
         <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
     <p class="text-center" style="font-size: 1.3rem;">India - <mark>"The Land of Diversity"</mark>. Majestic mountains, artistic temples, rip-roaring wildlife, colorful deserts and much more! <br>Have a glimpses of some Indian tourist places.</p>
-    <div class="container-fluid">
+    <div class="container">
+        <hr>
         <div class="row">
-            <div class="col-12 mt-5 left">
+            <div class="col-12 mt-3 left">
                 <div class="row">
                     {% for post in post_list %}
-                    <div class="col-md-4">
-                        <div class="card mb-4" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                    <div class="col-md-4 mb-5">
+                        <div class="card h-100" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                     <div class="image-container">

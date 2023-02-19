@@ -177,7 +177,7 @@ You can view the live site here -
 
 ## Bugs
 
-
+destination dropdown was not displaing the list items. add in setting.py
 
 
 ----
