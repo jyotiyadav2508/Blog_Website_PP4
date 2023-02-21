@@ -9,12 +9,13 @@ You can view the live site here -
 
 ----
 
-## Content
+## [Content](#content)
 - [Incredible India - Introduction](#incredible-india---introduction)
   - [User Experience - UX](#user-experience---ux)
     - [Site Aims](#site-aims)
     - [Agile Methodology](#agile-methodology)
-    - [User Stories](#user-stories)
+      - [Epics and User Stories](#epics-and-user-stories)
+      - [Tasks](#tasks)
   - [Design](#design)
       - [Colours](#colours)
       - [Typography](#typography)
@@ -58,17 +59,6 @@ You can view the live site here -
 
 ### Site Aims
 
-* To provide users with a good experience when using the Incredible India website, which targets tourist destinations in India.
-* To provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
-* To provide the admin with the ability to approve, create, update and delete a post.
-* To provide the author with the ability to create, update, read and delete a post.
-* To provide the user with the ability to read and view the post.
-* To provide the logged in user with the ability to like/unlike and commment on a post.
-* To provide a clear and appropriate response to any user inputs or actions.
-* To provide tools that allow users to search for particular destinations post.
-* To provide role-based permissions that allows user to interact with the website.
-
-
 * Incredible India is a website mainly meant to explore the Indian tourist destinattions with a good user experience.
 * The site aims is to provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
 * This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
@@ -77,16 +67,17 @@ You can view the live site here -
 
 ### Agile Methodology
 
-The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board. Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections:
-* To Do
-* In Progress
-* Done
+The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board. Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections: 
+
+* To Do- (All the User stories were initially entered in the 'To Do' column)
+* In Progress- (then during development story they were moved into the 'In Progress' column)
+* Done- (and then finally they get moved into 'Done' once the development completes)
 
 Please find my Kanban Board with my user stories [here](https://github.com/users/jyotiyadav2508/projects/3/views/1).
 
 ### Epics and User Stories
 
-Following Epics were created which were further developed into [writeNo.ofuserstories] User Stories.
+Following Epics were created which were further developed into ..... User Stories.
 
 ### Epic 1- Website UI
 Epic Goals for User- 
@@ -139,20 +130,47 @@ Epic Goals-
 * As a logged-in user I can edit/delete my comments so that I can update/delete my post opinion.
 * As a logged-in user I can like or unlike a post so that I can interact with the content.
 
+### Tasks
+
+The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project. The task is generally the developers step towards preparing the app.
+The tasks that I have followed during the development phase were carried out in this order.
+
+**Before Project Inception**
+
+- Design ERD and Data 
+- Create Repository in GitHub
+- Create Project, Epics, User Stories and prepare Kanban Board
+
+**Creation of Project in GitPod**
+
+- Create the django project. Check details in [deployment-section](#deployment)
+- Deploying app to Heroku - Details in [deployment](#deployment) section
+- Create Database Models
+	- Set up models.py file in "blog" directory
+- Build Admin site
+- Set up Templates
+	- Create base.html - Navbar and Footer content, which gets extended to all the other template files
+	- Add responsiveness to navigation and footer
+    - Create index.html, view and style
+	- Set up template file features with views.py and urls.py
+		- about.html (Description about incredible india)
+		- author_page.html (for author's personal collections)
+		- post_details.html (for detailed post view)
+		- add_post.html (to allow author's input for blog posts)
+		- blog.html (to view all blog posts)
+    - delete_post.html (to allow author to delete his post)
+    - destinations_post.html ( to view blog post for a selected destination)
+    - search.html ( to search a blog post)
+    - update_post.html (to allow author to edit his post)
+    - author_post_list.html (to allow author to view all post, which he posted so far)
+- Install Allauth for sign in, sign up and sign out tenplates with-  pip3 install django-allauth 
+	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
+- Intensive Manual Testing and Validation checks of each page and codes written
+- Final Deployment steps
 
 
-
-
-
-
-
-
-
-
-
-
-
-**Still in backlog for future features**
+**Future Tasks**
+- Automated Testing 
 
 -----
 
@@ -160,17 +178,27 @@ Epic Goals-
 
 ### Colours
 
+The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website.
+
 ### Typography
 
+Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users.
 
 ### Imagery
 
+All the imagery is related to the Indian tourist destination and website design. Some images including carousel are static. The remaining imagery was uploaded by the author to the database.
+
 ### Wireframes
+
+The wireframes were generated at the start of the project using Balsamiq. 
 
 ----
 
 ## Database Diagram
 
+...Smart Draw/ Lucid Chart ...was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment....... are shown here.
+
+[Back to top ⇧](#content)
 ----
 
 
@@ -182,6 +210,14 @@ Epic Goals-
 ----
 
 ## Admin Panel/Superuser
+
+On the Admin Panel, as an admin I have full access to CRUD functionality so I can view, create, edit and delete the following ones:
+Posts
+Comments
+Author
+Destination
+
+* As admin I can also approve comments, approve posts and change the status and give other permissions to the users.
 
 ----
 
