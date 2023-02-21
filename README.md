@@ -58,45 +58,97 @@ You can view the live site here -
 
 ### Site Aims
 
-* To provide the user with a website that allows them to view the Tourist Attractions in India.
+* To provide users with a good experience when using the Incredible India website, which targets tourist destinations in India.
 * To provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
-* To allow the user to read, create, update and delete reviews.
-* To provide the admin user with the ability to approve, update and delete a post.
+* To provide the admin with the ability to approve, create, update and delete a post.
+* To provide the author with the ability to create, update, read and delete a post.
+* To provide the user with the ability to read and view the post.
+* To provide the logged in user with the ability to like/unlike and commment on a post.
 * To provide a clear and appropriate response to any user inputs or actions.
+* To provide tools that allow users to search for particular destinations post.
 * To provide role-based permissions that allows user to interact with the website.
 
 
+* Incredible India is a website mainly meant to explore the Indian tourist destinattions with a good user experience.
+* The site aims is to provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
+* This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
+* All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
+* Author can access all the features of the website and can read, create, edit, and delete their posts.
+
 ### Agile Methodology
 
+The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board. Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections:
+* To Do
+* In Progress
+* Done
 
-### User Stories
+Please find my Kanban Board with my user stories [here](https://github.com/users/jyotiyadav2508/projects/3/views/1).
 
-**Sprint One**
-* As a Site Admin I can create draft posts so that I can finish writing the content later.
-* As a Site Admin I can create, read, update and delete posts to manage my blog content.
-* As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments.
+### Epics and User Stories
 
+Following Epics were created which were further developed into [writeNo.ofuserstories] User Stories.
 
-**Sprint Two**
+### Epic 1- Website UI
+Epic Goals for User- 
+* An intuitive User Interface with easy to navigate throughout the website 
+* Easily see the purpose of the site from the landing page
+* View a list of destinations and blog posts
+* Search bar for quick and easy access to required information
 
-**Sprint Three**
+#### Related User Stories:
+* As a site user I can easily see the purpose of the site from the landing page so that I can see if the site is relevant to my needs.
+* As a site user I can view a list of destinations so that I can see a list of posts relating to my specific interest.
+* As a site user I can view a paginated list of posts so that easily select a post to view.
+* As a site user I can click on a post so that I can read the full article.
+* As a site user I can use a search bar to search for a specific place so that I have quick and easy access to the information I need.
 
-* As a Site User I can click on a post so that I can read the full article.
-* As a Site User I can view a list of posts so that I can select one to read.
-* As a Site User I can access all my reviews easily in one place so that I can easily track my activity on the site and interact with the blog owners' content.
-* As a Site User I can easily see the purpose of the site from the landing page so that I can see if the site is relevant to my needs.
-* As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
-* As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
-* As a Site User I can view a list of destinations so that I can see a list of posts relating to my specific interest.
-* As a Site User I can register an account so that I can comment and like.
-* As a registered user I can login and logout of the site so that I can access my content.
+### Epic 2- Registration and Account Management
+Epic Goals-
+* Easy registration of an account
+* Easy Sign Up, Sign in and Sign Out
+* Upon signing in, the user should be able to like, comment on a blog post
+* Easy access to Create, Read, Update and Delete (CRUD) features upon signing in
+* Visibility of personalized blog posts and comments
+
+#### Related User Stories:
+* As a site user, I can register an account so that I can comment and like.
+* As a registered user, I can login and logout of the site so that I can access my content.
+* As a site user, I can view the number of likes on each post so that I can see which is the most popular or viral.
+* As a site user, I can view comments on an individual post so that I can read the conversation.
+* As a author I can create a post of tourist place so that I can share it with other.
+
+### Epic 3- Blog Post Management
+Epic Goals-
+* Create/ Update / Read / Delete blog posts.
+* View their created blog posts
+* Approve and publish a comment and post
+
+#### Related User Stories:
+* As a site admin/ author, I can create draft posts so that I can finish writing the content later.
+* As a site admin/ author, I can create, read, update and delete posts to manage the blog content.
+* As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments.
+* As a author, I can access all my blog posts easily in one place so that I can easily track my activity on the site.
+
+### Epic 4- Comments and Like Management
+Epic Goals-
+* Add /Delete and View Comments on a post
+* Like / Unlike a post
+
+#### Related User Stories:
 * As a logged-in user I can leave comments on a post so that I can be involved in the conversation.
-* As a logged-in user I can create a post with my favorite tourist place so that I can share my preferences with other users.
 * As a logged-in user I can edit/delete my comments so that I can update/delete my post opinion.
 * As a logged-in user I can like or unlike a post so that I can interact with the content.
 
-* As a Site User I can use a search bar to search for a specific place so that I have quick and easy access to the information I need.
-* As a Site User I can view a paginated list of posts so that easily select a post to view.
+
+
+
+
+
+
+
+
+
+
 
 
 
