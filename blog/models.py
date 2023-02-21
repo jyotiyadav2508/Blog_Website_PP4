@@ -15,6 +15,7 @@ class Author(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(default="")
     author_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):

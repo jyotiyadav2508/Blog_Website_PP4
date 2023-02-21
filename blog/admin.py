@@ -34,7 +34,7 @@ class DestinationAdmin(admin.ModelAdmin):
     """
     Add fields for destination in admin panel
     """
-    list_display = ['title']
+    list_display = ('title', 'slug', 'excerpt')
     search_fields = ['title']
 
 
@@ -43,5 +43,5 @@ class AuthorAdmin(admin.ModelAdmin):
     """
     Add fields for author in admin panel
     """
-    list_display = ('user', 'created_on')
+    list_display = ('user', 'created_on', 'email')
     search_fields = ['user']
