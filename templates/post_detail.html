@@ -59,8 +59,8 @@
                 {% if user.id == post.author.id  %}
                 <div class="row">
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'update-post' post.slug  %}" role="button" class="btn btn-info mx-2 text-dark"><strong>Edit</strong> </a>
-                        <a href="{% url 'delete-post' post.slug  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete</strong></a>
+                        <a href="{% url 'update-post' post.slug  %}" role="button" class="btn btn-info mx-2 text-dark"><strong>Edit Post</strong> </a>
+                        <a href="{% url 'delete-post' post.slug  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete Post</strong></a>
                     </div>
                 </div>
                 {% endif %}
@@ -86,12 +86,31 @@
 
                             {% if user.is_authenticated and user.username == comment.name  %}
                             <div class="row">
-                                <div class="d-flex justify-content-center">
-                                    <a href="{% url 'edit_comment' comment.id  %}" role="button" class="btn btn-info mx-2  text-dark "><strong>Edit</strong> </a>
-                                    <a href="{% url 'delete_comment' comment.id  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete</strong></a>
+                                <div class="d-flex">
+                                    <a href="{% url 'edit_comment' comment.id  %}" role="button" class="btn btn-secondary btn-sm mx-2"><strong>Edit</strong> </a>
+                                    <!-- <a href="{% url 'delete_comment' comment.id  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete</strong></a> -->
+                                    <!-- </div> -->
+                                    <button type="button" class="btn-delete btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete-comment">Delete</button>
+                                    <!-- Delete comment bootstrap modal-->
+                                    <div class="modal fade" id="delete-comment" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to delete your comment?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger" aria-label="Delete Comment">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <hr>
+                            <hr class="hr-small">
                             {% endif %}
                             {% endfor %}
                         </div>

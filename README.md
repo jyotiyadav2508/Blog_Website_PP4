@@ -1,7 +1,7 @@
 # Incredible India - Introduction
 
-This is my Portfolio Project 4, which is a Full Stack website built using the Django framework for Code Institute Full-stack development program.
-> Incredible India is a blog website which targets Tourist Attractions in India (India's tourist places), where user can view or search for a tourist place in India. When the user is logged in they can also like/unlike a post and comment on a post. They can also share their favourite place by adding a post on the ---- Page and upload or update their user image and details.
+This is my Portfolio Project 4, which is a Full Stack website built using the Django framework for Code Institute Full-stack development diploma.
+> Incredible India is a blog website which targets **tourist destinations** of India, where user can view the blog post of tourist destinations. The user can view the detailed blog post and read comments. Also when the user is logged in, they can like/unlike a post and comment on a post. They can also share their blog post by adding a post on the user page.
 
 You can view the live site here -
 
@@ -17,24 +17,32 @@ You can view the live site here -
       - [Epics and User Stories](#epics-and-user-stories)
       - [Tasks](#tasks)
   - [Design](#design)
-      - [Colours](#colours)
-      - [Typography](#typography)
-      - [Imagery](#imagery)
-      - [Wireframes](#wireframes)
+    - [Colours](#colours)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Wireframes](#wireframes)
   - [Database Diagram](#database-diagram)
   - [Features](#features)
-      - [Home Page](#home-page)
-      - [Home Page - Highlight Posts](#home-page---highlight-posts)
-      - [About Page](#about-page)
-      - [Blog Page](#blog-page)
-      - 
-  - [Future Features](#future-features)
-      
+    - [Home Page](#home-page)
+      - [Navbar](#navbar)
+      - [Hero Image](#hero-image)
+      - [Destination Section](#destination-section)
+      - [Footer](#footer)
+    - [About Page](#about-page)
+    - [Blog Page](#blog-page)
+      - [Blog Details](#blog-details)
+      - [Blog Comments](#blog-comments)
+    - [Register](#register)
+    - [Login](#login)
+    - [Logout](#logout)
+    - [Destinations](#destinations)
+    - [Search Button](#search-button)
+    - [Alert Messages](#alert-messages)      
   - [Admin Panel/Superuser](#admin-panelsuperuser)
   - [Technologies Used](#technologies-used)
-      - [Languages Used](#languages-used)
-      - [Django Packages](#django-packages)
-      - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+    - [Languages Used](#languages-used)
+    - [Django Packages](#django-packages)
+    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
   - [Testing](#testing)
       - [Validation](#validation)
       - [Manual Testing](#manual-testing)
@@ -51,7 +59,6 @@ You can view the live site here -
     - [Content](#content)
     - [Information Sources / Resources](#information-sources--resources)
   - [Acknowledgement](#acknowledgement)
-
 
 -----
 
@@ -221,17 +228,16 @@ Destination
 
 ----
 
-
 ## Technologies Used
 
 ### Languages Used
 
 * [HTML 5](https://en.wikipedia.org/wiki/HTML/)- Used to structure all the templates on the site
 * [CSS 3](https://en.wikipedia.org/wiki/CSS)- to provide extra styling to the site
-* [JavaScript](https://www.javascript.com/)- Minimum javascript was used to fade out alerts after a few seconds and to create a button that would bring the user back to the top of the screen.
+* [JavaScript](https://www.javascript.com/)- Minimum javascript was used to fade out alerts after a few seconds.
 * [Python](https://www.python.org/)- To provide the functionality to the site. Packages used in the project can be found in requirements.txt
 
-#### Django Packages
+### Django Packages
 
 * [Gunicorn](https://gunicorn.org/)- As the server for Heroku.
 * [Cloudinary](https://cloudinary.com/)- Was used to host the static files and media for the site.
@@ -243,22 +249,20 @@ Destination
 
 ### Frameworks - Libraries - Programs Used
 
+* [Django](https://www.djangoproject.com/) was used as the framework for the back-end logic of the project. Django enables rapid and secure development.
+* [Bootstrap](https://getbootstrap.com/)- Used to style the website, add responsiveness and interactivity.
 * [Git](https://git-scm.com/)- Used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
 * [GitHub](https://github.com/)- Used to store the project's code after being pushed from Git.
 * [Heroku](https://id.heroku.com)- Used to deploy the live project.
 * [PostgreSQL](https://www.postgresql.org/)- Database used through heroku.
-* [Bootstrap](https://getbootstrap.com/)- Used to style the website, add responsiveness and interactivity.
 * [Balsamiq](https://balsamiq.com/)- To build the wireframes for the project.
-
-
-
-
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
+* [Google Fonts:](https://fonts.google.com/) used for the Roboto font
+* [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
 
 -----
 
 ## Testing
-
-
 
 
 ----
