@@ -14,6 +14,7 @@ urlpatterns = [
     # path('', views.destinations, name='home'),
     path('destinations_post/<str:des>', views.destinations_view, name='destinations-post'),   # noqa: E501
     # path('destinations_post/<str:des>', views.DestinationListView.as_view(), name='destinations-post'),
+    path('edit_comment/<int:pk>', views.EditComment.as_view(), name='edit_comment'),   # noqa: E501
     path('delete_comment/<int:comment_id>', views.delete_comment, name='delete_comment'),  # noqa: E501
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),

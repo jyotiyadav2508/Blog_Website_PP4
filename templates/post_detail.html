@@ -81,6 +81,18 @@
                                 </p>
                                 <i class="fa-regular fa-comment"></i><span> {{ comment.body }}</span>
                             </div>
+
+                            <!-- Only visible to the user who write this comment-->
+
+                            {% if user.is_authenticated and user.username == comment.name  %}
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <a href="{% url 'edit_comment' comment.id  %}" role="button" class="btn btn-info mx-2  text-dark "><strong>Edit</strong> </a>
+                                    <a href="{% url 'delete_comment' comment.id  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete</strong></a>
+                                </div>
+                            </div>
+                            <hr>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
