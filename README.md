@@ -62,9 +62,9 @@ You can view the live site here -
 
 -----
 
-## User Experience - UX
+# User Experience - UX
 
-### Site Aims
+## Site Aims
 
 * Incredible India is a website mainly meant to explore the Indian tourist destinattions with a good user experience.
 * The site aims is to provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
@@ -72,7 +72,7 @@ You can view the live site here -
 * All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
 * Author can access all the features of the website and can read, create, edit, and delete their posts.
 
-### Agile Methodology
+## Agile Methodology
 
 The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board. Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections: 
 
@@ -82,7 +82,7 @@ The Agile Methodology was used to plan this project. This was implemented throug
 
 Please find my Kanban Board with my user stories [here](https://github.com/users/jyotiyadav2508/projects/3/views/1).
 
-### Epics and User Stories
+## Epics and User Stories
 
 Following Epics were created which were further developed into ..... User Stories.
 
@@ -137,7 +137,7 @@ Epic Goals-
 * As a logged-in user I can edit/delete my comments so that I can update/delete my post opinion.
 * As a logged-in user I can like or unlike a post so that I can interact with the content.
 
-### Tasks
+## Tasks
 
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project. The task is generally the developers step towards preparing the app.
 The tasks that I have followed during the development phase were carried out in this order.
@@ -160,21 +160,20 @@ The tasks that I have followed during the development phase were carried out in 
 	- Add responsiveness to navigation and footer
     - Create index.html, view and style
 	- Set up template file features with views.py and urls.py
-		- about.html (Description about incredible india)
-		- author_page.html (for author's personal collections)
-		- post_details.html (for detailed post view)
-		- add_post.html (to allow author's input for blog posts)
-		- blog.html (to view all blog posts)
-    - delete_post.html (to allow author to delete his post)
-    - destinations_post.html ( to view blog post for a selected destination)
-    - search.html ( to search a blog post)
-    - update_post.html (to allow author to edit his post)
-    - author_post_list.html (to allow author to view all post, which he posted so far)
+  - about.html (Description about incredible india)
+  - blog.html (to view all blog posts)
+  - author_page.html (for author's personal collections)
+  - post_details.html (for detailed post view)
+  - destinations_post.html (to view blog post for a selected destination)
+  - add_post.html (to allow author's input for blog posts)
+  - delete_post.html (to allow author to delete his post)
+  - search.html (to search a blog post)
+  - update_post.html (to allow author to edit his post)
+  - author_post_list.html (to allow author to view all post, which he posted so far)
 - Install Allauth for sign in, sign up and sign out tenplates with-  pip3 install django-allauth 
 	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
 - Intensive Manual Testing and Validation checks of each page and codes written
 - Final Deployment steps
-
 
 **Future Tasks**
 - Automated Testing 
@@ -206,11 +205,60 @@ The wireframes were generated at the start of the project using Balsamiq.
 ...Smart Draw/ Lucid Chart ...was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment....... are shown here.
 
 [Back to top ⇧](#content)
+
 ----
 
+# Features
 
-## Features
+## Home Page
 
+At first glimpse, user can see a Navigation menu with a search button and carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
+
+![Homepage](assets/features/home-page.jpg)
+
+Upon scrolling down, there is destination section which describe different types of tourist destination. Each destination card navigate to that particular blog posts. 
+
+![Destination](assets/features/destinations-section1.jpg)
+![Destination](assets/features/destinations-section2.jpg)
+![Destination](assets/features/destinations-section3.jpg)
+
+User can also select a specific destination blog posts from the navbar dropdown which navigates to that specific destination blog posts.
+
+![Destination](assets/features/dropdown-destination.jpg)
+
+----
+
+## About Us Page
+
+The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
+
+![About Us](assets/features/about-us1.jpg)
+![About Us](assets/features/about-us2.jpg)
+
+## Blog Page
+
+This page enlists all the blog posts added so far to the website. The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image overlay with the destination type. and the card body displays blog post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon in the card footer.
+
+![Blog Page](assets/features/blog-page1.jpg)
+![Blog Page](assets/features/blog-page2.jpg)
+
+## Post-Detail Page
+
+- When a user clicks on the image or title of the blog post, they are brought to the post details page for the selected blog post. Here the user is shown a full description of the blog post with image, author name, created time, title, best-time, ideal-duration, full content along with number of likes and comments.
+- Underneath the post description the page displays all the approved comments of that blog post posted by signed-in users. 
+- At the bottom of this page, Comment box is visible to users.
+
+![Blog Page](assets/features/post-details1.jpg)
+![Blog Page](assets/features/post-details2.jpg)
+
+- If user is signed-in, following comment box will appear. 
+
+![Blog Page](assets/features/comment-box-login-user.jpg)
+
+- When User submit a comment or like a post, following messages/ alert displays respectively.
+
+![Blog Page](assets/features/comment-approval.jpg)
+![Blog Page](assets/features/like-alert.jpg)
 
 
 
