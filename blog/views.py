@@ -128,7 +128,8 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return reverse('user-page')
 
     def form_valid(self, form):
-        form.instance.name = self.request.user
+        # form.instance.name = self.request.user
+        form.instance.name = self.request.author
         form.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
@@ -211,7 +212,6 @@ class User(LoginRequiredMixin, generic.ListView):
 #     """
 #     return render(request, 'index.html')
     # return render(request, 'destinations.html')
-
 
 def destinations_view(request, des):
     """

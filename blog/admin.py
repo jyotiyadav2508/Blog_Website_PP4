@@ -43,5 +43,5 @@ class AuthorAdmin(admin.ModelAdmin):
     """
     Add fields for author in admin panel
     """
-    list_display = ('user', 'created_on', 'email')
+    list_display = ('user', 'created_on', 'email', 'approved')
     search_fields = ['user']

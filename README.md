@@ -216,7 +216,7 @@ At first glimpse, user can see a Navigation menu with a search button and carous
 
 ![Homepage](assets/features/home-page.jpg)
 
-Upon scrolling down, there is destination section which describe different types of tourist destination. Each destination card navigate to that particular blog posts. 
+Upon scrolling down, there is destination section which indicates the available types of tourist destination blog post. Each destination card filter the post by destination name and navigate to that particular blog posts. 
 
 ![Destination](assets/features/destinations-section1.jpg)
 ![Destination](assets/features/destinations-section2.jpg)
@@ -228,12 +228,23 @@ User can also select a specific destination blog posts from the navbar dropdown 
 
 ----
 
+## Navbar
+
+## Navbar after loged in user
+
+----
+## Footer
+
+----
+
 ## About Us Page
 
 The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
 
 ![About Us](assets/features/about-us1.jpg)
 ![About Us](assets/features/about-us2.jpg)
+
+----
 
 ## Blog Page
 
@@ -242,25 +253,97 @@ This page enlists all the blog posts added so far to the website. The blog posts
 ![Blog Page](assets/features/blog-page1.jpg)
 ![Blog Page](assets/features/blog-page2.jpg)
 
+----
+
 ## Post-Detail Page
 
-- When a user clicks on the image or title of the blog post, they are brought to the post details page for the selected blog post. Here the user is shown a full description of the blog post with image, author name, created time, title, best-time, ideal-duration, full content along with number of likes and comments.
-- Underneath the post description the page displays all the approved comments of that blog post posted by signed-in users. 
-- At the bottom of this page, Comment box is visible to users.
+- When a user clicks on the image or title of the blog post, they are brought to the post details page for the selected blog post. Here the user is shown the complete details of the blog post with image, author name, created time, title, best time, ideal-duration, number of likes and comments along with full content.
+- Underneath the post description the page displays all the approved comments on that blog post posted by signed-in users. 
+- At the bottom of this page, the Comment box is visible to the users.
 
-![Blog Page](assets/features/post-details1.jpg)
-![Blog Page](assets/features/post-details2.jpg)
+![Post-detail](assets/features/post-details1.jpg)
+![Post detail](assets/features/post-details2.jpg)
 
 - If user is signed-in, following comment box will appear. 
 
-![Blog Page](assets/features/comment-box-login-user.jpg)
+![Comment box](assets/features/comment-box-login-user.jpg)
 
-- When User submit a comment or like a post, following messages/ alert displays respectively.
+- When User submit a comment or like/unlike a post, following messages/ alert displays respectively.
 
-![Blog Page](assets/features/comment-approval.jpg)
-![Blog Page](assets/features/like-alert.jpg)
+![Comment-alert](assets/features/comment-alert.jpg)
+![Comment-approval-msg](assets/features/comment-approval.jpg)
+![Like post alert](assets/features/like-alert.jpg)
+![Unlike-post-alert](assets/features/unlike-alert.jpg)
+
+- Signed-in users can only edit/delete their own comments.
+![Edit Delete Comment](assets/features/edit-delete-comment.jpg)
+
+- When the user clicks on the delete button to remove his comment, following alert message pops up.
+![Delete Comment Alert](assets/features/delete-comment-alert.jpg)
 
 
+-When user clicks on edit button to update his comment, navigates to the edit-page and a successful update alert message is displayed after clicking on update button.
+![Edit Comment](assets/features/edit-comment.jpg)
+![Update Comment Alert](assets/features/update-comment-alert.jpg)
+
+----
+
+## Destination Page
+
+User can select a specific destination blog posts either from destination section on home page or from the navbar dropdown which navigates to that specific destination blog posts.
+
+![Dropdown destination](assets/features/dropdown-destination.jpg)
+
+- For example, if user select a destination such as a hill station, the filtered blog posts will be displayed.
+![Filter destination posts](assets/features/selected-destination-post.jpg)
+
+- If there is no post for any selected destination, user will see the following message.
+![No post message](assets/features/no-destination-post.jpg)
+
+----
+
+## Security
+In order to properly interact with the website, the user needs to have an account and sign in. This ensures security of their comments and gives them rights to create, modify and delete them.
+
+### Sign Up
+
+- User is asked to enter username and password to sign up. User will be guided by validation messages if the username exists or password is too small which was created by modifying Django inbuilt templates.
+![Signup page](assets/features/user-register-page.jpg)
+
+- When users sign up to the website they will see a message at the top of the page saying "Successfully signed in as (username)".
+![Sign Up alert](assets/features/user-registration-alert.jpg)
+
+### Sign In
+- User can enter username and password to sign in. User will be guided by validation messages if the username or password is not correct. This was created by modifying Django inbuilt templates.
+
+![Sign In page](assets/features/user-login-page.jpg)
+
+- When users sign in to the website they will see a message at the top of the page saying "Successfully signed in as (username)".
+![Sign In alert](assets/features/signed-in-alert.jpg)
+
+### Sign Out
+- If the user is signed-in, then only they can see Logout nav-item in navbar. User will be taken to the Sign Out page. This was created by modifying Django inbuilt templates. When the user signs out, they are redirected to homepage.
+
+![Sign out page](assets/features/logout-page.jpg)
+
+- When users log out of the website they will see a message at the top of the page saying "You have signed out".
+![Sign out alert](assets/features/signout-alert.jpg)
+
+----
+
+## Search Button 
+
+On the top right corner, a search input field is provided along with a button to submit. This allows the user to try and find the post they are looking for. Search Results will appear in a new search page.
+
+![Search result](assets/features/search-result.jpg)
+
+- On the search results page, users will see this message if nothing is found for the search.
+
+![Search result](assets/features/no-search-result.jpg)
+
+- On the search results page, users will see this message for empty input.
+
+![Search result](assets/features/empty-input-for-search.jpg)
 
 ----
 

@@ -9,19 +9,6 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Author(models.Model):
-    """
-    Model for Author
-    """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    email = models.EmailField(default="")
-    author_image = CloudinaryField('image', default='placeholder')
-
-    def __str__(self):
-        return self.user.username
-
-
 class Destination(models.Model):
     """
     Model for destination place
@@ -39,12 +26,29 @@ class Destination(models.Model):
         return self.title
 
 
+class Author(models.Model):
+    """
+    Model for Author
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # name = models.OneToOneField(Author, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(default="", unique=True)
+    approved = models.BooleanField(default=False)
+    author_image = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return self.user.username
+
+
 class Post(models.Model):
     """
     Model for main blog post
     """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, null=True)
+    # author = models.ForeignKey(
+    #     Author, on_delete=models.CASCADE, related_name="blog_posts")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
@@ -95,3 +99,6 @@ class Comment(models.Model):
     def get_absolute_url(self):
         """Sets absolute URL"""
         return reverse('post_detail', args=[self.post.slug])
+
+
+
