@@ -212,17 +212,21 @@ The wireframes were generated at the start of the project using Balsamiq.
 
 ## Home Page
 
-At first glimpse, user can see a Navigation menu with a search button and carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
+At the very first glimpse, user can see a Navigation menu with a search button and carousel-images on the homepage. Homepage provides the user with some quick information about the site and make use of all its features. User do not need to be registered to view a blog post. The responsive navigation bar is featured on all pages. 
 
 ![Homepage](assets/features/home-page.jpg)
 
-Upon scrolling down, there is destination section which indicates the available types of tourist destination blog post. Each destination card filter the post by destination name and navigate to that particular blog posts. 
+----
+
+- Upon scrolling down, there is destination section which indicates the available types of tourist destination blog post. Each destination card filter the post by destination name and navigate to that particular blog posts. 
 
 ![Destination](assets/features/destinations-section1.jpg)
 ![Destination](assets/features/destinations-section2.jpg)
 ![Destination](assets/features/destinations-section3.jpg)
 
-User can also select a specific destination blog posts from the navbar dropdown which navigates to that specific destination blog posts.
+----
+
+- User can also select a specific destination blog posts from the navbar dropdown which navigates to that specific destination blog posts.
 
 ![Destination](assets/features/dropdown-destination.jpg)
 
@@ -230,16 +234,29 @@ User can also select a specific destination blog posts from the navbar dropdown 
 
 ## Navbar
 
+- The navigation bar is present at the top of every page and navigates all links to the respective pages.
+- The options to Register or Log in will change to the option to log out once a user has logged in.
+- The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
+
+![Navbar](assets/features/navbar.jpg)
+
+![Navbar](assets/features/nav-hamburger.jpg)
+
 ## Navbar after loged in user
+* Once a user has signed in, user page will be available in the navbar.
 
 ----
 ## Footer
+
+- On the website footer, users can see basic information such as my social media, copyright, and a quote about Incredible India.
+
+![Navbar](assets/features/footer.jpg)
 
 ----
 
 ## About Us Page
 
-The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
+- The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
 
 ![About Us](assets/features/about-us1.jpg)
 ![About Us](assets/features/about-us2.jpg)
@@ -248,7 +265,7 @@ The About Page gives, users information about the Incredible India with a brief 
 
 ## Blog Page
 
-This page enlists all the blog posts added so far to the website. The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image overlay with the destination type. and the card body displays blog post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon in the card footer.
+This page enlists all the blog posts added so far to the website. The blog posts is paginated in a way that 9 posts are displayed. Further post can be accessed by clicking next button. Each blog post shows the image overlay with the destination type. The card body displays blog post title with specific fields and sliced post content along with the name of author, submitted date and shows the number of likes and comment icon in the card footer.
 
 ![Blog Page](assets/features/blog-page1.jpg)
 ![Blog Page](assets/features/blog-page2.jpg)
@@ -276,14 +293,19 @@ This page enlists all the blog posts added so far to the website. The blog posts
 ![Unlike-post-alert](assets/features/unlike-alert.jpg)
 
 - Signed-in users can only edit/delete their own comments.
+
 ![Edit Delete Comment](assets/features/edit-delete-comment.jpg)
 
 - When the user clicks on the delete button to remove his comment, following alert message pops up.
+
 ![Delete Comment Alert](assets/features/delete-comment-alert.jpg)
 
 
--When user clicks on edit button to update his comment, navigates to the edit-page and a successful update alert message is displayed after clicking on update button.
+- User navigates to the edit-page when he clicks on the edit button. Here he can edit his comment text. 
 ![Edit Comment](assets/features/edit-comment.jpg)
+
+- When user clicks on update button, a successful update alert message is displayed.
+
 ![Update Comment Alert](assets/features/update-comment-alert.jpg)
 
 ----
@@ -319,6 +341,7 @@ In order to properly interact with the website, the user needs to have an accoun
 ![Sign In page](assets/features/user-login-page.jpg)
 
 - When users sign in to the website they will see a message at the top of the page saying "Successfully signed in as (username)".
+
 ![Sign In alert](assets/features/signed-in-alert.jpg)
 
 ### Sign Out
@@ -327,13 +350,18 @@ In order to properly interact with the website, the user needs to have an accoun
 ![Sign out page](assets/features/logout-page.jpg)
 
 - When users log out of the website they will see a message at the top of the page saying "You have signed out".
+
 ![Sign out alert](assets/features/signout-alert.jpg)
 
 ----
 
 ## Search Button 
 
-On the top right corner, a search input field is provided along with a button to submit. This allows the user to try and find the post they are looking for. Search Results will appear in a new search page.
+On the top right corner, a search input field is provided along with a button to submit. This allows the user to try and find the post they are looking for.
+
+![Search button](assets/features/search-button.jpg)
+
+- On the search results page, users can see posts related to their search. If there are posts for the user's search input, the user can click on the card result to go to the post detail page.
 
 ![Search result](assets/features/search-result.jpg)
 
@@ -347,15 +375,41 @@ On the top right corner, a search input field is provided along with a button to
 
 ----
 
+[Back to top ⇧](#contents)
+
 ## Admin Panel/Superuser
 
-On the Admin Panel, as an admin I have full access to CRUD functionality so I can view, create, edit and delete the following ones:
-Posts
-Comments
-Author
-Destination
+- Admin accesses the project via logging into Django admin panel with a superuser id and password. The page appears as shown [here](assets/features/admin-panel-login.jpg).
+- A superuser "admin" was created for this project to manage the admin panel.
+- On the Admin Panel, as an admin I have full access to CRUD functionality so I can view, create, edit and delete the following ones:
+  - Posts
+  - Comments
+  - Author
+  - Destination
+- As admin I can also approve comments, approve posts and change the status and give other permissions to the users.
 
-* As admin I can also approve comments, approve posts and change the status and give other permissions to the users.
+### Admin 'Post' Model Management
+
+- On selecting Blog "Post", a list of blog posts is displayed with its title, slug, status, created_on and author name. Admin can select the post and edit or delete its data.
+- When a blog post is submitted by a user, its status is set to Draft by default.
+- When the status is set to Publish on Admin Approval, the post starts appearing in the website.
+
+The admin site for post model appears as shown [here](assets/features/admin-posts-model.jpg).
+
+### Admin 'Comment' Model Management
+
+- Upon selecting the Blog "Comment" model, a list of comments on a post is displayed with the username, comment body, post title, status and created_on. Admin can select the comment and edit or delete its data.
+- When a comment is submitted by a user, it requires approval from an admin in order to publish it on the comments section.
+
+The admin site for comment model appears as shown [here](assets/features/admin-comment-model.jpg).
+
+### Admin 'Destination' Model Management
+
+- On selecting the Blog "Destination" model, a list of destinations for the blog post is displayed with title, slug and excerpt fields. Only Admin can add, edit or delete any destination data.
+
+The admin site for destination model appears as shown [here](assets/features/admin-destination-model.jpg).
+
+### Admin 'Author' Model Management
 
 ----
 
@@ -393,6 +447,8 @@ Destination
 
 -----
 
+[Back to top ⇧](#contents)
+
 ## Testing
 
 
@@ -404,6 +460,9 @@ destination dropdown was not displaing the list items. add in setting.py
 
 
 ----
+
+[Back to top ⇧](#contents)
+
 
 ## Deployment
 
@@ -513,7 +572,22 @@ In the IDE:
 
 # Credits
 
+## Code
+- The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project "I Think Therefore I Blog".
+- Followed the project of one of my friend who is also a CI student (Roshana Vakeel): https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/blob/main/logs/forms.py 
+- Another project link I found from Linkdin, also CI's student (Laura Mayock): https://github.com/LauraMayock/The-happy-reader
+- [The Newsbox](https://github.com/rashdogg74/newsbox86)- One of the project shared by my cohort facilitator on Slack. 
 
+## Learning Resources
+- Code Institutes Full Stack Framework Module, mainly the 'blog' walkthrough project.
+- Youtube videos by [Codemy](https://www.youtube.com/watch?v=6-XXvUENY_8&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=5)
+- [W3CSchool](https://www.w3schools.com/django/)
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types)(For different quaries while doing project. For example query about models, fields, form widgets, auth and many more)
+- Other open source to understand and solve following types of error: PageNotFound, ProgrammingError, InvalidCursorName etc.
+
+## Content and Media
+
+Mostly images and post content are taken from the website https://www.holidify.com/ and https://www.incredible-india.org/. 
 
 ----
 
