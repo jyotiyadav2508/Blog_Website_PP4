@@ -394,7 +394,7 @@ On the top right corner, a search input field is provided along with a button to
 - When a blog post is submitted by a user, its status is set to Draft by default.
 - When the status is set to Publish on Admin Approval, the post starts appearing in the website.
 
-The admin site for post model appears as shown [here](assets/features/admin-posts-model.jpg).
+The admin site for post model appears as shown [here](assets/features/admin-post-model.jpg).
 
 ### Admin 'Comment' Model Management
 
