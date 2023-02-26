@@ -184,7 +184,9 @@ The tasks that I have followed during the development phase were carried out in 
 
 ### Colours
 
-The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website.
+The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website. The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
+
+![Color Palette](assets/features/color-palette.jpg)
 
 ### Typography
 
@@ -258,7 +260,7 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 
 - The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
 
-![About Us](assets/features/about-us1.jpg)
+![About Us](assets/features/about-us-page1.jpg)
 ![About Us](assets/features/about-us2.jpg)
 
 ----
@@ -457,6 +459,8 @@ The admin site for destination model appears as shown [here](assets/features/adm
 ## Bugs
 
 destination dropdown was not displaing the list items. add in setting.py
+
+Post image is not visible in post detail page on mobile devices.
 
 
 ----
