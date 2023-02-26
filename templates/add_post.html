@@ -14,21 +14,21 @@
             <!-- success alert -->
             <h2>Your post has submitted successfully. Thanks you for contributing!</h2>
             {% else %}
-            <!-- <div class="form-group"> -->
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form | crispy }}
-                {{ post.content | safe }}
-                {{ post.ideal_duration | safe }}
-                <button type="submit" class="btn btn-success my-3">Submit</button>
-            </form>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    {{ post.content | safe }}
+                    {{ post.ideal_duration | safe }}
+                    <button type="submit" class="btn btn-success my-3">Submit</button>
+                </form>
+            </div>
+            <script>
+                var name = "{{ user.username }}";
+                document.getElementById("elder").placeholder = name;
+            </script>
 
-            <!-- <script>
-                var name = "{{ user.id }}";
-                document.getElementById("mahi").value = name;
-            </script> -->
 
-            <!-- </div> -->
             {% endif %}
         </div>
     </div>

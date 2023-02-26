@@ -11,7 +11,7 @@
             <h2 class="text-center my-4">
                 <strong>
                     {% with results.count as total_results %}
-                    There are {{ total_results }} result{{ total_results|pluralize }} containing: "{{ q }}"
+                    There are {{ total_results }} result{{ total_results|pluralize }} containing your search: "{{ q }}"
                     {% endwith %}
                 </strong>
             </h2>

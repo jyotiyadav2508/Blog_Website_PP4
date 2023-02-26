@@ -583,7 +583,7 @@ In the IDE:
 - Youtube videos by [Codemy](https://www.youtube.com/watch?v=6-XXvUENY_8&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=5)
 - [W3CSchool](https://www.w3schools.com/django/)
 - [Django Documentation](https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types)(For different quaries while doing project. For example query about models, fields, form widgets, auth and many more)
-- Other open source to understand and solve following types of error: PageNotFound, ProgrammingError, InvalidCursorName etc.
+- Other open source to understand and solve following types of error : UnboundedLocalError, MultivalueDictKeyError,  ProgrammingError, InvalidCursorName etc.
 
 ## Content and Media
 
