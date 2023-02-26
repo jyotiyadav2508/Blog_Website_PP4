@@ -184,7 +184,7 @@ The tasks that I have followed during the development phase were carried out in 
 
 ### Colours
 
-The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website. The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
+The colour scheme has considered based on easy accessibility for all and have been consistently maintained throughout the website. The colours were modified using [Colorswall](https://colorswall.com/). 
 
 ![Color Palette](assets/features/color-palette.jpg)
 
@@ -591,7 +591,7 @@ In the IDE:
 
 ## Content and Media
 
-Mostly images and post content are taken from the website https://www.holidify.com/ and https://www.incredible-india.org/. 
+Mostly images and post content are taken from the website https://www.holidify.com/ and https://www.incredible-india.org/. Some images are taken from [Pexels](https://www.pexels.com/).
 
 ----
 
