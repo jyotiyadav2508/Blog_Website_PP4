@@ -458,9 +458,10 @@ The admin site for destination model appears as shown [here](assets/features/adm
 
 ## Bugs
 
-destination dropdown was not displaing the list items. add in setting.py
-
-Post image is not visible in post detail page on mobile devices.
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+| In navbar, the menu item destination dropdown was not displaing the list items.| Create destination_list view that return context (destination_list) then add `'blog.views.destinations_list'` in templates section in settings.py file |
+| Post image was not rendering on post_detail page(Issue only for mobile devices). |    |
 
 
 ----
