@@ -453,6 +453,9 @@ The admin site for destination model appears as shown [here](assets/features/adm
 
 ## Testing
 
+Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. All clickable links redirect to the correct pages.
+
+- Link for TESTING.md file:- [Testing Results Here](TESTING.md)
 
 ----
 
@@ -460,8 +463,8 @@ The admin site for destination model appears as shown [here](assets/features/adm
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| In navbar, the menu item destination dropdown was not displaing the list items.| Create destination_list view that return context (destination_list) then add `'blog.views.destinations_list'` in templates section in settings.py file |
-| Post image was not rendering on post_detail page(Issue only for mobile devices). |    |
+| In navbar, the menu item destination dropdown was not populating.| Create destination_list view that return context (destination_list) then add `'blog.views.destinations_list'` in templates section in settings.py file |
+| Post image was not rendering on post_detail page(Issue only for mobile screens). |    |
 
 
 ----
