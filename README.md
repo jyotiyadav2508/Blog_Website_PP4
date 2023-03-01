@@ -84,7 +84,7 @@ Please find my Kanban Board with my user stories [here](https://github.com/users
 
 ## Epics and User Stories
 
-Following Epics were created which were further developed into ..... User Stories.
+Following Epics were created which were further developed into 19 User Stories.
 
 ### Epic 1- Website UI
 Epic Goals for User- 
@@ -200,13 +200,18 @@ All the imagery is related to the Indian tourist destination and website design.
 
 ### Wireframes
 
-The wireframes were generated at the start of the project using Balsamiq. 
+The wireframes for this projected were generated using Balsamiq. 
+- [Wieframes for Desktop]()
+- [Wieframes for Tablet]()
+- [Wieframes for Mobile]()
 
 ----
 
 ## Database Diagram
 
-...Smart Draw/ Lucid Chart ...was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment....... are shown here.
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post, Author and Comment are shown in this diagram.
+
+![ER Diagram](assets/Database_Diagram.jpg)
 
 [Back to top ⇧](#content)
 
@@ -413,8 +418,6 @@ The admin site for comment model appears as shown [here](assets/features/admin-c
 
 The admin site for destination model appears as shown [here](assets/features/admin-destination-model.jpg).
 
-### Admin 'Author' Model Management
-
 ----
 
 ## Technologies Used
@@ -455,14 +458,14 @@ The admin site for destination model appears as shown [here](assets/features/adm
 
 ## Testing
 
-### Manual Testing
-Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. All clickable links redirect to the correct pages.
-
 ### Validation
 I used the following validation tools to validate HTML, CSS, PYTHON codes. Below the link of TESTING.md file, which includes all validation results.  
 - HTML using [W3C HTML validator](https://validator.w3.org/)
 - CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
 - Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
+
+### Manual Testing
+Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. All clickable links redirect to the correct pages.
 
 - Link for TESTING.md file:- [Testing Results Here](TESTING.md)
 
@@ -608,11 +611,9 @@ Mostly images and post content are taken from the website https://www.holidify.c
 
 ----
 
+## Acknowledgement
 
-# Acknowledgement
-
-
-
+Special thanks to my mentor Sandeep Aggarwal, My fellow student Roshna, Tutor support and Slack community for their assistance throughout this project.
 
 [Back to top](<#content>)
    

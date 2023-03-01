@@ -11,11 +11,12 @@ from .models import *
 from .forms import CommentForm, AddPostForm, UpdatePostForm
 
 
-# def index(request):
-#     """
-#     Render the about page
-#     """
-#     return render(request, 'index.html')
+class AllDestination(generic.ListView):
+    """
+    Render the all destinations type on home page
+    """
+    model = Destination
+    template_name = 'index.html'
 
 
 class AllBlogPost(generic.ListView):
@@ -26,14 +27,6 @@ class AllBlogPost(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = "blog.html"
     paginate_by = 9
-
-
-class AllDestination(generic.ListView):
-    """
-    Render the all destinations type on home page
-    """
-    model = Destination
-    template_name = 'index.html'
 
 
 class PostDetail(View):
@@ -129,7 +122,6 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.name = self.request.user
-        # form.instance.name = self.request.author
         form.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
