@@ -180,6 +180,8 @@ The tasks that I have followed during the development phase were carried out in 
 
 -----
 
+[Back to top](#content)
+
 ## Design
 
 ### Colours
@@ -377,7 +379,7 @@ On the top right corner, a search input field is provided along with a button to
 
 ----
 
-[Back to top ⇧](#contents)
+[Back to top ⇧](#content)
 
 ## Admin Panel/Superuser
 
@@ -449,11 +451,18 @@ The admin site for destination model appears as shown [here](assets/features/adm
 
 -----
 
-[Back to top ⇧](#contents)
+[Back to top ⇧](#content)
 
 ## Testing
 
+### Manual Testing
 Testing has taken place continuously throughout the development of the project. Each view was tested regularly. When the outcome was not as expected, debugging took place at that point. An exhaustive list of features were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. All clickable links redirect to the correct pages.
+
+### Validation
+I used the following validation tools to validate HTML, CSS, PYTHON codes. Below the link of TESTING.md file, which includes all validation results.  
+- HTML using [W3C HTML validator](https://validator.w3.org/)
+- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
+- Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
 
 - Link for TESTING.md file:- [Testing Results Here](TESTING.md)
 
@@ -469,7 +478,7 @@ Testing has taken place continuously throughout the development of the project. 
 
 ----
 
-[Back to top ⇧](#contents)
+[Back to top ⇧](#content)
 
 
 ## Deployment
@@ -576,7 +585,7 @@ In the IDE:
 
 ----
 
-[Back to top](<#content>)
+[Back to top](#content)
 
 # Credits
 
