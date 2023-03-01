@@ -8,7 +8,6 @@
 - [Code Validation](#code-validation)
   - [HTML Validation](#html-validation)
   - [CSS Validation](#css-validation)
-  - [JS Validation](#js-validation)
   - [PEP8 Validation](#pep8-validation)
 - [Testing](#testing)
   - [Manual Testing (BDD)](#manual-testing-bdd)
@@ -32,9 +31,13 @@
 The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website.
 All the Django templates html files hava been manually copying the source of the rendered pages and then validating using the W3C Validator.
  - Result for [home page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2F)
- - Result for [about page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fabout)
- - Result for [blog page]
- - Result for [home page]
+ - Result for [about page](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fabout)
+ - Result for [blog page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fblog)
+ - Result for [user page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fuser_page)
+ - Result for [add-post page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fadd_post)
+ - Result for [update post](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fupdate_post%2Findian-museum-kolkata%2F)
+ - Result for[delete post](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fdelete_post%2Fnational-gallery-of-modern-art%2F)
+ - Result for [edit comment](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fedit_comment%2F11)
  - Result for [search page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fsearch)
 
 
@@ -47,14 +50,11 @@ All the Django templates html files hava been manually copying the source of the
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards.
 
 ### Blog
-* [admin.py](./assets/readme/test/pep8/....)
-* [apps.py](./assets/readme/test/pep8/.....)
-* [models.py](./assets/readme/test/pep8/......)
-* [apps.py](./assets/readme/test/pep8......)
-* [forms.py](./assets/readme/test/pep8/......)
-* [signals.py](./assets/readme/test/pep8......)
-* [urls.py](./assets/readme/test/pep8......)
-* [views.py](./assets/readme/test/pep8/......)
+* [admin.py](./assets/testing/pep8-admin-py.jpg)
+* [models.py](./assets/testing/pep8-models-py.jpg)
+* [forms.py](./assets/testing/pep8-forms-py.jpg)
+* [urls.py](./assets/testing/pep8-urls-py.jpg)
+* [views.py](./assets/testing/pep8-views-py.jpg)
 
 ## Manual Testing (BDD)
 
