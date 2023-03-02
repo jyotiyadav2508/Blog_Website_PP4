@@ -201,9 +201,9 @@ All the imagery is related to the Indian tourist destination and website design.
 ### Wireframes
 
 The wireframes for this projected were generated using Balsamiq. 
-- [Wieframes for Desktop]()
-- [Wieframes for Tablet]()
-- [Wieframes for Mobile]()
+- [Wieframes for Desktop](assets/wireframes/Desktop-Wireframe.pdf)
+- [Wieframes for Tablet](assets/wireframes/Tablet-Wireframes.pdf)
+- [Wieframes for Mobile](assets/wireframes/Mobile-Wireframes.pdf)
 
 ----
 
@@ -211,7 +211,7 @@ The wireframes for this projected were generated using Balsamiq.
 
 Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post, Author and Comment are shown in this diagram.
 
-![ER Diagram](assets/Database_Diagram.jpg)
+![ER Diagram](assets/ERD/Database_Diagram.jpg)
 
 [Back to top ⇧](#content)
 
@@ -582,9 +582,10 @@ DEFAULT_FILE_STORAGE =
 
 ### 6. Final Deployment
 In the IDE:
-
-
-
+* When development is complete change the debug setting to: `DEBUG = False` in `settings.py` 
+* In Heroku settings config vars change the `DISABLE_COLLECTSTATIC` value to 0
+* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku. 
+* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
 
 ----
 

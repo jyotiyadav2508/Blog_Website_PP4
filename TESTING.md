@@ -21,7 +21,7 @@
 ![Lighthouse Mobile Result](./assets/readme/test/).
 
 #### Mobile Results:
-![Lighthouse Desktop Result](./assets/readme/test/...).
+![Lighthouse Desktop Result](./assets/readme/test/.).
 
 *Go back to the [top](#table-of-contents)*
 
@@ -30,15 +30,16 @@
 ### HTML Validation
 The [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the website.
 All the Django templates html files hava been manually copying the source of the rendered pages and then validating using the W3C Validator.
- - Result for [home page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2F)
- - Result for [about page](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fabout)
- - Result for [blog page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fblog)
- - Result for [user page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fuser_page)
- - Result for [add-post page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fadd_post)
- - Result for [update post](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fupdate_post%2Findian-museum-kolkata%2F)
- - Result for[delete post](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fdelete_post%2Fnational-gallery-of-modern-art%2F)
- - Result for [edit comment](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fedit_comment%2F11)
- - Result for [search page](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2F8000-jyotiyadav2-blogwebsite-1o1wg2vxxi1.ws-eu88.gitpod.io%2Fsearch)
+ - Result for [home page](./assets/testing/W3C-home-page.jpg)
+ - Result for [about page](./assets/testing/W3C-about-page.jpg)
+ - Result for [blog page](./assets/testing/W3C-blog-page.jpg)
+ - Result for [post-detail page](./assets/testing/W3C-post-detail.jpg)
+ - Result for [user page](./assets/testing/W3C-user-page.jpg)
+ - Result for [add-post page](./assets/testing/W3C-add-post.jpg)
+ - Result for [update post](./assets/testing/W3C-update-post.jpg)
+ - Result for [delete post](./assets/testing/W3C-delete-post.jpg)
+ - Result for [edit comment](./assets/testing/W3C-edit-comment.jpg)
+ - Result for [search page](./assets/testing/W3C-search-page.jpg)
 
 
 ### CSS Validation 
