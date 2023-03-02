@@ -1,7 +1,9 @@
 # Incredible India - Introduction
 
-This is my Portfolio Project 4, which is a Full Stack website built using the Django framework for Code Institute Full-stack development diploma.
-> Incredible India is a blog website which targets **tourist destinations** of India, where user can view the blog post of tourist destinations. The user can view the detailed blog post and read comments. Also when the user is logged in, they can like/unlike a post and comment on a post. They can also share their blog post by adding a post on the user page.
+** Incredible India** blog website is developed using Django Framework as part of Portfolio Project 4 for my Diploma in Full Stack Software Development at Code Institute.
+
+> It targets **tourist destinations** of India, where user can view the blog post of tourist destinations.
+The user can view the blog post and comments. When the user is logged in, user can like/unlike a post, comment on a post and add a post from the user page.
 
 You can view the live site here -
 
@@ -65,10 +67,10 @@ You can view the live site here -
 ## Site Aims
 
 * Incredible India is a website mainly meant to explore the Indian tourist destinattions with a good user experience.
-* The site aims is to provide users with a visually pleasing and informative website that is intuitive to use and easy to navigate.
+* The site aims to provide user with a visually pleasing and informative website that is intuitive to use and easy to navigate.
 * This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
 * All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
-* Author can access all the features of the website and can read, create, edit, and delete their posts.
+* ...Author can access all the features of the website and can read, create, edit, and delete their own posts.
 
 ## Agile Methodology
 
