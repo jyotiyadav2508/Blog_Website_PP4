@@ -5,8 +5,6 @@ This is my Portfolio Project 4, which is a Full Stack website built using the Dj
 
 You can view the live site here -
 
-![Incredible India]()
-
 ----
 
 ## [Content](#content)
