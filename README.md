@@ -70,7 +70,7 @@ You can view the live site here:- https://incredible-india.herokuapp.com/
 * The site aims to provide user with a visually pleasing and informative website that is intuitive to use and easy to navigate.
 * This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
 * All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
-* Author can access all the features of the website and can read, create, edit, and delete their own posts.
+* User can access all the features of the website and can read, create, edit, and delete their own posts.
 
 ## Agile Methodology
 
@@ -162,15 +162,15 @@ The tasks that I have followed during the development phase were carried out in 
 	- Set up template file features with views.py and urls.py
   - about.html (Description about incredible india)
   - blog.html (to view all blog posts)
-  - author_page.html (for author's personal collections)
+  - user_page.html (for user's personal collections)
   - post_details.html (for detailed post view)
   - destinations_post.html (to view blog post for a selected destination)
-  - add_post.html (to allow author's input for blog posts)
-  - delete_post.html (to allow author to delete his post)
+  - add_post.html (to allow user's input for blog posts)
+  - delete_post.html (to allow user to delete his post)
   - search.html (to search a blog post)
-  - update_post.html (to allow author to edit his post)
-  - author_post_list.html (to allow author to view all post, which he posted so far)
-- Install Allauth for sign in, sign up and sign out tenplates with-  pip3 install django-allauth 
+  - update_post.html (to allow user to edit his post)
+  - author_post_list.html (to allow user to view all post, which he posted so far)
+- Install Allauth for sign in, sign up and sign out templates with-  pip3 install django-allauth 
 	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
 - Intensive Manual Testing and Validation checks of each page and codes written
 - Final Deployment steps
@@ -263,6 +263,7 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 * User can access all his posts in this page which he has posted till now. Here he/she can edit or delete any of his post.
 
 ![user-post-list](assets/features/user-post-list.jpg) 
+![edit-delete-post](assets/features/edit-delete-post.jpg)
 
 * If the user hasn't posted anything before, the user will be shown that there are no posts and they can create.
 
@@ -491,7 +492,9 @@ Testing has taken place continuously throughout the development of the project. 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
 | In navbar, the menu item destination dropdown was not populating.| Create destination_list view that return context (destination_list) then add `'blog.views.destinations_list'` in templates section in settings.py file |
-| Post image was not rendering on post_detail page(Issue only for mobile screens). |    |
+| Post image was not rendering on post_detail page(Issue only for mobile screens). | Remove class 'd-none' from post_detail page |
+| Alert messages was not disappeare after setTimeOut(2000)<br><details><summary>Alert Code</summary><img src="assets/alert-js.jpg"></details> | Copy code from bootstrap alert and customize with forEach <br><details><summary>New Alert Code</summary><img src="assets/new-alert-js.jpg"></details>|
+| Destination dropdown was again not populating. | Remove script scr 'bootstrap.min.js' because there is already 'bootstrap.bundle.min.js' |
 
 
 ----
