@@ -1,11 +1,11 @@
 # Incredible India - Introduction
 
-** Incredible India** blog website is developed using Django Framework as part of Portfolio Project 4 for my Diploma in Full Stack Software Development at Code Institute.
+**Incredible India** blog website is developed using Django Framework as part of Portfolio Project 4 for my Diploma in Full Stack Software Development at Code Institute.
 
 > It targets **tourist destinations** of India, where user can view the blog post of tourist destinations.
 The user can view the blog post and comments. When the user is logged in, user can like/unlike a post, comment on a post and add a post from the user page.
 
-You can view the live site here -
+You can view the live site here:- https://incredible-india.herokuapp.com/
 
 ----
 
@@ -174,9 +174,6 @@ The tasks that I have followed during the development phase were carried out in 
 	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
 - Intensive Manual Testing and Validation checks of each page and codes written
 - Final Deployment steps
-
-**Future Tasks**
-- Automated Testing 
 
 -----
 
