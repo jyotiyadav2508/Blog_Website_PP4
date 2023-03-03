@@ -70,7 +70,7 @@ You can view the live site here:- https://incredible-india.herokuapp.com/
 * The site aims to provide user with a visually pleasing and informative website that is intuitive to use and easy to navigate.
 * This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
 * All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
-* ...Author can access all the features of the website and can read, create, edit, and delete their own posts.
+* Author can access all the features of the website and can read, create, edit, and delete their own posts.
 
 ## Agile Methodology
 
@@ -113,7 +113,7 @@ Epic Goals-
 * As a registered user, I can login and logout of the site so that I can access my content.
 * As a site user, I can view the number of likes on each post so that I can see which is the most popular or viral.
 * As a site user, I can view comments on an individual post so that I can read the conversation.
-* As a author I can create a post of tourist place so that I can share it with other.
+* As a registered user, I can create a post of tourist place so that I can share it with other.
 
 ### Epic 3- Blog Post Management
 Epic Goals-
@@ -122,8 +122,8 @@ Epic Goals-
 * Approve and publish a comment and post
 
 #### Related User Stories:
-* As a site admin/ author, I can create draft posts so that I can finish writing the content later.
-* As a site admin/ author, I can create, read, update and delete posts to manage the blog content.
+* As a site admin, I can create draft posts so that I can finish writing the content later.
+* As a site admin/author, I can create, read, update and delete posts to manage the blog content.
 * As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments.
 * As a author, I can access all my blog posts easily in one place so that I can easily track my activity on the site.
 
@@ -206,7 +206,7 @@ The wireframes for this projected were generated using Balsamiq.
 
 ## Database Diagram
 
-Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post, Author and Comment are shown in this diagram.
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities Post, Author, Destination and Comment are shown in this diagram.
 
 ![ER Diagram](assets/ERD/Database_Diagram.jpg)
 
@@ -249,9 +249,27 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 ![Navbar](assets/features/nav-hamburger.jpg)
 
 ## Navbar after loged in user
-* Once a user has signed in, user page will be available in the navbar.
+
+* If the user is logged in (username Mahi is provided as an example here), navbar will be shown with user name and logout options. On a desktop, the navigation menu will appear as shown below:
+
+![logged-in-user-Navbar](assets/features/logged-in-user-navbar.jpg) 
+
+## User Page
+
+* This page will be only visible to logged-in user. Navbar will show this page with the username on it. When the user clicks on his/her name in the navbar, the user navigates to the User page. On this user page, the user can create new posts or view his old posts list to edit and delete any of his posts.
+
+![logged-in-user-page](assets/features/logged-in-user-page.jpg) 
+
+* User can access all his posts in this page which he has posted till now. Here he/she can edit or delete any of his post.
+
+![user-post-list](assets/features/user-post-list.jpg) 
+
+* If the user hasn't posted anything before, the user will be shown that there are no posts and they can create.
+
+![no-user-post](assets/features/no-user-post.jpg) 
 
 ----
+
 ## Footer
 
 - On the website footer, users can see basic information such as my social media, copyright, and a quote about Incredible India.
