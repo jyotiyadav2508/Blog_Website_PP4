@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <br>
-<div>
+<div id="user-page">
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mt-3 text-center">
@@ -29,7 +29,6 @@
         </h4>
     </div>
     <div class="mt-4 mb-5">
-
         <a href="{% url 'user-post-list' %}" role="button" type="submit" class="btn btn-success text-white">
             View Old Post!
         </a>

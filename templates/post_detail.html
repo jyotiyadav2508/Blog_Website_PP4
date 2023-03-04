@@ -7,9 +7,8 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-sm-10 mx-auto p-2">
-                <!-- <img class="post-content-img" src="{{ post.featured_image.url }}" width="100%" alt="{{ post.title }} Image"> -->
                 <div class="d-md-block col-md-10 ">
-                    <!-- The featured image URL or an alternitive if one isnt provided -->
+                    <!-- The featured image URL or an alternative if one isnt provided -->
                     {% if "placeholder" in post.featured_image.url %}
                     <img class="card-img" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
                     {% else %}
@@ -17,7 +16,6 @@
                     {% endif %}
                     <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 </div>
-
                 <div class="content-description">
                     <h1 class="post-title">{{ post.title }}</h1>
                     <h4 class="best-time"><strong>Best Time:- </strong> <span><small>{{ post.best_time }}</small></span></h4>
@@ -41,7 +39,6 @@
                             {% endif %}
                             <span class="text-secondary"> {{ post.number_of_likes }}</span>
                         </strong>
-
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -82,8 +79,6 @@
                             <div class="row">
                                 <div class="d-flex">
                                     <a href="{% url 'edit_comment' comment.id  %}" role="button" class="btn btn-secondary btn-sm mx-2"><strong>Edit</strong> </a>
-                                    <!-- <a href="{% url 'delete_comment' comment.id  %}" role="button" class="btn btn-danger mx-2 text-light"><strong>Delete</strong></a> -->
-                                    <!-- </div> -->
                                     <button type="button" class="btn-delete btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete-comment">Delete</button>
                                     <!-- Delete comment bootstrap modal-->
                                     <div class="modal fade" id="delete-comment" tabindex="-1" aria-hidden="true">
@@ -109,8 +104,7 @@
                             {% endfor %}
                         </div>
                     </div>
-
-                    <div class=" col-md-12  card mb-4  mt-3 post-comment " style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                    <div class="col-md-12 card mb-4 mt-3 post-comment" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
                         <div class="card-body">
                             <!-- alert when comment is submitted -->
                             {% if commented %}
@@ -132,12 +126,9 @@
                             {% endif %}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 </section>
-
 {% endblock%}

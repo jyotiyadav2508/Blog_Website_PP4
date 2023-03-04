@@ -20,7 +20,6 @@
                 <div class="row">
                     <!-- if the user have added post-->
                     {% if post_list|length > 0 %}
-
                     <!-- loops through the posts have been posted by the logged in user -->
                     {% for post in post_list %}
                     <div class="col-md-10 offset-md-1 text-center my-3">
@@ -31,7 +30,7 @@
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
+                                            <h4 class="des-heading" style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 30px;">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>

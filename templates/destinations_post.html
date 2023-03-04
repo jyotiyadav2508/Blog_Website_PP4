@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section id="destination_post">
+<section id="destination-post">
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mt-4 text-center">
@@ -11,7 +11,6 @@
             </div>
         </div>
     </div>
-
     {% if destinations_post %}
     <div class="container">
         <h4 class="text-center">Have a look at all posts related to your choice: {{ des }}</h4>
@@ -28,7 +27,7 @@
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 40px;">{{ des }}</h4>
+                                            <h4 class="des-heading" style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 30px;">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>
@@ -57,10 +56,8 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-
                 {% else %}
-
-                <div class="col-md-12 mt-3 mb-5" style="height:200px;">
+                <div class="col-md-12 mt-3 mb-5 no-post-msg" style="height:200px;">
                     <h2 class="text-center">Ohh, Looks like there are no posts in this destination yet...
                     </h2>
                 </div>

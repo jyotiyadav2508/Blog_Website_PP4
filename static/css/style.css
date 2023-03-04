@@ -2,38 +2,22 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    /* font-family: Roboto, sans-serif;
-    font-weight: 400; */
+    font-family: Roboto, sans-serif;
+    /* font-weight: 400; */
 }
 
-body {
-    /* background-color: #c4a519; */
-    font-family: 'Source Sans Pro', sans-serif;
-    /* margin-bottom: 60px; */
-    /* height: 100vh; */
-
+/*-----------------------------------------------Nav bar buttons */
+#logo {
+    border-radius: 30px;
 }
 
-/* -------------------------------------------------logo */
-/* .red-o {
-    color: #E84610;
-} */
-
-/* .thin {
-    font-weight: 300;
-} */
-
-/*----------------------------------------Nav bar buttons */
-/* .navbar ul {
-    color: white;
+.navbar {
+    background-color: #033c64;
 }
 
-.navbar-brand {
-    font-family: 'Kalam', cursive;
-}
-
-.navbar-brand:hover {
-    font-weight: 600;
+.navbar ul {
+    /* color: white; */
+    font-size: large;
 }
 
 .dropdown {
@@ -43,15 +27,111 @@ body {
 .nav-link:hover {
     text-decoration: underline;
     transition: ease-in-out;
-} */
+}
 
-/*-----------------------------------------------footer*/
+/*-------------------------------------------Home page*/
+.carousel-item img {
+    height: 70vh;
+}
 
-/* #footer {
-    position: relative;
-    padding: 25px;
-    margin: 50px;
-    width: 100%;
-    z-index: 1000;
-    
-} */
+.carousel-item h2 span {
+    color: #f7e23f;
+}
+
+.carousel-item p {
+    font-size: 1.3rem;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 12, 16, 0.6);
+}
+
+#destination h2 span {
+    color: #03736d;
+}
+
+#destination .card {
+    box-shadow: 1px 1px 5px 3px rgb(245, 196, 196);
+}
+
+/*-----------------------------------------------Footer*/
+
+#footer {
+    background-color: #033c64;
+    color: antiquewhite;
+}
+
+footer a {
+    color: rgb(248, 183, 98);
+}
+
+footer p a {
+    color: rgb(248, 183, 98);
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/*-----------------------------------------------About Page*/
+#about .introduction {
+    border-bottom: 2px solid #03736d;
+}
+
+#about .introduction img {
+    height: 250px;
+}
+
+#about p,
+ul {
+    font-size: 1.2rem;
+}
+
+/*---------------------------------------------------------Blog Page*/
+#blog-page p {
+    font-size: 1.3rem;
+}
+
+#blog-page .card,
+#user-posts .card {
+    box-shadow: 1px 1px 5px 3px rgb(195, 191, 191);
+}
+
+#blog-page .des-heading,
+#destination-post .des-heading,
+#user-posts .des-heading {
+    background-color: rgba(15, 16, 16, 0.6);
+    color: #f7e23f;
+    line-height: 30px;
+}
+
+#blog-page .card-title,
+#destination-post .card-title,
+#user-posts .card-title {
+    color: black;
+    text-decoration: none;
+}
+
+/*----------------------------------------------Post and Destination*/
+#destination-post h2 span,
+#user-page h2 span,
+#user-posts h2 span {
+    color: #05a098;
+}
+
+#destination-post .card {
+    box-shadow: 1px 1px 3px 2px #b8ebeb;
+}
+
+#destination-post .no-post-msg {
+    height: 200px;
+}
+
+#post-description .post-comment {
+    box-shadow: 1px 1px 5px 3px rgb(195, 191, 191) inset;
+}
+
+#signup .container,
+#signin .container,
+#logout .container {
+    height: auto;
+    box-shadow: 20px 20px 50px 10px #cdf0ef inset;
+}
