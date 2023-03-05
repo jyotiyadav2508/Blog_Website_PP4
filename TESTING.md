@@ -18,10 +18,10 @@
 
 [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to test the performance of the website. 
 #### Desktop Results:
-![Lighthouse Mobile Result](./assets/readme/test/).
+![Lighthouse Mobile Result](./assets/testing/desktop-lighthouse.jpg).
 
 #### Mobile Results:
-![Lighthouse Desktop Result](./assets/readme/test/.).
+![Lighthouse Desktop Result](./assets/testing/mobile-lighthouse.jpg).
 
 *Go back to the [top](#table-of-contents)*
 
@@ -45,7 +45,7 @@ All the Django templates html files hava been manually copying the source of the
 ### CSS Validation 
 [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the CSS stylesheet. CSS file was tested by manually copying the CSS codes into the manual input option.
 
-- The result can be seen [here](assets/validation/.....).
+- The result can be seen [here](assets/testing/css-validator.jpg).
 
 ### PEP8 Python Linter Test
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards.
