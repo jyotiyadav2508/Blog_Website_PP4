@@ -7,7 +7,7 @@
 }
 
 /*-----------------------------------------------Nav bar buttons */
-#logo {
+#logo img {
     border-radius: 30px;
 }
 
@@ -29,7 +29,7 @@
     transition: ease-in-out;
 }
 
-/*-------------------------------------------Home page*/
+/*------------------------------------------------------Home page*/
 .carousel-item img {
     height: 70vh;
 }
@@ -44,6 +44,12 @@
 
 .carousel-caption {
     background-color: rgba(0, 12, 16, 0.6);
+}
+
+.w-100 {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
 }
 
 #destination h2 span {
@@ -151,4 +157,18 @@ ul {
 #delete-post .container {
     height: auto;
     box-shadow: 20px 20px 50px 10px #a3f4f1 inset;
+}
+
+/* Media queries for different screen size*/
+
+@media screen and (max-width:850) {
+    .carousel-item img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width:450) {
+    .carousel-item img {
+        height: 35vh;
+    }
 }
