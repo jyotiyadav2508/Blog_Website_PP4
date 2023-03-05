@@ -10,9 +10,6 @@
     <meta name="description" content="India's tourist attractions review blog. You can search or view tourist place in India and explore them">
     <meta name="keywords" content="india, incredible-india, tourism, destinations, tourist-place, Hill stations, beaches, heritage, advanture">
 
-    <!-- FAVICON -->
-    <!-- Put icon here which will be an indian map icon -->
-    <!-- <link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'images/logos/favicon-16x16.png' %}"> -->
     <!-- google fonts links-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <!-- Bootstrap links-->
@@ -21,21 +18,20 @@
     <script src="https://kit.fontawesome.com/a40a60ed20.js" crossorigin="anonymous"></script>
     <!-- CSS style sheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #033c64;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" id="logo" href="{% url 'home' %}">
-                <img src="{% static 'images/Incredible-India-Logo60.jpg' %}" alt="India map logo" class="d-inline-block align-text-top ps-3" style="border-radius: 30px;">
+                <img src="{% static 'images/Incredible-India-Logo60.jpg' %}" alt="India map logo" class="d-inline-block align-text-top ps-3">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:large">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}" aria-label="Go to the home page">Home</a>
                     </li>
@@ -103,10 +99,10 @@
 
     <!-- Footer with links to social media and link to home page -->
     <footer>
-        <div class="container-fluid" style="background-color: #033c64; color:antiquewhite ">
+        <div class="container-fluid">
             <div class="row py-3">
                 <div class="col-md-3 offset-1">
-                    <a href="{% url 'home' %}" style="color:rgb(247, 188, 110); text-decoration: none;">
+                    <a href="{% url 'home' %}">
                         <h4>Incredible India</h4>
                     </a>
                     <p class="footer-text">One of the oldest civilisations in the world. India is a home to the finest architectural heritage, rich culture, serene ghats, and spectacular landscapes.
@@ -114,8 +110,8 @@
                 </div>
                 <div class="col-md-3 offset-1">
                     <h4>My Social Media</h4>
-                    <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin" style="color:rgb(248, 183, 98); font-size:1.1rem; text-decoration: none;"><i class="fa-brands fa-linkedin me-2"></i><span> LinkedIn</span></a></p>
-                    <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my github" style="color:rgb(248, 183, 98); font-size:1.1rem; text-decoration: none;"><i class="fa-brands fa-github me-2"></i><span> GitHub</span></a> </p>
+                    <p><a href="https://www.linkedin.com/in/jyotiyadav2508/" target="_blank" rel="noopener" aria-label="Go to my linkedin"><i class="fa-brands fa-linkedin me-2"></i><span> LinkedIn</span></a></p>
+                    <p><a href="https://github.com/jyotiyadav2508" target="_blank" rel="noopener" aria-label="Go to my github"><i class="fa-brands fa-github me-2"></i><span> GitHub</span></a> </p>
                 </div>
                 <div class="col-md-4">
                     <h4>For educational purpose only!</h4>

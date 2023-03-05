@@ -1,21 +1,15 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
-
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
-
-
 <!-- Sign In page -->
 <section id="signin">
-    <!-- <div class="container mb-5 col-md-8" style="height: auto; box-shadow: 20px 20px 50px 10px #cdf0ef inset;"> -->
     <div class="container mb-5 col-md-8">
         <div class="row mt-5">
             <div class="col-md-8 mt-4 offset-md-2 text-dark">
                 <h1>{% trans "Sign In" %}</h1>
-                <p class="mt-2" style="font-size:1.3rem">{% blocktrans %}Welcome back to Incredible India blog. To leave a comment and like a post, please login first. If you have not created an account yet, then please
+                <p class="mt-2">{% blocktrans %}Welcome back to Incredible India blog. To leave a comment and like a post, please login first. If you have not created an account yet, then please
                     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
             </div>
         </div>
@@ -27,12 +21,10 @@
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
                     {% endif %}
-
                     <button class="btn btn-signup btn-lg right btn-success mt-3 mb-5" type="submit">{% trans "Sign In" %}</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
 {% endblock %}

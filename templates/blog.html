@@ -6,7 +6,7 @@
     <h2 class="text-center mt-5">Welcome to the blog page</h2>
     <div class="text-center">
         <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
-    <p class="text-center" style="font-size: 1.3rem;">India - <mark>"The Land of Diversity"</mark>. Majestic mountains, artistic temples, rip-roaring wildlife, colorful deserts and much more!<br>Have a glimpses of some Indian tourist places.</p>
+    <p class="text-center">India - <mark>"The Land of Diversity"</mark>. Majestic mountains, artistic temples, rip-roaring wildlife, colorful deserts and much more!<br>Have a glimpses of some Indian tourist places.</p>
     <div class="container">
         <hr>
         <div class="row">
@@ -14,18 +14,18 @@
                 <div class="row">
                     {% for post in post_list %}
                     <div class="col-lg-4 mb-5">
-                        <div class="card h-100" style="box-shadow: 1px 1px 5px 3px  rgb(195, 191, 191);">
+                        <div class="card h-100">
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                     <div class="image-container">
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 class="des-heading" style="background-color: rgba(15, 16, 16, 0.6); color:#f7e23f; line-height: 30px;">{{ des }}</h4>
+                                            <h4 class="des-heading">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>
-                                    <h3 class="card-title mt-2 text-center" style="color: black;">{{ post.title }}</h3>
+                                    <h3 class="card-title mt-2 text-center">{{ post.title }}</h3>
                                 </a>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item text-center"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>

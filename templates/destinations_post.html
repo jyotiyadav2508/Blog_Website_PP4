@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2 mt-4 text-center">
-                <h2>Destination: <span style="color:#05a098;">{{ des }}</span></h2>
+                <h2>Destination: <span>{{ des }}</span></h2>
                 <div>
                     <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
             </div>
@@ -20,18 +20,18 @@
                 <div class="row">
                     {% for post in destinations_post %}
                     <div class="col-lg-4 mb-5">
-                        <div class="card h-100" style="box-shadow: 1px 1px 3px 2px  #b8ebeb;">
+                        <div class="card h-100">
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                     <div class="image-container">
                                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
-                                            <h4 class="des-heading" style="background-color: rgba(0, 12, 16, 0.6); color:#f7e23f; line-height: 30px;">{{ des }}</h4>
+                                            <h4 class="des-heading">{{ des }}</h4>
                                             {% endfor %}
                                         </div>
                                     </div>
-                                    <h3 class="card-title mt-2 text-center" style="color: black;">{{ post.title }}</h3>
+                                    <h3 class="card-title mt-2 text-center">{{ post.title }}</h3>
                                 </a>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item text-center"><strong>Best Time: </strong> <span>{{ post.best_time }}</span></li>
@@ -57,7 +57,7 @@
                     {% endfor %}
                 </div>
                 {% else %}
-                <div class="col-md-12 mt-3 mb-5 no-post-msg" style="height:200px;">
+                <div class="col-md-12 mt-3 mb-5 no-post-msg">
                     <h2 class="text-center">Ohh, Looks like there are no posts in this destination yet...
                     </h2>
                 </div>

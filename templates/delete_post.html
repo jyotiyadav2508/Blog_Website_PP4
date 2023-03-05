@@ -5,7 +5,7 @@
 
 <section class="my-5 min-vh-80" id="delete-post">
     {% if user.id == post.author.id  %}
-    <div class="container" style="height: 56vh; box-shadow: 20px 20px 50px 10px #a3f4f1 inset;">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-8 mt-1 offset-md-2">
                 <form method="POST" action="{% url 'delete-post' post.slug %}">

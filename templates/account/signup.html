@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
 {% block content %}
 <!-- Sign up section -->
 <section id="signup">
@@ -10,32 +8,17 @@
         <div class="row mt-5">
             <div class="col-md-8 mt-4 offset-md-2 text-dark">
                 <h2 class="mt-2">{% trans "Sign Up" %}</h2>
-                <p class="mt-2" style="font-size:1.3rem">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                <p class="mt-2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 mt-2 offset-md-2 text-dark">
                 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}
-                    <!-- First Name: <input type="text" placeholder="Last name">
-                    Last Name: <input type="text" placeholder="Last name"> -->
                     {{ form.as_p }}
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Register as User
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Register as Author
-                        </label>
-                    </div> -->
-
                     <button class="btn right btn-md btn-success mt-2 mb-5" type="submit">{% trans "Sign Up" %} &raquo;</button>
                 </form>
             </div>
