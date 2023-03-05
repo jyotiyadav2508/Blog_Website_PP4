@@ -35,10 +35,10 @@ body {
 
 /*------------------------------------------------------------Home page*/
 .carousel-item img {
-    height: 70vh;
+    height: 32vh;
 }
 
-.carousel-item h2 span {
+.carousel-item h3 span {
     color: #f7e23f;
 }
 
@@ -49,12 +49,6 @@ body {
 .carousel-caption {
     background-color: rgba(0, 12, 16, 0.6);
 }
-
-/* .w-100 {
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-} */
 
 #destination h2 span {
     color: #03736d;
@@ -94,7 +88,7 @@ ul {
 
 /*------------------------------------------------------------Blog Page*/
 #blog-page p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 #blog-page .card,
@@ -151,9 +145,12 @@ ul {
 }
 
 #signup p,
-#signin p,
+#signin p {
+    font-size: 1.2rem;
+}
+
 #logout p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 /*-------------------------------------------------------------Search*/
@@ -165,14 +162,14 @@ ul {
 
 /* Media queries for different screen size*/
 
-@media screen and (max-width:850) {
+@media screen and (min-width:485px) {
     .carousel-item img {
         height: 60vh;
     }
 }
 
-@media screen and (max-width:450) {
+@media screen and (min-width:950px) {
     .carousel-item img {
-        height: 33vh;
+        height: 70vh;
     }
 }
