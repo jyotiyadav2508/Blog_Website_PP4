@@ -15,7 +15,7 @@
             <h2>Your post has submitted successfully. Thanks you for contributing!</h2>
             {% else %}
             <div class="form-group">
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" class="input-fields">
                     {% csrf_token %}
                     {{ form | crispy }}
                     {{ post.content | safe }}

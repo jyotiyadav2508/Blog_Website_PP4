@@ -13,7 +13,7 @@ urlpatterns = [
     # path('edit_comment/<int:pk>', views.EditComment.as_view(), name='edit_comment'),   # noqa: E501
     # path('delete_comment/<int:comment_id>', views.delete_comment, name='delete_comment'),  # noqa: E501
     # path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-    # path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),
+    path('like/<slug:slug>/', views.PostLike.as_view(), name='post_like'),
     path('update_post/<slug:slug>/', views.update_post, name='update-post'),
     path('delete_post/<slug:slug>/', views.DeletePost.as_view(), name='delete-post'),  # noqa: E501
 ]

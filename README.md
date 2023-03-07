@@ -419,20 +419,20 @@ On the top right corner, a search input field is provided along with a button to
 - When a blog post is submitted by a user, its status is set to Draft by default.
 - When the status is set to Publish on Admin Approval, the post starts appearing in the website.
 
-The admin site for post model appears as shown [here](assets/features/admin-post-model.jpg).
+The admin site for post model appears as shown [here](assets/features/admin-panel-post-model.jpg).
 
 ### Admin 'Comment' Model Management
 
 - Upon selecting the Blog "Comment" model, a list of comments on a post is displayed with the username, comment body, post title, status and created_on. Admin can select the comment and edit or delete its data.
 - When a comment is submitted by a user, it requires approval from an admin in order to publish it on the comments section.
 
-The admin site for comment model appears as shown [here](assets/features/admin-comment-model.jpg).
+The admin site for comment model appears as shown [here](assets/features/admin-panel-comment-model.jpg).
 
 ### Admin 'Destination' Model Management
 
 - On selecting the Blog "Destination" model, a list of destinations for the blog post is displayed with title, slug and excerpt fields. Only Admin can add, edit or delete any destination data.
 
-The admin site for destination model appears as shown [here](assets/features/admin-destination-model.jpg).
+The admin site for destination model appears as shown [here](assets/features/admin-panel-destination-model.jpg).
 
 ----
 

@@ -165,6 +165,15 @@ ul {
     box-shadow: 20px 20px 50px 10px #a3f4f1 inset;
 }
 
+/*--------------------------------------------------------Input Fields*/
+.input-fields input,
+.input-fields select,
+.input-fields textarea {
+    min-width: -webkit-fill-available;
+}
+
+
+
 /* Media queries for different screen size*/
 
 @media screen and (min-width:485px) {

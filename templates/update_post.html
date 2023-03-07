@@ -10,11 +10,11 @@
                 <h2 class="mt-3">Welcome <span>{{ user }}</span></h2>
                 <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
                 <h3 class="mt-2">Update your post: </h3>
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data" class="input-fields">
                     {% csrf_token %}
                     {{ form | crispy }}
-                    {{ post.content | safe }}
-                    {{ post.ideal_duration | safe }}
+                    <!-- {{ post.content | safe }} -->
+                    <!-- {{ post.ideal_duration | safe }} -->
                     <button type="submit" value="Update" class="btn btn-success my-3">Update</button>
                 </form>
             </div>
