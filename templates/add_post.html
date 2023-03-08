@@ -6,10 +6,11 @@
 {% if user.is_authenticated %}
 <div class="container-fluid p-2 bg-success text-dark bg-opacity-10" id="add-post">
     <div class="row justify-content-center">
-        <div class="col-sm-8 mt-1 offset-md-2">
-            <h2 class="mt-3">Welcome <span>{{ user }}</span></h2>
-            <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
-            <h4 class="mt-2">Share your blog post with us: </h4>
+        <div class="col-sm-10 mt-1">
+            <h2 class="mt-3 text-center">Welcome <span>{{ user }}</span></h2>
+            <div class="text-center">
+                <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
+            <h4 class="mt-2 text-center">Share your blog post with us: </h4>
             {% if submitted %}
             <!-- success alert -->
             <h2>Your post has submitted successfully. Thanks you for contributing!</h2>

@@ -15,20 +15,6 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
 
 
-# @admin.register(Comment)
-# class CommentAdmin(admin.ModelAdmin):
-#     """
-#     Add fields for comments in admin panel
-#     """
-#     list_display = ('name', 'body', 'email', 'post', 'created_on', 'approved')
-#     search_fields = ['name', 'email', 'body']
-#     list_filter = ('approved', 'created_on')
-#     actions = ['approve_comments']
-
-#     def approve_comments(self, request, queryset):
-#         queryset.update(approved=True)
-
-
 @admin.register(Destination)
 class DestinationAdmin(admin.ModelAdmin):
     """

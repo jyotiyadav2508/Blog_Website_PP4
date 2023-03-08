@@ -235,24 +235,3 @@ def search(request):
         'results': results
     })
 
-
-# class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-#     """
-#     Edit comment
-#     """
-#     model = Comment
-#     template_name = 'edit_comment.html'
-#     form_class = CommentForm
-#     success_message = "The comment updated successfully!"
-
-
-# @login_required()
-# def delete_comment(request, comment_id):
-#     """
-#     Delete comment
-#     """
-#     comment = get_object_or_404(Comment, id=comment_id)
-#     comment.delete()
-#     messages.success(request, 'Comment deleted successfully!')
-#     return HttpResponseRedirect(reverse(
-#         'post_detail', args=[comment.post.slug]))

@@ -172,6 +172,10 @@ ul {
     min-width: -webkit-fill-available;
 }
 
+.control-group label {
+    font-size: 23px;
+}
+
 
 
 /* Media queries for different screen size*/
