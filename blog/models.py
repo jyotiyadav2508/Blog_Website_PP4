@@ -59,8 +59,8 @@ class Post(models.Model):
         User, related_name="blogpost_likes", blank=True)
     comment_count = models.IntegerField(default=0)
     best_time = models.CharField(max_length=100)
-    ideal_duration = models.TextField(
-        verbose_name="Ideal trip duration (days)")
+    ideal_duration = models.CharField(
+        max_length=200, verbose_name="Ideal trip duration (days)")
     destinations = models.ManyToManyField(Destination, blank=True)
 
     class Meta:

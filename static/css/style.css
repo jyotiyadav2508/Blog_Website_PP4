@@ -172,6 +172,10 @@ ul {
     min-width: -webkit-fill-available;
 }
 
+.input-fields select option {
+    padding-left: 5px;
+}
+
 .control-group label {
     font-size: 23px;
 }

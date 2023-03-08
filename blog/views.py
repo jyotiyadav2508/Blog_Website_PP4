@@ -234,4 +234,3 @@ def search(request):
         'q': q,
         'results': results
     })
-
