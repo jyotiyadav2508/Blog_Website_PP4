@@ -25,9 +25,9 @@
                                 Author: {{ post.author }}
                                 <!-- Only users that are logged in can edit/ delete their own post -->
                                 {% if user.id == post.author.id %}
-                                <small><a href="{% url 'edit-post' post.slug %}"> Edit</a></small> |
-                                <small><a class="text-danger" href="{% url 'delete-post' post.slug %}">
-                                        Delete</a></small>
+                                <strong><a class="text-dark ms-2" href="{% url 'update-post' post.slug %}"> Edit</a></strong> |
+                                <strong><a class="text-danger" href="{% url 'delete-post' post.slug %}">
+                                        Delete</a></strong>
                                 {% endif %}
                             </p>
                         </div>

@@ -28,6 +28,7 @@ You can view the live site here:- https://incredible-india.herokuapp.com/
       - [Hero Image](#hero-image)
       - [Destination Section](#destination-section)
       - [Footer](#footer)
+    - [User Page](#user-page)
     - [About Page](#about-page)
     - [Blog Page](#blog-page)
       - [Blog Details](#blog-details)
@@ -292,7 +293,7 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 
 ----
 
-## About Us Page
+## About Page
 
 - The About Page gives, users information about the Incredible India with a brief discription of india and the travel options to reach there.
 
