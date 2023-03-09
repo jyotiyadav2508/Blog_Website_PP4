@@ -21,9 +21,9 @@
                             <a href="{% url 'post_detail' post.slug  %}">
                                 <h2 class="card-title">{{ post.title }}</h2>
                             </a>
-                            <p class="text-muted">Author: {{ post.author }}
+                            <p class="text-muted">
+                                Author: {{ post.author }}
                                 <!-- Only users that are logged in can edit/ delete their own post -->
-
                                 {% if user.id == post.author.id %}
                                 <small><a href="{% url 'edit-post' post.slug %}"> Edit</a></small> |
                                 <small><a class="text-danger" href="{% url 'delete-post' post.slug %}">
@@ -32,7 +32,6 @@
                             </p>
                         </div>
                         <p class="card-text">{{post.content|slice:":280" | safe }} <a href="{% url 'post_detail' post.slug  %}" class="hidden-link">... continue reading &rarr;</a></p>
-
                         <hr>
                         <div class="card-footer">
                             <span>{{ post.created_on}} | </span>

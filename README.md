@@ -260,10 +260,23 @@ At the very first glimpse, user can see a Navigation menu with a search button a
 
 ![logged-in-user-page](assets/features/logged-in-user-page.jpg) 
 
-* User can access all his posts in this page which he has posted till now. Here he/she can edit or delete any of his post.
+* When user clicks on the 'Add New Post' button, following form will be displayed.
+
+![Add-post](assets/features/add-post.jpg)
+
+* User can access all his posts by clicking on 'View Old Post' button. User can see the list of posts in this page which he has posted till now. Here he/she can edit or delete any of his post.
 
 ![user-post-list](assets/features/user-post-list.jpg) 
 ![edit-delete-post](assets/features/edit-delete-post.jpg)
+
+* If user want to edit his post, following update form will be displayed.
+
+![update-post](assets/features/update-post.jpg)
+
+* User can see the following message to make sure to delete his post.
+
+![delete-post](assets/features/delete-post.jpg)
+
 
 * If the user hasn't posted anything before, the user will be shown that there are no posts and they can create.
 

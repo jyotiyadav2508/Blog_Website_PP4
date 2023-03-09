@@ -58,14 +58,14 @@
         </button>
     </div>
 </section>
-
 <section class="bg-success p-3 text-dark bg-opacity-10" id="destination">
     <div class="container">
         <div class="row d-flex flex-wrap">
             <div class="col-md-12">
                 <h2 class="text-center mt-2"><span>Destinations</span> Tours In India</h2>
                 <div class="text-center">
-                    <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction"></div>
+                    <img src="{% static 'images/decorated-line.png' %}" alt="line decoraction">
+                </div>
                 <h4 class="text-center mb-4">From pilgrimage to wildlife and from adventure to leisure- View some Glimpses!</h4>
             </div>
         </div>
@@ -79,7 +79,7 @@
                         <div class="card h-100 text-center text-dark">
                             <a href="{% url 'destinations-post' destination.title %}" aria-label="Go to the destinations post page">
                                 <div class="card-header">
-                                    <h2>{{ destination.title}}</h2>
+                                    <h4>{{ destination.title}}</h4>
                                 </div>
                                 <img src="{{ destination.destination_image.url }}" class="card-img" alt=" {{ destination.title }} Image">
                             </a>
