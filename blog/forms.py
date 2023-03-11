@@ -8,20 +8,39 @@ class AddPostForm(forms.ModelForm):
     """
     Form to add a blog post
     """
+
     class Meta:
         model = Post
         fields = (
-            'title', 'author', 'destinations',
-            'content', 'featured_image', 'best_time',
-            'ideal_duration', )
+            "title",
+            "destinations",
+            "content",
+            "featured_image",
+            "best_time",
+            "ideal_duration",
+        )
 
     widgets = {
-        'title': forms.TextInput(attrs={'class': 'form-control'}),  # noqa: E501
-        'author': forms.TextInput(attrs={'class': 'form-control'}),
-        'destinations': forms.Select(attrs={'class': 'form-control'}),
-        'content': SummernoteWidget(attrs={'class': 'form-control'}),
-        'best_time': forms.TextInput(attrs={'class': 'form-control'}),
-        'ideal_duration': forms.TextInput(attrs={'class': 'form-control'}),
+        "title": forms.TextInput(attrs={"class": "form-control"}),
+        "destinations": forms.Select(attrs={"class": "form-control"}),
+        "content": SummernoteWidget(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Add your content here",
+            }
+        ),
+        "best_time": forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Which season or months",
+            }
+        ),
+        "ideal_duration": forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Ideal trip duration(days/week)",
+            }
+        ),
     }
 
 
@@ -29,18 +48,22 @@ class UpdatePostForm(forms.ModelForm):
     """
     Form to edit a blog post
     """
+
     class Meta:
         model = Post
         fields = (
-            'title', 'author', 'destinations',
-            'content', 'featured_image', 'best_time',
-            'ideal_duration', )
+            "title",
+            "destinations",
+            "content",
+            "featured_image",
+            "best_time",
+            "ideal_duration",
+        )
 
     widgets = {
-        'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'}),  # noqa: E501
-        'author': forms.TextInput(attrs={'class': 'form-control'}),
-        'destinations': forms.Select(attrs={'class': 'form-control'}),
-        'content': SummernoteWidget(attrs={'class': 'form-control'}),
-        'best_time': forms.TextInput(attrs={'class': 'form-control'}),
-        'ideal_duration': forms.TextInput(attrs={'class': 'form-control'}),
-    }
+        "title": forms.TextInput(attrs={"class": "form-control"}),
+        "destinations": forms.Select(attrs={"class": "form-control"}),
+        "content": SummernoteWidget(attrs={"class": "form-control"}),
+        "best_time": forms.TextInput(attrs={"class": "form-control"}),
+        "ideal_duration": forms.TextInput(attrs={"class": "form-control"}),
+        }
