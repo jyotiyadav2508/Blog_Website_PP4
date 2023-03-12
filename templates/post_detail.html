@@ -61,6 +61,10 @@
                     <div class=" col-md-12 card mb-4 mt-3 pt-3 post-comment">
                         <h3>Comments: </h3>
                         <div class="card-body">
+                            {% if not comments %}
+                            <h4>No comments yet...<a href="{% url 'add_comment' post.pk %}">Add One</a></h4>
+                            {% else %}
+                            <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
                             <!-- for loop to iterate through each comment in comments -->
                             {% for comment in comments %}
                             <div class="comments" style="padding: 10px;">
@@ -100,11 +104,11 @@
                             <hr class="hr-small">
                             {% endif %}
                             {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
-                    <div class="col-md-12 card mb-4 mt-3 post-comment">
+                    <!-- <div class="col-md-12 card mb-4 mt-3 post-comment">
                         <div class="card-body">
-                            <!-- alert when comment is submitted -->
                             {% if commented %}
                             <div class="alert alert-sucess" role="alert">
                                 Thanks {{ user.username}}. Your comment is awaiting approval!
@@ -123,7 +127,7 @@
                             {% endif %}
                             {% endif %}
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
