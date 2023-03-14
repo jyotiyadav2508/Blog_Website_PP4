@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
 from .forms import AddPostForm, UpdatePostForm
 from comment.forms import CommentForm
-# from comment.views import PostDetail
+from comment.models import Comment
 
 
 class AllDestination(generic.ListView):
@@ -33,29 +33,36 @@ class AllBlogPost(generic.ListView):
     paginate_by = 9
 
 
-class PostDetail(View):
-    """
-    Render the Post details page of the selected post with approved comments
-    """
+def postDetail(request, slug):
+    queryset = Post.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    comments = Comment.objects.filter(post=post)
+    context = {'post': post, 'comments': comments, 'user': request.user, 'comment_form': CommentForm()}
+    return render(request, "post_detail.html", context)
 
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm(),
-            },
-        )
+
+# class PostDetail(View):
+#     """
+#     Render the Post details page of the selected post with approved comments
+#     """
+#     def get(self, request, slug, *args, **kwargs):
+#         queryset = Post.objects.filter(status=1)
+#         post = get_object_or_404(queryset, slug=slug)
+#         comments = post.comments.filter(approved=True).order_by("created_on")
+#         liked = False
+#         if post.likes.filter(id=self.request.user.id).exists():
+#             liked = True
+#         return render(
+#             request,
+#             "post_detail.html",
+#             {
+#                 "post": post,
+#                 "comments": comments,
+#                 "commented": False,
+#                 "liked": liked,
+#                 "comment_form": CommentForm(),
+#             },
+#         )
 
     # def post(self, request, slug, *args, **kwargs):
     #     """
@@ -202,7 +209,6 @@ class User(LoginRequiredMixin, generic.ListView):
     """
     Render the user page
     """
-
     model = Post
     template_name = "user_page.html"
 

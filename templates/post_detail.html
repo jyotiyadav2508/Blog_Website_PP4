@@ -62,9 +62,8 @@
                         <h3>Comments: </h3>
                         <div class="card-body">
                             {% if not comments %}
-                            <h4>No comments yet...<a href="{% url 'add_comment' post.pk %}">Add One</a></h4>
+                            <h4>No comments yet...</h4>
                             {% else %}
-                            <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
                             <!-- for loop to iterate through each comment in comments -->
                             {% for comment in comments %}
                             <div class="comments" style="padding: 10px;">
@@ -107,7 +106,7 @@
                             {% endif %}
                         </div>
                     </div>
-                    <!-- <div class="col-md-12 card mb-4 mt-3 post-comment">
+                    <div class="col-md-12 card mb-4 mt-3 post-comment">
                         <div class="card-body">
                             {% if commented %}
                             <div class="alert alert-sucess" role="alert">
@@ -117,17 +116,17 @@
                             {% if user.is_authenticated %}
                             <h3>Leave a comment: </h3>
                             <p>Posting as: {{ user.username }}</p>
-                            <form method="post" style="margin-top: 1.2em;">
+                            <form method="post" action="{% url 'add_comment' post_id %}" style="margin-top: 1.2em;">
                                 {{ comment_form | crispy }}
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-signup btn-success mt-2">Submit</button>
                             </form>
                             {% else %}
-                            <h4>To like and comment a post, please <a href="{% url 'account_signup' %}">sign up</a> first.</h4>
+                            <h4>To like and comment a post, please <a href="{% url 'account_signup' %}">Sign up</a> or <a href="{% url 'account_login' %}">Sign in</a> first.</h4>
                             {% endif %}
                             {% endif %}
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>

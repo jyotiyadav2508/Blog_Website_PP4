@@ -1,11 +1,11 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from blog.models import *
+from blog.views import *
 
 
-class TestModels(TestCase):
+class TestViews(TestCase):
     """
-    Class to test the blog models
+    Class to test the blog views
     """
     def setUp(self):
         self.test_user = User.objects.create(
