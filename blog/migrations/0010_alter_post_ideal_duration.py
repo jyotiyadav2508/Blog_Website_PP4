@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0009_delete_comment'),
+        ("blog", "0009_delete_comment"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='post',
-            name='ideal_duration',
-            field=models.CharField(max_length=200, verbose_name='Ideal trip duration (days)'),
+            model_name="post",
+            name="ideal_duration",
+            field=models.CharField(
+                max_length=200, verbose_name="Ideal trip duration (days)"
+            ),
         ),
     ]

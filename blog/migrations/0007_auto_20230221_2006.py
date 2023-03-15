@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0006_auto_20230218_2055'),
+        ("blog", "0006_auto_20230218_2055"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='author',
-            name='approved',
+            model_name="author",
+            name="approved",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='author',
-            name='email',
+            model_name="author",
+            name="email",
             field=models.EmailField(default=False, max_length=254),
         ),
     ]

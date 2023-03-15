@@ -116,10 +116,11 @@
                             {% if user.is_authenticated %}
                             <h3>Leave a comment: </h3>
                             <p>Posting as: {{ user.username }}</p>
-                            <form method="post" action="{% url 'add_comment' post_id %}" style="margin-top: 1.2em;">
+
+                            <form method="post" action="{% url 'add_comment' post.id %}" style="margin-top: 1.2em;">
                                 {{ comment_form | crispy }}
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-signup btn-success mt-2">Submit</button>
+                                <button type=" submit" class="btn btn-signup btn-success mt-2">Submit</button>
                             </form>
                             {% else %}
                             <h4>To like and comment a post, please <a href="{% url 'account_signup' %}">Sign up</a> or <a href="{% url 'account_login' %}">Sign in</a> first.</h4>

@@ -14,9 +14,11 @@ class Comment(models.Model):
     """
     Model for comment
     """
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
-    name = models. CharField(max_length=80)
+
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments"
+    )
+    name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -26,6 +28,7 @@ class Comment(models.Model):
         """
         To order the comments on the created_on field in the ascending order
         """
+
         ordering = ["created_on"]
 
     def __str__(self):
@@ -33,4 +36,4 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         """Sets absolute URL"""
-        return reverse('post_detail', args=[self.post.slug])
+        return reverse("post_detail", args=[self.post.slug])

@@ -66,4 +66,4 @@ class UpdatePostForm(forms.ModelForm):
         "content": SummernoteWidget(attrs={"class": "form-control"}),
         "best_time": forms.TextInput(attrs={"class": "form-control"}),
         "ideal_duration": forms.TextInput(attrs={"class": "form-control"}),
-        }
+    }

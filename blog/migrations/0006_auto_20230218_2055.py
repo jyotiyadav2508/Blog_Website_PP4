@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0005_auto_20230214_1135'),
+        ("blog", "0005_auto_20230214_1135"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='destination',
-            name='excerpt',
+            model_name="destination",
+            name="excerpt",
             field=models.TextField(blank=True),
         ),
         migrations.AddField(
-            model_name='post',
-            name='excerpt',
+            model_name="post",
+            name="excerpt",
             field=models.TextField(blank=True),
         ),
     ]

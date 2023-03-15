@@ -4,23 +4,25 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0003_alter_post_destinations'),
+        ("blog", "0003_alter_post_destinations"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='destination',
-            options={'verbose_name': 'Destination', 'verbose_name_plural': 'Destinations'},
+            name="destination",
+            options={
+                "verbose_name": "Destination",
+                "verbose_name_plural": "Destinations",
+            },
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='excerpt',
+            model_name="post",
+            name="excerpt",
         ),
         migrations.AlterField(
-            model_name='post',
-            name='ideal_duration',
-            field=models.TextField(verbose_name='Ideal trip duration (days)'),
+            model_name="post",
+            name="ideal_duration",
+            field=models.TextField(verbose_name="Ideal trip duration (days)"),
         ),
     ]
