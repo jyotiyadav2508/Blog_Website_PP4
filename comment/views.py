@@ -1,14 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
-from django.views import generic, View
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
 from .forms import CommentForm
-from blog.views import PostLike
 
 
 def add_comment(request, post_id):
@@ -23,7 +21,6 @@ def add_comment(request, post_id):
         messages.success(
             request, "Comment added successfully!"
         )
-        
         return redirect(reverse("post_detail", args=(post.slug,)))
     else:
         comment_form = CommentForm()

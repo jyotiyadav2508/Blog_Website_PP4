@@ -176,7 +176,7 @@ def update_post(request, slug):
                 post.status = 1
                 form.save()
                 messages.success(request, "Your post updated successfully!")
-                return redirect(reverse("user-page"))
+                return redirect(reverse("user-page", args=(post.slug,)))
             else:
                 messages.error(request, "Failed to update the post.")
         else:
