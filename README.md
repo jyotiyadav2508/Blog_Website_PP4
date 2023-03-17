@@ -120,12 +120,12 @@ Epic Goals-
 Epic Goals-
 * Create/ Update / Read / Delete blog posts.
 * View their created blog posts
-* Approve and publish a comment and post
+* Approve and publish a post
 
 #### Related User Stories:
 * As a site admin, I can create draft posts so that I can finish writing the content later.
 * As a site admin/author, I can create, read, update and delete posts to manage the blog content.
-* As a site admin, I can approve or disapprove comments so that I can filter out objectionable comments.
+* As a site admin, I can delete any comment so that I can filter out objectionable comments.
 * As a author, I can access all my blog posts easily in one place so that I can easily track my activity on the site.
 
 ### Epic 4- Comments and Like Management
@@ -327,7 +327,6 @@ This page enlists all the blog posts added so far to the website. The blog posts
 - When User submit a comment or like/unlike a post, following messages/ alert displays respectively.
 
 ![Comment-alert](assets/features/comment-alert.jpg)
-![Comment-approval-msg](assets/features/comment-approval.jpg)
 ![Like post alert](assets/features/like-alert.jpg)
 ![Unlike-post-alert](assets/features/unlike-alert.jpg)
 

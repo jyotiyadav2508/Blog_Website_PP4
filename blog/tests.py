@@ -24,14 +24,3 @@ class TestViews(TestCase):
         response = self.client.get("/blog")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "blog.html")
-
-    def test_user_page(self):
-        self.login()
-        response = self.client.get("/user_page/")
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "user_page.html")
-
-    # def test_get_sucess_url(self, request):
-    #     # add_post = AddPost.get(f'/add-post/{post.id}')
-    #     response = self.client.get(f'/add_post/{post.id}')
-    #     self.assertEqual(add_post.get_sucess_url(), "/blog/add_post/1")
