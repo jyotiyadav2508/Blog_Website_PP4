@@ -8,11 +8,7 @@ class CommentAdmin(admin.ModelAdmin):
     """
     Add fields for comments in admin panel
     """
-
-    list_display = ("name", "body", "email", "post", "created_on", "approved")
+    list_display = ("name", "body", "email", "post", "created_on")
     search_fields = ["name", "email", "body"]
-    list_filter = ("approved", "created_on")
-    actions = ["approve_comments"]
+    list_filter = ("created_on",)
 
-    def approve_comments(self, request, queryset):
-        queryset.update(approved=True)

@@ -31,7 +31,6 @@ class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Edit comment
     """
-
     model = Comment
     template_name = "edit_comment.html"
     form_class = CommentForm

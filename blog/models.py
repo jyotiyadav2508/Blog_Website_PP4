@@ -13,7 +13,6 @@ class Destination(models.Model):
     """
     Model for destination place
     """
-
     title = models.CharField(max_length=100, blank=True)
     destination_image = CloudinaryField("image", default="placeholder")
     slug = models.SlugField(max_length=100, unique=True, default="", null=True)
@@ -31,7 +30,6 @@ class Author(models.Model):
     """
     Model for Author
     """
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(default="", unique=True)
