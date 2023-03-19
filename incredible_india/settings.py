@@ -113,13 +113,13 @@ WSGI_APPLICATION = "incredible_india.wsgi.application"
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 # Override database when running unit tests.
-# if "UNITTEST" in os.environ:
-#     DATABASES = {
-#         "default": {
-#             "ENGINE": "django.db.backends.sqlite3",
-#             "NAME": BASE_DIR / "db.sqlite3",
-#         }
-#     }
+if "UNITTEST" in os.environ:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
