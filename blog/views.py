@@ -94,7 +94,8 @@ class UserPostList(LoginRequiredMixin, generic.ListView):
     template_name = "user_post_list.html"
 
     def get_queryset(self, *args, **kwargs):
-        return Post.objects.filter(author=self.request.user, status=1).order_by(
+        return Post.objects.filter(
+            author=self.request.user, status=1).order_by(
             "-created_on"
         )
 

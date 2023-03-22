@@ -7,6 +7,9 @@ The user can view the blog post and comments. When the user is logged in, user c
 
 You can view the live site here:- https://incredible-india.herokuapp.com/
 
+
+![mockup](assets/mockup.jpg)
+
 ----
 
 ## [Content](#content)
@@ -508,6 +511,7 @@ Testing has taken place continuously throughout the development of the project. 
 | Post image was not rendering on post_detail page(Issue only for mobile screens). | Remove class 'd-none' from post_detail page |
 | Alert messages was not disappeare after setTimeOut(2000)<br><details><summary>Alert Code</summary><img src="assets/alert-js.jpg"></details> | Copy code from bootstrap alert and customize with forEach <br><details><summary>New Alert Code</summary><img src="assets/new-alert-js.jpg"></details>|
 | Destination dropdown was again not populating. | Remove script scr 'bootstrap.min.js' because there is already 'bootstrap.bundle.min.js' |
+| Automated test was not working because of postgres database | Connect with local db.sqlite3 while running unit test |
 
 
 ----

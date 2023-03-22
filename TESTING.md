@@ -11,6 +11,8 @@
   - [PEP8 Validation](#pep8-validation)
 - [Testing](#testing)
   - [Manual Testing (BDD)](#manual-testing-bdd)
+  - [Automated Testing](#automated-testing)
+  - [Features Testing](#features-testing)
 
 ## Performance
 
@@ -79,3 +81,115 @@ As a site admin <br>I can approve or disapprove comments<br>so that I can filter
 As a site admin<br>I want to be able to create/edit/update/delete a post <br>	so that I can maintain the site and remove any offensive content. | Given that I'm a site admin<br>When I navigate to the admin panel<br>Then I need to be able to control all the content on the website.| :white_check_mark:
 As a site admin<br>I want to be able to direct users to my social profiles<br> So that I can increase social interaction and attract new users. | Given that I'm a site admin<br>When I view/scroll down to the footer<br>Then I should see working links to my social media. | :white_check_mark:
 As a site admin<br>I want to be able to ensure that all areas of the site to function correctly and have no bugs<br> so that I can ensure an enjoyable browsing experience for all users. | Given that I'm a site admin<br>When I check all site functionality<br>Then I should see that everything works as expected, there are no bugs and all links and forms work as expected | :white_check_mark:
+
+## Automated Testing
+
+I have performed some basic automated tests on the forms, urls and models. The tests passed as shown below.
+
+![Automated Tests Result](./assets/testing/automatic-test-result.jpg).
+
+## Features Testing
+
+In addition to the other tests, I have conducted a manual check list for different features of website to make sure that everything is working as intended.
+
+| Status | **Navigation Bar - User Logged Out**
+|:-------:|:--------|
+| &check; | Clicking the navbar logo loads the home page
+| &check; | Navbar shows the nav links for Home, About, Blog, Register, Login, Destination and search field, search button if the user is logged out
+| &check; | Clicking the Home tab on the navbar loads the home page
+| &check; | Clicking the About tab on the navbar loads the about page
+| &check; | Clicking the Blog tab on the navbar loads the blog page
+| &check; | Clicking the Login tab on the navbar loads the login Page
+| &check; | Clicking the Register tab on the navbar loads the register page
+| &check; | Clicking the Destination tab on the navbar loads the destination page
+| &check; | Clicking the Search button on the navbar loads the search page
+
+
+| Status | **Navigation Bar - User Logged In**
+|:-------:|:--------|
+| &check; | Clicking on navbar logo, Home, About, Blog, Destination, Search loads the relevant page as described above for user logged out
+| &check; | Navbar shows the tabs Home, About, Blog, Logout, UserName(for example: Mahi), Destination and search field, search button if the user is logged in
+| &check; | The navbar shows the username of the logged in user and clicking on that username tab loads the user page
+| &check; | Clicking the Logout tab on the navbar loads the logout page
+
+
+| Status | **Footer - User Logged Out/In**
+|:-------:|:--------|
+| &check; | Clicking the heading 'Incredible India' loads the home page
+| &check; | Clicking the LinkedIn/icon loads the my LinkedIn in a new tab
+| &check; | Clicking the Github/icon loads the my GitHub in a new tab
+
+
+| Status | **Destination Dropdown**
+|:-------:|:--------|
+| &check; | Clicking on the Destination tab shows a dropdown list which further shows the selected destination post
+
+
+| Status | **Home Page**
+|:-------:|:--------|
+| &check; | User can see the carousel images on first view
+| &check; | The Destination section navigates to the blog post of the selected destination type
+
+
+| Status | **Blog Page**
+|:-------:|:--------|
+| &check; | Shows the blog posts paginated by 9 posts and the prev/next button works as expected
+| &check; | Clicking on the post image and title loads the post detail page.
+
+
+| Status | **Post Detail Page**
+|:-------:|:--------|
+| &check; | Shows the full content of the post
+| &check; | Shows a list of comments posted so far, if any
+| &check; | Comment box is visible with Sign Up and Sign In link 
+
+
+| Status | **Post Detail Page - User logged in**
+|:-------:|:--------|
+| &check; | Shows the full content of the post
+| &check; | Like icon works only when the user is logged in
+| &check; | Shows a list of comments posted so far, if any 
+| &check; | Comment box is visible with comment body and submit button 
+| &check; | Submitted comment displays in comment list
+| &check; | User can edit/delete his own comment
+
+
+| Status | **Edit comment - User logged in**
+|:-------:|:--------|
+| &check; | That the user can see the comment body input field is already prepoulated with the content as it currently is
+| &check; | Clicking Update button, updates the comment content
+| &check; | That an alert message informs the user that their comment has been updated successfully
+
+
+| Status | **Delete Comment - User Logged In**
+|:-------:|:--------|
+| &check; | That the user can see a modal to make sure to delete the comment
+| &check; | Clicking the Close button fade the modal
+| &check; | Clicking the Delete button inform the user that the comment deleted successfully
+
+
+| Status | **Add a Post - User Logged In**
+|:-------:|:--------|
+| &check; | That the Title input field is required
+| &check; | That the Content field is required
+| &check; | That the Best Time field is required
+| &check; | That the Ideal Duration field is required
+| &check; | That the form cannot be submitted without all the required fields and user feedback is given if a user forgets a required field
+| &check; | That when the form is submitted a post slug is automatically created from the title and post author input fields in the form
+| &check; | That when the post is added, the user is redirected back to the 'User page and a message alert informs the user that they successfully added a post
+
+
+| Status | **Edit Post - User Logged In**
+|:-------:|:--------|
+| &check; | That the user can see the post input field is already prepoulated with the content as it currently is
+| &check; | Clicking Update button, updates the post content
+| &check; | That an alert message informs the user that their post has been updated successfully
+
+
+| Status | **Delete Post - User Logged In**
+|:-------:|:--------|
+| &check; | That the user can see the user name and the message with post title that they would like to delete their post
+| &check; | Clicking the Delete button redirects back to the User page
+| &check; | That an alert message informs the user that they successfully deleted their post
+| &check; | That the post is completely deleted and doesnt show up in the database or subsequently any place on the website
+
