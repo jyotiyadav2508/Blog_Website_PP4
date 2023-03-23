@@ -80,7 +80,7 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return reverse("user-page")
 
     def form_valid(self, form):
-        form.instance.name = self.request.user
+        form.instance.author = self.request.user
         form.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
@@ -116,7 +116,7 @@ def update_post(request, slug):
                 post.status = 1
                 form.save()
                 messages.success(request, "Your post updated successfully!")
-                return redirect(reverse("user-page", args=(post.slug,)))
+                return redirect(reverse("user-post-list"))
             else:
                 messages.error(request, "Failed to update the post.")
         else:
@@ -140,6 +140,13 @@ class DeletePost(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.warning(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """
+        Set the reverse url for the successful delete
+        of the post to the database
+        """
+        return reverse("user-post-list")
 
 
 def about(request):

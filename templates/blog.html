@@ -19,7 +19,11 @@
                             <div class="card-body">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Go to the post detail page">
                                     <div class="image-container">
-                                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                                        {% if "placeholder" in post.featured_image.url %}
+                                        <img class="card-img" src="{% static 'images/incredible-india-bg.webp' %}" width="100%">
+                                        {% else %}
+                                        <img src=" {{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }} image">
+                                        {% endif %}
                                         <div class="card-img-overlay text-center">
                                             {% for des in post.destinations.all %}
                                             <h4 class="des-heading">{{ des }}</h4>

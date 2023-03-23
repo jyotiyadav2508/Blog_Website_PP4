@@ -10,7 +10,7 @@
                 <div class="d-md-block col-md-10 ">
                     <!-- The featured image URL or an alternative if one isnt provided -->
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img" src="{% static 'images/default-pic.jpg' %}" width="100%">
+                    <img class="card-img" src="{% static 'images/incredible-india-bg.webp' %}" width="100%">
                     {% else %}
                     <img src=" {{ post.featured_image.url }}" class="card-img-top" alt="{{ post.title }} image">
                     {% endif %}

@@ -22,6 +22,12 @@ class AddPostForm(forms.ModelForm):
 
     widgets = {
         "title": forms.TextInput(attrs={"class": "form-control"}),
+        "author": forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "type": "hidden"
+            }
+        ),
         "destinations": forms.Select(attrs={"class": "form-control"}),
         "content": SummernoteWidget(
             attrs={
