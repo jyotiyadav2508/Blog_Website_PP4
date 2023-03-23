@@ -73,7 +73,7 @@ You can view the live site here:- https://incredible-india.herokuapp.com/
 * Incredible India is a website mainly meant to explore the Indian tourist destinattions with a good user experience.
 * The site aims to provide user with a visually pleasing and informative website that is intuitive to use and easy to navigate.
 * This website provides the user with the ability to read and view posts, as well as tools that allow users to search for a particular destination posts.
-* All users who sign up and sign in, can access the features of like/unlike and comment on a blog post of this website.
+* All users who sign up and sign in, can access the features of add post, like/unlike and comment on a blog post of this website.
 * User can access all the features of the website and can read, create, edit, and delete their own posts.
 
 ## Agile Methodology
@@ -520,6 +520,10 @@ Testing has taken place continuously throughout the development of the project. 
 | Automated test was not working because of postgres database | Connect with local db.sqlite3 while running unit test |
 
 
+| **Unfix Bug** |
+| ----------- | 
+| When the logged in user add a new post, the post slug should be automatically created from the post title. But in database the slug field is empty. Below is the screenshot from the post model in admin panel and view for Add Post.<br><details><summary>Empty slug screenshot</summary><img src="assets/empty-slug.jpg"></details><details><summary>Add Post View</summary><img src="assets/addPostView.jpg"></details> 
+
 ----
 
 [Back to top ⇧](#content)
@@ -635,7 +639,7 @@ In the IDE:
 # Credits
 
 ## Code
-- The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project "I Think Therefore I Blog".
+- The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project `"I Think Therefore I Blog"`.
 - Followed the project of one of my friend who is also a CI student (Roshana Vakeel): https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/blob/main/logs/forms.py 
 - Another project link I found from Linkdin, also CI's student (Laura Mayock): https://github.com/LauraMayock/The-happy-reader
 - [The Newsbox](https://github.com/rashdogg74/newsbox86)- One of the project shared by my cohort facilitator on Slack. 
@@ -646,6 +650,7 @@ In the IDE:
 - [W3CSchool](https://www.w3schools.com/django/)
 - [Django Documentation](https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types)(For different quaries while doing project. For example query about models, fields, form widgets, auth and many more)
 - Other open source to understand and solve following types of error : UnboundedLocalError, MultivalueDictKeyError,  ProgrammingError, InvalidCursorName etc.
+- Youtube videos [The Dumbfounds](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) for automated testing.
 
 ## Content and Media
 

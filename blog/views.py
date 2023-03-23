@@ -66,7 +66,6 @@ class AddPost(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     Add a blog post only when user is logged in
     """
-
     model = Post
     form_class = AddPostForm
     template_name = "add_post.html"
