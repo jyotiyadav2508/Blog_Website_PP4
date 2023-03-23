@@ -198,6 +198,6 @@ def search(request):
             Q(title__icontains=q) | Q(content__icontains=q)
         ).filter(
             status=1
-        )  # noqa: E501
+        )
 
     return render(request, "search.html", {"q": q, "results": results})

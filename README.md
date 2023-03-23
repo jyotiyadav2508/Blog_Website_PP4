@@ -526,6 +526,11 @@ Testing has taken place continuously throughout the development of the project. 
 
 ----
 
+| **Future Implementation** |
+| ----------- | 
+| Automated testing for views functions |
+| Adding and displaying replies below corresponding comments on our blog |
+
 [Back to top ⇧](#content)
 
 
