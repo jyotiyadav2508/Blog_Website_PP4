@@ -149,9 +149,9 @@ In addition to the other tests, I have conducted a manual check list for differe
 | &check; | Shows the full content of the post
 | &check; | Like icon works only when the user is logged in
 | &check; | Shows a list of comments posted so far, if any 
-| &check; | Comment box is visible with comment body and submit button 
+| &check; | Comment box is visible with comment body input field and submit button 
 | &check; | Submitted comment displays in comment list
-| &check; | User can edit/delete his own comment
+| &check; | Edit/delete buttons are visible only for user's own comment
 
 
 | Status | **Edit comment - User logged in**
@@ -175,8 +175,9 @@ In addition to the other tests, I have conducted a manual check list for differe
 | &check; | That the Best Time field is required
 | &check; | That the Ideal Duration field is required
 | &check; | That the form cannot be submitted without all the required fields and user feedback is given if a user forgets a required field
-| &check; | That when the form is submitted a post slug is automatically created from the title and post author input fields in the form
-| &check; | That when the post is added, the user is redirected back to the 'User page and a message alert informs the user that they successfully added a post
+| &cross; | That when the form is submitted a post slug is automatically created from the title<br><details><summary>Empty slug screenshot</summary><img src="assets/empty-slug.jpg"></details> 
+| &check; | That when the form is submitted a post author field is automatically created
+| &check; | That when the post is added, the user is redirected back to the 'User page' and a message alert informs the user that the post added successfully
 
 
 | Status | **Edit Post - User Logged In**
@@ -189,7 +190,7 @@ In addition to the other tests, I have conducted a manual check list for differe
 | Status | **Delete Post - User Logged In**
 |:-------:|:--------|
 | &check; | That the user can see the user name and the message with post title that they would like to delete their post
-| &check; | Clicking the Delete button redirects back to the User page
+| &check; | Clicking the Delete button redirects back to the User post list page
 | &check; | That an alert message informs the user that they successfully deleted their post
 | &check; | That the post is completely deleted and doesnt show up in the database or subsequently any place on the website
 
