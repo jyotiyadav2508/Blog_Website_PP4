@@ -52,7 +52,7 @@ You can view the live site here:- https://incredible-india.herokuapp.com/
       - [Manual Testing](#manual-testing)
   - [Bugs](#bugs)
       - [Fixed Bugs](#fixed-bugs)
-      - [Unfix Bugs](#fixed-bugs)
+      - [Unfix Bugs](#unfix-bugs)
   - [Deployment](#deployment)
       - [Creating the Django project](#creating-the-django-project)
       - [Creating Heroku app](#creating-heroku-app)
@@ -168,12 +168,13 @@ The tasks that I have followed during the development phase were carried out in 
   - blog.html (to view all blog posts)
   - user_page.html (for user's personal collections)
   - post_details.html (for detailed post view)
+  - edit_comment.html (to update the comment)
   - destinations_post.html (to view blog post for a selected destination)
   - add_post.html (to allow user's input for blog posts)
   - delete_post.html (to allow user to delete his post)
   - search.html (to search a blog post)
   - update_post.html (to allow user to edit his post)
-  - author_post_list.html (to allow user to view all post, which he posted so far)
+  - user_post_list.html (to allow user to view all post, which he posted so far)
 - Install Allauth for sign in, sign up and sign out templates with-  pip3 install django-allauth 
 	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
 - Intensive Manual Testing and Validation checks of each page and codes written
@@ -383,6 +384,7 @@ In order to properly interact with the website, the user needs to have an accoun
 ![Sign Up alert](assets/features/user-registration-alert.jpg)
 
 ### Sign In
+
 - User can enter username and password to sign in. User will be guided by validation messages if the username or password is not correct. This was created by modifying Django inbuilt templates.
 
 ![Sign In page](assets/features/user-login-page.jpg)
@@ -392,6 +394,7 @@ In order to properly interact with the website, the user needs to have an accoun
 ![Sign In alert](assets/features/signed-in-alert.jpg)
 
 ### Sign Out
+
 - If the user is signed-in, then only they can see Logout nav-item in navbar. User will be taken to the Sign Out page. This was created by modifying Django inbuilt templates. When the user signs out, they are redirected to homepage.
 
 ![Sign out page](assets/features/logout-page.jpg)
@@ -563,7 +566,7 @@ Testing has taken place continuously throughout the development of the project. 
 * Click create app.
 * Click Reveal Config Vars and add a new record with `DATABASE_URL`.
 * Click Reveal Config Vars and add a new record with `PORT`.
-* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`(note: this must be removed for final deployment).
+* Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`(note: this must be either removed or set to 0 for final deployment).
 * Next, scroll down to the Buildpack section, click `Add Buildpack` select python and click Save Changes.
 
 ### 3. Set up Environment Variables
